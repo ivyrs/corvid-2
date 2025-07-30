@@ -1,0 +1,49 @@
+---
+import { getAllRepos, isFork } from "~/lib/external/github";
+import { ghostDate } from "~/lib/time";
+import Link from "../ui/link.astro";
+import DateC from "../ui/date.astro";
+
+const data = await getAllRepos();
+const repos = data.slice(0, 3);
+---
+
+<div class="">
+  <div class="">
+    {
+      repos.map((repo) => (
+        <div class="border-l-2 border-gray border-dotted mb-4 pl-6">
+          <div class="flex justify-between text-sm text-gray-dark mb-2">
+            <span>
+              <i class="fa-solid fa-language mr-1" />
+              {repo.language}
+            </span>
+            <span>
+              <i class="fa-solid fa-calendar-days mr-1" />
+              last push:
+              <DateC
+                date={ghostDate(repo.pushed_at || "1970-01-01")}
+                showTime={false}
+              />
+            </span>
+          </div>
+          <div>
+            <span class="text-xl font-bold">
+              {isFork(repo.fork) && (
+                <i class="fa-solid fa-code-fork mr-2 text-gray-dark" />
+              )}
+              <a href={repo.html_url}>{repo.name}</a>
+            </span>{" "}
+            <br />
+            <span class="text-gray-dark">{repo.description}</span>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+  <div class="flex gap-4">
+    <Link href="https://git.gay/ivy">@ivy on git.gay</Link>
+    <Link href="https://codeberg.org/ivyrs">@ivyrs on Codeberg</Link>
+    <Link href="https://github.com/ivyturner">@ivyturner on GitHub</Link>
+  </div>
+</div>

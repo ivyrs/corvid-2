@@ -1,0 +1,16 @@
+---
+import BlogList from "~/components/content/blog/BlogList.astro";
+import Link from "../ui/link.astro";
+---
+
+<div class="">
+  <h1 class="text-xl mb-4 font-semibold">
+    <i class="fa-solid fa-signature mr-2"></i>
+    latest from my blog
+  </h1>
+  <BlogList limit={3} />
+  <div class="flex gap-4 my-4">
+    <Link href="/blog">/blog</Link>
+    <!-- <Link href="https://ivyneeds.rest">ivyneeds.rest</Link> -->
+  </div>
+</div>

@@ -1,0 +1,20 @@
+---
+import NoteList from "~/components/content/notes/List.astro";
+import Link from "../ui/link.astro";
+---
+
+<div>
+  <h1 class="text-xl mb-4 font-semibold">
+    <i class="fa-solid fa-bullhorn mr-2"></i>
+    Fresh off the press...
+  </h1>
+
+  <NoteList type="status" limit={1} />
+  <NoteList type="links" limit={1} />
+
+  <div class="flex gap-4 my-4">
+    <Link href="/status">/status</Link>
+    <Link href="/links">/links</Link>
+    <!-- <Link href="/media">/media journal</Link> -->
+  </div>
+</div>

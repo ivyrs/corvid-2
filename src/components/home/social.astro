@@ -1,0 +1,29 @@
+---
+import Link from "../ui/link.astro";
+
+const links = [
+  {
+    "icon": "omg-icon omg-prami",
+    "name": "check omg.lol",
+    "href": "https://hi.ivy.rs" 
+  },
+];
+---
+
+<div class="mt-4">
+  <h1 class="text-xl mb-4 font-semibold">
+    <i class="fa-solid fa-location-dot mr-2"></i>
+    Other places on the web
+  </h1>
+  <div class="flex gap-4 my-4">
+    {
+      links.map((l) => {
+        return (
+          <Link href={l.href} icon={l.icon || "fa-solid fa-arrow-down"}>
+            {l.name}
+          </Link>
+        );
+      })
+    }
+  </div>
+</div>

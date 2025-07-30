@@ -1,0 +1,36 @@
+---
+import { Content as Bio } from "~/content/bio.md";
+import { Image } from "astro:assets";
+import Link from "~/components/ui/link.astro";
+---
+
+<div class="border-l-4 border-ml-lavender pl-6">
+  <header class="mb-4 w-full">
+    <!-- <Image
+      src={Headshot}
+      alt="meow"
+      class={`rounded-full mb-2 rotate-45`}
+      width={75}
+      loading={"eager"}
+    /> -->
+    <div>
+      <p class="mb-2">Hey, nice to meet you! I'm...</p>
+      <h1 class="text-4xl font-bold mb-2">
+        Ivy Turner 🏳️‍⚧️ <span class="text-sm">(she/her)</span>
+      </h1>
+    </div>
+  </header>
+
+  <div class="max-w-120">
+    <Bio />
+  </div>
+
+  <div class="flex gap-4 my-4">
+    <Link href="/about">About</Link>
+    <Link href="/now">Now</Link>
+    <Link href="https://hi.ivy.rs" icon="omg-icon omg-prami">Contact</Link>
+    <Link relme href="mailto:ivy@ivy.rs" icon="fa-solid fa-envelope">
+      ivy@ivy.rs
+    </Link>
+  </div>
+</div>

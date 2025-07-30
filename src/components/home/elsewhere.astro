@@ -1,0 +1,19 @@
+---
+import Link from "../ui/link.astro";
+
+const l = ["/stats", "/support", "/colophon"];
+---
+
+<div class="mt-4">
+  <h1 class="text-xl mb-4 font-semibold">
+    <i class="fa-solid fa-magnifying-glass mr-2"></i>
+    Elsewhere on this site
+  </h1>
+  <div class="flex gap-4 my-4">
+    {
+      l.map((l) => {
+        return <Link href={l}>{l}</Link>;
+      })
+    }
+  </div>
+</div>
