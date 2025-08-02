@@ -1,6 +1,9 @@
 @import 'tailwindcss';
+@plugin '@tailwindcss/typography';
 
 @theme {
+  --breakpoint-xs: 30rem;
+
   /* Disable default colors */
   --color-amber-*: initial;
   --color-lime-*: initial;
@@ -109,4 +112,8 @@
   --color-yin-9: oklch(25.11% 0.006 258.36);
   --color-yin: oklch(14.38% 0.007 256.88);
   --color-yang: oklch(99.4% 0 0);
+}
+
+.link {
+  @apply text-red-7 dark:text-pink-4 underline decoration-dashed
 }

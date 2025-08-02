@@ -1,0 +1,11 @@
+---
+import Page from "~/layouts/Page.astro";
+import Prose from "~/components/ui/prose.astro";
+import Content, { frontmatter } from "~/content/contact.md";
+---
+
+<Page title="/contact" date={frontmatter.updated}>
+    <Prose>
+        <Content />
+    </Prose>
+</Page>

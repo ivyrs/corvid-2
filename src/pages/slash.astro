@@ -1,0 +1,29 @@
+---
+import Link from "~/components/ui/link.astro";
+import Page from "../layouts/Page.astro";
+
+const pages = [
+  {
+    name: "now",
+    icon: "fa-solid fa-calendar-days",
+    desc: "What I'm doing at the moment.",
+  },
+];
+---
+
+<Page title="Slash Pages">
+  <ul class="fa-ul">
+    <Link href="https://slashpages.net/">what are you on about, ivy?</Link>
+      {
+        pages.map((i) => {
+          return (
+            <li>
+              <i class={`fa-li ${i.icon}`} />
+              <a class="link" href={`/${i.name}`}>{`/${i.name}`}</a> - {i.desc}
+            </li>
+          );
+        })
+      }
+    </Link>
+  </ul>
+</Page>

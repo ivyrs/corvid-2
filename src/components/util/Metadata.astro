@@ -1,7 +1,7 @@
 ---
-import { site, author } from "../../site.config";
+import { site, author } from "~/site.config";
 import { titleConstructor, descriptionConstructor } from "~/lib/meta";
-import Analytics from "./analytics.astro";
+import Analytics from "./Analytics.astro";
 import { getClacks } from "~/lib/fun";
 const { title, description } = Astro.props;
 ---
@@ -11,8 +11,9 @@ const { title, description } = Astro.props;
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{titleConstructor(title)}</title>
   <meta name="description" content={descriptionConstructor(description)} />
+
   <meta name="author" content={author.name} />
-  <meta name="fediverse:creator" content={author.contact.fedi} />
+  <meta name="fediverse:creator" content={author.social.fedi} />
 
   {/* og */}
   <meta property="og:title" content={titleConstructor(title)} />

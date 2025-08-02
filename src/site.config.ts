@@ -8,7 +8,7 @@ export const author = {
   },
   social: {
     fedi: "@ivy@social.lol",
-    bsky: "ivy.rs",
+    bsky: "@ivy.rs",
   },
 };
 
@@ -19,14 +19,12 @@ export const site = {
   nav: [
     {
       href: "/about",
-      name: "About",
     },
     {
-      href: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-      name: "click this for cookie"
+      href: "/contact",
     },
     {
-        href: "/404"
+      href: "/slash"
     }
   ],
 };

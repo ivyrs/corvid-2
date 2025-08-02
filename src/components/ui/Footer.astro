@@ -1,4 +1,11 @@
-<footer class="w-fit mt-4 pt-1 border-t-pink-4 border-t-1">
-  <p>(c) Ivy Turner 2025</p>
-  <p><a href="/source">Source code</a></p>
+---
+import { footerReminders } from "~/lib/fun";
+import { astroVersion } from "~/lib/utils";
+---
+
+<footer class="min-w-[300px] w-fit mt-4 pt-2 border-t-red-7 dark:border-t-pink-4 border-t-1 text-yin-7 dark:text-yin-3">
+  <p>© Ivy Turner 2025</p>
+  <p>Made with blood, sweat and probably too much coffee</p>
+  <p>Built with <a href="https://astro.build" class="link">Astro {astroVersion}</a></p>
+  <p>{footerReminders()}</p>
 </footer>

@@ -2,11 +2,12 @@
 const { href, relme, xstyle, icon = "fa-solid fa-arrow-right" } = Astro.props;
 ---
 
-<ul class=`mb-2 ${xstyle} pl-0`>
+<ul class=`my-2 ${xstyle}`>
   <li>
-    <a rel={relme && "me"} href={href}>
+    <a class="" rel={relme && "me"} href={href}>
       <i class={`${icon} mr-1`}></i>
-      <slot />
+      
+      <span class="link"><slot /></span>
     </a>
   </li>
 </ul>

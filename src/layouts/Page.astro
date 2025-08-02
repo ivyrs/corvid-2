@@ -5,7 +5,7 @@ const { showPageHeader = true, showHeader, title, desc, date } = Astro.props;
 ---
 
 <Base title={title} desc={desc} showHeader={showHeader}>
-  <main class="ml-4 py-4 px-4 border-l-2 border-l-pink-4">
+  <main class="ml-4 py-4 px-4 border-l-2 border-l-red-7 dark:border-l-pink-4">
     {showPageHeader && <PageHead title={title} desc={desc} date={date} />}
 
     <slot />
