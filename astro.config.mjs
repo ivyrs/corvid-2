@@ -8,8 +8,6 @@ import mdx from '@astrojs/mdx';
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
-import node from '@astrojs/node';
-
 import icon from 'astro-icon';
 
 // https://astro.build/config
@@ -48,7 +46,4 @@ export default defineConfig({
     ],
   },
 
-  adapter: node({
-    mode: 'standalone'
-  })
 });
