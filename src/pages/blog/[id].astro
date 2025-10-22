@@ -1,0 +1,34 @@
+---
+import Page from "~/layouts/Page.astro";
+import { getBlogPosts } from "~/lib/content/blog";
+import { Icon } from "astro-icon/components";
+import { render } from "astro:content";
+
+export async function getStaticPaths() {
+	const posts = await getBlogPosts();
+	return posts.map((post) => ({
+		params: { id: post.id },
+		props: { post },
+	}));
+}
+// 2. For your template, you can get the entry directly from the prop
+const { post } = Astro.props;
+const { Content } = await render(post);
+const data = post.data;
+---
+
+<Page title={data.title} desc={data.tldr} date={data.date}>
+	<Content />
+	<div class="flex gap-4 mt-4 text-sm">
+		{
+			data.tags &&
+				data.tags.map((i) => {
+					return (
+						<span class="bg-red-7 text-yang dark:bg-pink-4 text-yin px-2 py-1 rounded-sm">
+							{i}
+						</span>
+					);
+				})
+		}
+	</div>
+</Page>

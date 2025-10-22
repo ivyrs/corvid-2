@@ -2,15 +2,25 @@
 import { site } from "../../site.config";
 ---
 
-<header class="w-fit mb-4 pr-2 bg-yin-2 dark:bg-yin-8 sm:flex gap-2">
-  <a href="/" class="block w-fit">
-    <h1 class="bg-red-7 text-yang dark:bg-pink-4 dark:text-yin font-mono py-1 px-2">{`${site.title}`}</h1>
-  </a>
-  <nav class="flex flex-row gap-4 pt-1">
-    {
-      site.nav.map((i) => {
-        return <a class="" href={i.href}>{i.name || `.${i.href}`}</a>;
-      })
-    }
-  </nav>
+<header
+	class="w-screen sm:w-fit mb-4 pr-2 bg-yin-2 dark:bg-yin-8 sm:flex gap-2"
+>
+	<a href="/" class="block w-fit">
+		<h1
+			class="bg-red-7 text-yang dark:bg-pink-4 dark:text-yin font-bold py-1 px-2 font-header tracking-tighter"
+		>
+			{`${site.title}`}
+		</h1>
+	</a>
+	<nav class="flex flex-row gap-4 pt-1">
+		{
+			site.nav.map((i) => {
+				return (
+					<a class="" href={i.href}>
+						{i.name || `${i.href.substring(1)}`}
+					</a>
+				);
+			})
+		}
+	</nav>
 </header>

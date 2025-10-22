@@ -1,0 +1,13 @@
+---
+import { getBlogPosts } from "~/lib/content/blog";
+import PostItem from "./PostItem.astro";
+const posts = await getBlogPosts();
+---
+
+<ul>
+  {
+    posts.map((i) => {
+		return <PostItem i={i} />;
+    })
+  }
+</ul>

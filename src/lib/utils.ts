@@ -1,5 +1,4 @@
-import pkgjson from "package.json"
-
+import pkg from "package.json";
 export function currentEnv(): { mode: string; prod: boolean; dev: boolean } {
   const mode = import.meta.env.MODE;
   const isProd = import.meta.env.PROD;
@@ -9,5 +8,4 @@ export function currentEnv(): { mode: string; prod: boolean; dev: boolean } {
 }
 
 export const e = import.meta.env;
-export const pkg = pkgjson;
 export const astroVersion = pkg.dependencies.astro.substring(1);

@@ -1,0 +1,12 @@
+---
+import { Image } from "astro:assets"
+import buttons from "~/data/buttons.json"
+---
+
+<div class="flex flex-row gap-2 mt-4">
+    {
+        buttons.map((i)=>{
+            return <a href={"https://" + i.link}><Image src={i.image} width={88} height={31} alt={i.alt || i.link}/></a>
+        })
+    }    
+</div>

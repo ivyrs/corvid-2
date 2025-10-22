@@ -1,0 +1,34 @@
+---
+import Item from "~/components/ui/Item.astro";
+import Link from "~/components/ui/link.astro";
+import Date from "~/components/ui/Date.astro";
+
+const { i } = Astro.props;
+const data = i.data;
+---
+
+<li>
+	<Item>
+		<p class="flex gap-16">
+			<Link icon="fa-solid fa-hash" href={`/blog/${i.id}`}>
+				{data.title}
+			</Link>
+		</p>
+		<p class="text-yin-7 dark:text-yin-3 flex flex-col text-base">
+			<Date date={data.date} />
+			<span>{data.tldr}</span>
+			<div class="flex gap-4 mt-2 text-sm">
+				{
+					data.tags &&
+						data.tags.map((i: string) => {
+							return (
+								<span class="bg-red-7 text-yang dark:bg-pink-4 dark:text-yin px-2 py-0.5 rounded-sm">
+									{i}
+								</span>
+							);
+						})
+				}
+			</div>
+		</p>
+	</Item>
+</li>

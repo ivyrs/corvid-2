@@ -1,5 +1,5 @@
 import { formattedDate } from "./time";
-import {site, author} from "~/site.config"
+import { site, author } from "~/site.config";
 
 function titleTemplate(input: string): string {
   return `${input} | ${site.title}`;

@@ -1,0 +1,24 @@
+---
+import Page from "~/layouts/Page.astro";
+import keys from "~/data/keys.json";
+import pgp from "public/keys/ivy.asc?raw";
+---
+
+<Page title="Keys" back="/contact" breadcrumb="/contact/">
+	<h3 class="text-xl font-bold">ssh</h3>
+	{
+		keys.ssh.map((i) => {
+			return (
+				<p>
+					i@{i.host}: <code class="text-sm">{i.id}</code>
+				</p>
+			);
+		})
+	}
+
+	<h3 class="text-xl font-bold">pgp</h3>
+
+	<p>ivy@ivy.rs</p>
+
+	<code class="text-sm font-mono w-60">{pgp}</code>
+</Page>

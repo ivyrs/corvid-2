@@ -1,9 +1,13 @@
+@import url(https://fonts.bunny.net/css?family=atkinson-hyperlegible:400,400i,700,700i|fira-code:400|ibm-plex-mono:400,700,700i|inter:400,400i,700,700i);
+@import url(https://cdn.cache.lol/profiles/icons/omg.lol-icons.css);
 @import 'tailwindcss';
+@import 'lucide-static/font/lucide.css';
 @plugin '@tailwindcss/typography';
 
 @theme {
-  --breakpoint-xs: 30rem;
-
+  --font-sans: 'Atkinson Hyperlegible', sans-serif;
+  --font-header: 'Atkinson Hyperlegible Mono';
+  --font-mono: 'Fira Code', monospace;
   /* Disable default colors */
   --color-amber-*: initial;
   --color-lime-*: initial;
@@ -114,6 +118,10 @@
   --color-yang: oklch(99.4% 0 0);
 }
 
+mark {
+  @apply bg-[rgba(0,0,0,0)] text-red-7 dark:text-pink-4
+}
 .link {
   @apply text-red-7 dark:text-pink-4 underline decoration-dashed
 }
+

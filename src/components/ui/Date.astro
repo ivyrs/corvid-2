@@ -1,0 +1,10 @@
+---
+import { formattedDate, isoDate } from "../../lib/time";
+interface Props {
+  date: Date;
+  showTime?: boolean;
+}
+const { date, showTime } = Astro.props;
+---
+
+<time datetime={isoDate(date)}>{formattedDate(date, showTime)}</time>

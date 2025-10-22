@@ -5,9 +5,12 @@ import tailwindcss from '@tailwindcss/vite';
 import svelte from '@astrojs/svelte';
 
 import mdx from '@astrojs/mdx';
-import rehypeExternalLinks from 'rehype-external-links';
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+
+import node from '@astrojs/node';
+
+import icon from 'astro-icon';
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,7 +18,10 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
-  integrations: [svelte(), mdx()],
+  experimental: {
+  },
+
+  integrations: [svelte(), mdx(), icon()],
 
   markdown: {
     shikiConfig: {
@@ -40,5 +46,9 @@ export default defineConfig({
         },
       ],
     ],
-  }
+  },
+
+  adapter: node({
+    mode: 'standalone'
+  })
 });
