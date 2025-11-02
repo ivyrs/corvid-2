@@ -1,8 +1,16 @@
 import { formattedDate } from "./time";
 import { site, author } from "~/site.config";
+import { currentEnv } from "./utils";
+
+function showDev(): string {
+  if (currentEnv().dev == true) {
+    return " (DEV)";
+  }
+  return "";
+}
 
 function titleTemplate(input: string): string {
-  return `${input} | ${site.title}`;
+  return `${input} | ${site.title + showDev()}`;
 }
 
 export function titleConstructor(title: string | undefined): string {

@@ -1,4 +1,5 @@
 import pkg from "package.json";
+
 export function currentEnv(): { mode: string; prod: boolean; dev: boolean } {
   const mode = import.meta.env.MODE;
   const isProd = import.meta.env.PROD;

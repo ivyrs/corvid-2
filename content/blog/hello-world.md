@@ -6,6 +6,3 @@ publish: true
 tags: ["personal", "meta"]
 ---
 
-teeeest
-
-something
