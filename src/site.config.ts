@@ -1,4 +1,4 @@
-function dynamicEmail(): string {
+function dynamicEmail(): string { // lol
 	return "ivy" + "@ivy.rs";
 }
 

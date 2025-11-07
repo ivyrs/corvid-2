@@ -7,6 +7,9 @@ import Link from "~/components/ui/link.astro";
 <Base>
 	<main class="pl-0 flex flex-col gap-2" id="content">
 		<p>
+			
+		</p>
+		<p>
 			Hey! Welcome to my site, I'm {author.name}.
 		</p>
 		<p>
@@ -21,16 +24,29 @@ import Link from "~/components/ui/link.astro";
 		<p class="mt-2">
 			this site's kind of a mess right now, but feel free to look around.
 		</p>
-		<p>--- START IVY'S LINKS ---</p>
-		<Link href="//git.lovecomputer.net/ivy">
-			my code
-		</Link>
-		<Link href="//fedi.ivy.rs/i">
-			@i@fedi.ivy.rs (personal)
-		</Link>
-		<Link href="//social.lol/@ivy">
-			@ivy@social.lol (work)
-		</Link>
-		<p>--- END IVY'S LINKS ---</p>
+		<div class="font-mono sm:flex flex-col gap-2">
+			<p>--- START IVY'S LINKS ---</p>
+			<div class="sm:flex gap-16">
+				<Link href="//git.lovecomputer.net/ivy" icon="fa6-solid:code-branch">
+					LCgit
+				</Link>
+				<Link href="//codeberg.org/ivyrs" icon="devicon-plain:codeberg">
+					Codeberg (@ivyrs)
+				</Link>
+				<Link href="//github.com/ivyturner" icon="fa7-brands:github">
+					GitHub (@ivyturner)	
+				</Link>
+			</div>
+			<div class="sm:flex gap-16">
+				<Link href="//fedi.ivy.rs/i">
+					@i@fedi.ivy.rs (personal)
+				</Link>
+				<Link href="//social.lol/@ivy">
+					@ivy@social.lol (work)
+				</Link>
+			</div>
+			<Link href="mailto:ivy@ivy.rs" icon="fa6-solid:envelope">ivy@ivy.rs</Link>
+			<p>--- END IVY'S LINKS ---</p>
+		</div>
 	</main>
 </Base>
