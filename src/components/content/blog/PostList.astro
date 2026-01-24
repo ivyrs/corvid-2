@@ -4,7 +4,7 @@ import PostItem from "./PostItem.astro";
 const posts = await getBlogPosts();
 ---
 
-<ul>
+<ul class="flex flex-col gap-4">
   {
     posts.map((i) => {
 		return <PostItem i={i} />;

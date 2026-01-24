@@ -121,6 +121,7 @@
 mark {
   @apply bg-[rgba(0,0,0,0)] text-red-7 dark:text-pink-4
 }
+
 .link {
   @apply text-red-7 dark:text-pink-4 underline decoration-dashed underline-offset-4
 }

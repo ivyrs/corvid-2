@@ -22,14 +22,7 @@ export const site = {
 	desc: `${author.name}'s personal site`,
 	nav: [
 		{
-			href: "/about",
-		},
-		{
-			href: "//ivy.omg.lol",
-			name: "contact",
-		},
-		{
-			href: "/slash",
+			href: "/now",
 		},
 		{
 			href: "/blog",

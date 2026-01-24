@@ -1,0 +1,11 @@
+---
+import Prose from "~/components/ui/prose.astro";
+import { Content, frontmatter } from "~/content/forges.md";
+import Page from "~/layouts/Page.astro";
+---
+
+<Page title="too many forges" back="/" date={frontmatter.updated}>
+  <Prose>
+    <Content />
+  </Prose>
+</Page>

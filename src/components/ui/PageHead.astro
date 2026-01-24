@@ -8,7 +8,7 @@ const { title, desc, date, back, backLabel, breadcrumb } = Astro.props;
 	{
 		back && (
 			<a href={back} class="link mb-1">
-				{backLabel || "Back"}
+				{`<- ${backLabel || `back to ${back}`}`}
 			</a>
 		)
 	}
