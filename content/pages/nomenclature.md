@@ -18,3 +18,4 @@ date: 2025-11-28
         <span class="text-yin-7 dark:text-yin-3 text-base">& i reserve the right to throw you into the sun</span>
     </p>
 <span class="text-sm">thank you to <a class="link" href="https://eta.st/nomenclature/">eta</a> for the idea for this page :3</span>
+<span class="text-sm">see also: <a class="link" href="https://en.pronouns.page/@ivyrs">pronouns.page</a></span>

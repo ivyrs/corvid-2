@@ -48,5 +48,8 @@ export default defineConfig({
       ],
     ],
   },
-
+  redirects: {
+		"/cv": "https://example.com",
+		"/_index": "/"
+	}
 });

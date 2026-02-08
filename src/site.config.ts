@@ -39,6 +39,7 @@ export const settings = {
 		source: "goat",
 	},
 	redir: {
-		"/cv": "https://example.com"
+		"/cv": "https://example.com",
+		"/_index": "/"
 	}
 };
