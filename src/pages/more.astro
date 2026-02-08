@@ -1,13 +1,7 @@
 ---
-import Link from "~/components/ui/link.astro";
 import Page from "../layouts/Page.astro";
 
 const pages = [
-  {
-    name: "now",
-    icon: "fa-solid fa-calendar-days",
-    desc: "What I'm doing at the moment.",
-  },
   {
     name: "blank",
     icon: "fa-solid fa-square",
@@ -16,14 +10,30 @@ const pages = [
   {
     name: "ai",
     icon: "fa-solid fa-robot",
-    desc: "how i use ai"
+    desc: "how i use ai",
+  },
+  {
+    name: "nomenclature",
+    icon: "fa-solid fa-signature",
+    desc: "how i'd like to be referred to"
+  },
+  {
+    name: "accounts",
+    icon: "fa-solid fa-globe",
+    desc: "places i exist on the internet"
+  },
+  {
+    name: "hills",
+    icon: "fa-solid fa-mountain",
+    desc: "hills i will die on"
   }
 ];
+
+pages.sort((a, b) => a.name.localeCompare(b.name));
 ---
 
-<Page title="Slash Pages">
+<Page title="More" desc="all the pages not linked to in the header">
   <ul class="fa-ul">
-    <Link href="https://slashpages.net/">what are you on about, ivy?</Link>
     {
       pages.map((i) => {
         return (

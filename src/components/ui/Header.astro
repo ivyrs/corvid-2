@@ -3,11 +3,11 @@ import { site } from "../../site.config";
 ---
 
 <header
-	class="w-screen sm:w-fit mb-4 pr-2 bg-yin-2 dark:bg-yin-8 sm:flex gap-2"
+	class="w-fit sm:flex gap-4 text-xl mb-4"
 >
 	<a href="/" class="block w-fit">
 		<h1
-			class="bg-red-7 text-yang dark:bg-pink-4 dark:text-yin font-bold py-1 px-2 font-mono tracking-tighter"
+			class="text-red-7 dark:text-pink-4 pt-1"
 		>
 			{`${site.title}`}
 		</h1>
@@ -16,7 +16,7 @@ import { site } from "../../site.config";
 		{
 			site.nav.map((i) => {
 				return (
-					<a class="" href={i.href}>
+					<a class="text-purple-7 dark:text-purple-2" href={i.href}>
 						{i.name || `${i.href.substring(1)}`}
 					</a>
 				);

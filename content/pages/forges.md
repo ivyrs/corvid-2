@@ -1,5 +1,5 @@
 ---
-updated: 2026-01-11
+date: 2026-01-11
 ---
 
 Currently I have accounts on:

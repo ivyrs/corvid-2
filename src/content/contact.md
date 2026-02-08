@@ -1,15 +1,3 @@
----
-updated: 2025-07-30
----
+If you'd like to see any of my code, you can check out [/forges](/forges).
 
-- my personal email is <ivy@ivy.rs>
-- for any work related stuff: <ivy@lovecomputer.net>
-- fediverse: [@ivy@social.lol](https://social.lol/@ivy) (bridged to bluesky as [@ivy.rs](https://bsky.app/profile/ivy.rs))
-
----
-
-- discord: ivy.rs
-- irc:
-  - libera.chat: ivyrose
-  - omg.lol: ivy
-- matrix (i'd rather not): @ivyrs:catgirl.cloud
+The best way to talk to me is through [email](mailto:ivy@ivy.rs), [signal](https://signal.me/#eu/ZEDpkWnOM3_XzX1Cyp3B7dqRg_ndUJ2JEDHpqKmLc7T26ME1GEZHyqtxmyv_IBJa) or discord: @ivy.rs

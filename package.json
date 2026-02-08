@@ -10,7 +10,7 @@
     "deploy-local": "ssh lovecomputer /opt/sites/ivy.rs/deploy.sh"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.4",
+    "@astrojs/mdx": "^4.3.13",
     "@astrojs/node": "^9.4.3",
     "@astrojs/svelte": "^7.1.0",
     "@iconify-json/devicon-plain": "^1.2.42",

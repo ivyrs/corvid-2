@@ -9,18 +9,22 @@
         "alt": "RIP SOPHIE"
     },
     {
-        "link": "thei.rs",
+        "link": "badge.les.bi",
+        "image": "https://badge.les.bi/88x31/trans/lesbi/75-degree.png",
+        "alt": "trans & lesbian flags"
+    },
+    {
+        "link": "xela.zone",
+        "image": "https://geo.thei.rs/88x31/xela.png"
+    },
+    {
+        "link": "thei.rs/i0",
         "image": "https://geo.thei.rs/88x31/i0-a.png",
         "alt": "i0"
     },
     {
         "link": "kittycat.moe",
         "image": "/img/kittycat.moe.png"
-    },
-    {
-        "link": "badge.les.bi",
-        "image": "https://badge.les.bi/88x31/trans/lesbi/75-degree.png",
-        "alt": "trans & lesbian flags"
     },
     {
         "link": "bun.work",

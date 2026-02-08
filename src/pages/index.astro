@@ -1,29 +1,13 @@
 ---
-import { author } from "~/site.config";
-import { Content as Contact } from "~/content/home/contact.md"
-import Base from "../layouts/Base.astro";
+import Base from "~/layouts/Base.astro";
+import { Content } from "~/../content/pages/_index.mdx";
+import Prose from "~/components/ui/prose.astro";
 ---
 
 <Base>
-	<main class="pl-0 flex flex-col gap-2" id="content">
-		<p></p>
-		<p>
-			Hey! Welcome to my site, I'm 
-			<a href="/nomenclature" class="link">
-				{author.name}.
-			</a>
-		</p>
-		<p class="">
-			I'm a <mark>CS student</mark> from the
-			<mark>North of England</mark>!
-			<br />
-
-			When I'm not in front of a computer, I like to
-			<mark>take photos</mark>, <br />
-			<mark>collect stationary</mark>, and <mark>make music</mark>.
-		</p>
-		<div class="max-w-3xl [&>*>a]:text-red-7 dark:[&>*>a]:text-pink-4 [&>*>a]:underline [&>*>a]:decoration-dashed [&>*>a]:underline-offset-4">
-			<Contact />
-		</div>
+	<main class="pl-0 flex flex-col gap-2">
+		<Prose>
+			<Content />
+		</Prose>
 	</main>
 </Base>

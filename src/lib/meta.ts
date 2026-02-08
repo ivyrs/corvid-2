@@ -14,7 +14,7 @@ function titleTemplate(input: string): string {
 }
 
 export function titleConstructor(title: string | undefined): string {
-  if (!title) return site.title;
+  if (!title) return site.title + showDev();
   return titleTemplate(title);
 }
 

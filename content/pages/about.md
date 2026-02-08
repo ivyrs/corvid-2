@@ -1,5 +1,5 @@
 ---
-updated: 2025-10-26
+date: 2025-10-26
 ---
 ```
 - name: Ivy Rose

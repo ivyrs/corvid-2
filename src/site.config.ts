@@ -17,7 +17,7 @@ export const author = {
 };
 
 export const site = {
-	title: "ivy.rs",
+	title: "Ivy!",
 	url: "https://ivy.rs",
 	desc: `${author.name}'s personal site`,
 	nav: [
@@ -27,6 +27,9 @@ export const site = {
 		{
 			href: "/blog",
 		},
+		{
+			href: "/more"
+		}
 	],
 };
 
@@ -35,4 +38,7 @@ export const settings = {
 		enabled: true,
 		source: "goat",
 	},
+	redir: {
+		"/cv": "https://example.com"
+	}
 };

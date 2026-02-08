@@ -1,5 +1,6 @@
 // all the code for making fun stuff happen
 import flavourText from "~/data/flavourtext.json";
+import clacks from "~/data/rip.json";
 
 function randomiseStrings(input: string[]) {
 	return input[Math.floor(Math.random() * input.length)];
@@ -21,15 +22,8 @@ export function isBirthday(): boolean {
 
 // https://gnuterrypratchett.com/index.php
 export function getClacks(): string {
-	const clacks: string[] = [
-		"Terry Pratchett",
-		"Bram Moolenaar",
-		"Alan Turing",
-		"Haskell Curry",
-		"Brianna Ghey",
-		"Anne Sturdivant"
-	];
-	return clacks.join(", ");
+	const c: string[] = clacks;
+	return c.join(", ");
 }
 
 export function footerReminders(): string {
