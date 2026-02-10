@@ -24,6 +24,8 @@ export default defineConfig({
 
   integrations: [svelte(), mdx(), icon()],
 
+  trailingSlash: "never",
+
   markdown: {
     shikiConfig: {
       theme: "catppuccin-mocha"
@@ -48,6 +50,7 @@ export default defineConfig({
       ],
     ],
   },
+  
   redirects: {
 		"/cv": "https://example.com",
 		"/_index": "/"

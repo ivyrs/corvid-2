@@ -1,13 +1,14 @@
-@import url(https://fonts.bunny.net/css?family=atkinson-hyperlegible:400,400i,700,700i|atkinson-hyperlegible-mono:400,700|fira-code:400|ibm-plex-mono:400,700,700i|inter:400,400i,700,700i);
+@import url(https://fonts.bunny.net/css?family=ibm-plex-mono:400,700,700i|ibm-plex-sans:400,700,700i);
 @import url(https://cdn.cache.lol/profiles/icons/omg.lol-icons.css);
+@import url("https://geo.thei.rs/fonts/berkeley-mono:ligatures,variable.css");
 @import 'tailwindcss';
 @import 'lucide-static/font/lucide.css';
 @plugin '@tailwindcss/typography';
 
 @theme {
-  --font-sans: 'Atkinson Hyperlegible', sans-serif;
-  --font-header: 'Atkinson Hyperlegible Mono';
-  --font-mono: 'Fira Code', monospace;
+  --font-sans: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'Berkeley Mono', monospace;
+  
   /* Disable default colors */
   --color-amber-*: initial;
   --color-lime-*: initial;
@@ -126,3 +127,8 @@ mark {
   @apply text-red-7 dark:text-pink-4 underline decoration-dashed underline-offset-4
 }
 
+@layer utilities { /* font fix 4 safari */
+  .italic {
+    font-variation-settings: "slnt" -14;
+  }
+}

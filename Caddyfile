@@ -1,0 +1,5 @@
+# Extra Caddy config for ivy.rs.
+
+route {
+    redir /git/{uri} https://git.lovecomputer.net/{uri}
+}

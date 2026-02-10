@@ -5,5 +5,6 @@
 
 ### friends
 
+- [xela.zone](https://xela.zone) - my girlfriend,,, lov her :3
 - [thei.rs](https://thei.rs) - very pretty ascii art
-- [beeps.website](https://beeps.website)
+- [kassiopia.dev](//kassiopia.dev) - you can play pinball!!

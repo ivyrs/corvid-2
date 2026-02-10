@@ -11,16 +11,18 @@ export async function GET(context) {
   return rss({
     title: site.title,
     description: site.desc,
-    site: context.site,
+    site: "https://ivy.rs",
+
     items: blog.map((post) => ({
       title: post.data.title,
       pubDate: post.data.date,
       description: post.data.description,
-      link: `/blog/${post.id}/`,
+      link: `/blog/${post.id}`,
       content: sanitizeHtml(parser.render(post.body), {
         allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img'])
       }),
     })),
     customData: `<language>en-gb</language>`,
+    trailingSlash: false
   });
 }

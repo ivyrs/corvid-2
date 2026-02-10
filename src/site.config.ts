@@ -25,6 +25,9 @@ export const site = {
 			href: "/now",
 		},
 		{
+			href: "/contact"
+		},
+		{
 			href: "/blog",
 		},
 		{

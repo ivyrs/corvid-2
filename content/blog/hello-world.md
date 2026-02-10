@@ -11,3 +11,7 @@ awawa
 ## heading!
 
 something
+
+```py
+print("awawa")
+```
