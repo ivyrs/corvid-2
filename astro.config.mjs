@@ -8,24 +8,17 @@ import mdx from '@astrojs/mdx';
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
-import icon from 'astro-icon';
 
 // https://astro.build/config
 export default defineConfig({
+  integrations: [svelte(), mdx()],
   vite: {
     plugins: [tailwindcss()],
     server: {
       allowedHosts: ["turing"] // so i can use tailscale magicDNS
     }
   },
-
-  experimental: {
-  },
-
-  integrations: [svelte(), mdx(), icon()],
-
   trailingSlash: "never",
-
   markdown: {
     shikiConfig: {
       theme: "catppuccin-mocha"
@@ -49,10 +42,5 @@ export default defineConfig({
         },
       ],
     ],
-  },
-  
-  redirects: {
-		"/cv": "https://example.com",
-		"/_index": "/"
-	}
+  }
 });
