@@ -6,7 +6,7 @@ const parser = new MarkdownIt();
 
 import { site } from '~/site.config';
 
-export async function GET(context) {
+export async function GET() {
   const blog = await getBlogPosts();
   return rss({
     title: site.title,
