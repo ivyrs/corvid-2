@@ -16,7 +16,8 @@ const { title, desc, date, back, backLabel, breadcrumb } = Astro.props;
 	{desc && <p class="text-yin-6 dark:text-yin-4">{desc}</p>}
 	{
 		date && (
-			<p class="text-base text-yin-6 dark:text-yin-4 flex gap-2 items-baseline">
+			<p class="text-base text-yin-6 dark:text-yin-4 flex gap-1 items-baseline">
+				<i class="fa-solid fa-calendar-days"></i>
 				<Date date={date} />
 			</p>
 		)

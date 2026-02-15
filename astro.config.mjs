@@ -7,11 +7,11 @@ import svelte from '@astrojs/svelte';
 import mdx from '@astrojs/mdx';
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-
+import icon from "astro-icon"
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [svelte(), mdx()],
+  integrations: [svelte(), mdx(), icon()],
   vite: {
     plugins: [tailwindcss()],
     server: {

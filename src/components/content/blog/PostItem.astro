@@ -15,7 +15,9 @@ const data = i.data;
 			</Link>
 		</p>
 		<p class="text-yin-7 dark:text-yin-3 flex flex-col text-base">
-			<Date date={data.date} />
+			<span class="flex gap-1">
+				<i class="fa-solid fa-calendar-days pt-1"></i><Date date={data.date} />
+			</span>
 			<span>{data.tldr}</span>
 			<div class="flex gap-4 mt-2 text-sm">
 				{
