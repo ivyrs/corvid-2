@@ -1,5 +1,5 @@
 ---
-title: info about my name and pronouns
+desc: info about my name and pronouns
 date: 2025-11-28
 ---
 

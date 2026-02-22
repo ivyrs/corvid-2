@@ -1,12 +1,12 @@
 ---
-import Page from "~/layouts/Page.astro";
+import Layout from "~/layouts/Page.astro";
 import { getCollection, render } from "astro:content";
 import Prose from "~/components/ui/prose.astro";
 
 export async function getStaticPaths() {
-	const posts = await getCollection("slash");
+	const posts = await getCollection("pages");
 	return posts.map((post) => ({
-		params: { slash: post.id },
+		params: { page: post.id },
 		props: { post },
 	}));
 }
@@ -17,8 +17,8 @@ const data = post.data;
 let title = data.title || "/" + post.id;
 ---
 
-<Page title={title} desc={data.desc} date={data.date}>
+<Layout title={title} desc={data.desc} date={data.date}>
 	<Prose>
 		<Content />
 	</Prose>
-</Page>
+</Layout>

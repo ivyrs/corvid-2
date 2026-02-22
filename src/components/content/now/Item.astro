@@ -1,0 +1,15 @@
+---
+import Prose from "~/components/ui/prose.astro";
+
+const { i } = Astro.props;
+---
+
+<div class="w-fit min-w-140 border border-gray-9 rounded-md p-2">
+    <div class="w-full border-b border-b-gray-8 pb-1 mb-1 flex justify-between">
+        <span class="font-mono">{i.id}</span>
+        <span>⭐</span>
+    </div>
+    <Prose>
+        <i.Content />
+    </Prose>
+</div>

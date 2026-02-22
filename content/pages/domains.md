@@ -4,11 +4,11 @@ hide: true
 date: 2026-02-18
 ---
 current count: **16**
-
 - ivy.rs
 - ivyro.se
 - ivyrose.gay
 - ivyrose.mom
+- lovecomputer.net
 - ivyturner.co.uk
 - [legacyname]turner.co.uk
 - [legacyname].gay
@@ -19,5 +19,4 @@ current count: **16**
 - grammoph.one
 - [redacted].com
 - yiff.industries
-- lovecomputer.net
-- [redacted].social (stupid joke i mis-spelled so im redacting out of posterity)
+- [redacted].social (i mis-spelled it so i'm redacting out of posterity)

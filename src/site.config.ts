@@ -3,7 +3,7 @@ function dynamicEmail(): string { // lol
 }
 
 export const author = {
-	name: "Ivy",
+	name: "ivy",
 	pronouns: "she/her",
 	email: dynamicEmail(),
 	work: {
@@ -17,23 +17,9 @@ export const author = {
 };
 
 export const site = {
-	title: "Ivy!",
+	title: "ivy!",
 	url: "https://ivy.rs",
 	desc: `${author.name}'s personal site`,
-	nav: [
-		{
-			href: "/now",
-		},
-		{
-			href: "/contact"
-		},
-		{
-			href: "/blog",
-		},
-		{
-			href: "/more"
-		}
-	],
 };
 
 export const settings = {
@@ -41,8 +27,4 @@ export const settings = {
 		enabled: true,
 		source: "goat",
 	},
-	redir: {
-		"/cv": "https://example.com",
-		"/_index": "/"
-	}
 };

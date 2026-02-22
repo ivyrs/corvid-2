@@ -1,3 +1,7 @@
+---
+desc: sites i like
+---
+
 ### inspirations
 
 - [melonkorin.net](//melonkorin.net) - everything about this site is absolute cinema.

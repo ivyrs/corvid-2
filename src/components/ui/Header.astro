@@ -1,23 +1,21 @@
 ---
 import { site } from "../../site.config";
+
+const nav = ["now", "blog", "contact", "more"];
 ---
 
-<header
-	class="w-fit sm:flex gap-4 text-xl mb-4"
->
+<header class="w-fit sm:flex gap-4 text-xl mb-4">
 	<a href="/" class="block w-fit">
-		<h1
-			class="text-red-7 dark:text-pink-4 pt-1"
-		>
+		<h1 class="text-red-7 dark:text-pink-4 pt-1">
 			{`${site.title}`}
 		</h1>
 	</a>
 	<nav class="flex flex-row gap-4 pt-1 first:pl-8">
 		{
-			site.nav.map((i) => {
+			nav.map((i) => {
 				return (
-					<a class="text-purple-7 dark:text-purple-2" href={i.href}>
-						{i.name || `${i.href.substring(1)}`}
+					<a class="text-purple-7 dark:text-purple-2" href={i}>
+						{i}
 					</a>
 				);
 			})

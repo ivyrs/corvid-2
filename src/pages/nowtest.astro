@@ -1,0 +1,23 @@
+---
+import { getCollection, render } from 'astro:content';
+import Item from '~/components/content/now/Item.astro';
+import Layout from "~/layouts/Page.astro";
+
+
+
+// Render each post's content
+const renderedPosts = await Promise.all(
+  posts.map(async (post) => {
+    const { Content } = await render(post);
+
+    return {
+      ...post,
+      Content,
+    };
+  })
+);
+---
+
+<Layout title="/now" desc="">
+    {renderedPosts.map((post) => <Item i={post} />)}
+</Layout>

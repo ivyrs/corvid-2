@@ -1,50 +1,74 @@
 ---
+import { getCollection } from "astro:content";
 import Page from "~/layouts/Page.astro";
 
-const pages = [
+// const pages = [
+//   {
+//     name: "blank",
+//     icon: "fa-solid fa-square",
+//     desc: "▓▓▓▓▓▓▓▓▓▓",
+//   },
+//   {
+//     name: "ai",
+//     icon: "fa-solid fa-robot",
+//     desc: "how i use ai",
+//   },
+//   {
+//     name: "nomenclature",
+//     icon: "fa-solid fa-signature",
+//     desc: "how i'd like to be referred to"
+//   },
+//   {
+//     name: "accounts",
+//     icon: "fa-solid fa-globe",
+//     desc: "places i exist on the internet"
+//   },
+//   {
+//     name: "hills",
+//     icon: "fa-solid fa-mountain",
+//     desc: "hills i will die on"
+//   },
+//   {
+//     name: "sites",
+//     icon: "fa-solid fa-link",
+//     desc: "other cool websites"
+//   }
+// ];
+
+const extra = [
   {
-    name: "blank",
-    icon: "fa-solid fa-square",
-    desc: "▓▓▓▓▓▓▓▓▓▓",
-  },
-  {
-    name: "ai",
-    icon: "fa-solid fa-robot",
-    desc: "how i use ai",
-  },
-  {
-    name: "nomenclature",
-    icon: "fa-solid fa-signature",
-    desc: "how i'd like to be referred to"
-  },
-  {
-    name: "accounts",
-    icon: "fa-solid fa-globe",
-    desc: "places i exist on the internet"
-  },
-  {
-    name: "hills",
-    icon: "fa-solid fa-mountain",
-    desc: "hills i will die on"
-  },
-  {
-    name: "sites",
-    icon: "fa-solid fa-link",
-    desc: "other cool websites"
+    id: "blank",
+    data: {
+      title: "",
+      icon: "fa-solid fa-square",
+      desc: "▓▓▓▓▓▓▓▓▓▓",
+      hide: false,
+    },
   }
 ];
 
-pages.sort((a, b) => a.name.localeCompare(b.name));
+const entries = await getCollection("pages");
+const sorted = [...entries, ...extra]
+  .filter((i) => !i.data.hide)
+  .sort((a, b) => {
+    const titleA = a.data.title || a.id;
+    const titleB = b.data.title || b.id;
+    return titleA.localeCompare(titleB);
+  });
 ---
 
 <Page title="More" desc="all the pages not linked to in the header">
   <ul class="fa-ul">
     {
-      pages.map((i) => {
+      sorted.map((i) => {
         return (
           <li>
-            <i class={`fa-li ${i.icon}`} />
-            <a class="link" href={`/${i.name}`}>{`/${i.name}`}</a> - {i.desc}
+            <i class={`fa-li ${i.data.icon}`} />
+            <a
+              class="link"
+              href={`/${i.id}`}
+            >{`${i.data.title || "/" + i.id}`}</a>{" "}
+            {i.data.desc && `- ${i.data.desc}`}
           </li>
         );
       })
