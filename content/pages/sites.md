@@ -1,5 +1,6 @@
 ---
 desc: sites i like
+icon: fa-solid fa-link
 ---
 
 ### inspirations

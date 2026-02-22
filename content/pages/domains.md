@@ -1,6 +1,6 @@
 ---
 desc: all* of my domains
-hide: true
+icon: fa-solid fa-house-signal
 date: 2026-02-18
 ---
 current count: **16**

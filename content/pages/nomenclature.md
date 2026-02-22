@@ -1,15 +1,14 @@
 ---
 desc: info about my name and pronouns
 date: 2025-11-28
+icon: fa-solid fa-user
 ---
 
 <h3 class="text-xl">hi, my name is ivy</h3>
 
-<p>
-    my full name is [miss.] ivy rose turner <br>
-    unless required, please keep my name lowercase <br>
-    if you know any of my old names, please do not use them
-</p>
+my full name is [miss.] ivy rose turner <br>
+unless required, please keep my name lowercase <br>
+if you know any of my old names, please do not use them
 
 <h3 class="text-xl">my pronouns are she/her <span class="text-xs text-yin-7 dark:text-yin-3">unless you know different</span></h2>
     <p>
