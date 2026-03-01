@@ -1,5 +1,5 @@
 import rss from '@astrojs/rss';
-import { getBlogPosts } from '~/lib/content/blog';
+import { getBlogPosts } from '~/lib/blog';
 import sanitizeHtml from 'sanitize-html';
 import MarkdownIt from 'markdown-it';
 const parser = new MarkdownIt();
