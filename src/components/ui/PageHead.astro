@@ -1,7 +1,7 @@
 ---
 import Date from "./Date.astro";
 
-const { title, desc, date, back, backLabel, breadcrumb } = Astro.props;
+const { title, desc, date, back, backLabel, icon, breadcrumb } = Astro.props;
 ---
 
 <div class="mb-2 flex flex-col">
@@ -12,7 +12,11 @@ const { title, desc, date, back, backLabel, breadcrumb } = Astro.props;
 			</a>
 		)
 	}
-	<h2 class="text-2xl font-bold"><span>{breadcrumb}</span>{title}</h2>
+	<h2 class="text-2xl font-bold">
+		{icon && <i class={icon}></i>}
+		<span>{breadcrumb}</span>
+		{title}
+	</h2>
 	{desc && <p class="text-yin-6 dark:text-yin-4">{desc}</p>}
 	{
 		date && (

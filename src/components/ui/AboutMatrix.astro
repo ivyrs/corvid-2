@@ -1,3 +1,20 @@
-<div class="">
-    
+---
+const rows = [
+    ['term', 'type', 'value'],
+    ['name', 'Array<String>', "['ivy']"]
+];
+---
+
+<div class="no-prose">
+    <table class="my-0">
+        {
+            rows.map((r)=>{
+                return <tr>
+                    <td>{r[0]}</td>
+                    <td>{r[1]}</td>
+                    <td>{r[2]}</td>
+                </tr>
+            })
+        }
+    </table> 
 </div>

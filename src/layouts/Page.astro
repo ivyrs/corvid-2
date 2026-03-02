@@ -1,12 +1,34 @@
 ---
 import Base from "./Base.astro";
 import PageHead from "../components/ui/PageHead.astro";
-const { showPageHeader = true, showHeader, title, desc, date, back, backLabel } = Astro.props;
+const {
+  showPageHeader = true,
+  showHeader,
+  title,
+  desc,
+  date,
+  icon,
+  back,
+  backLabel,
+} = Astro.props;
 ---
 
 <Base title={title} desc={desc} showHeader={showHeader}>
-  <main class="ml-4 pb-4 pt-3 px-4 border-l-1 border-dashed border-l-red-7 dark:border-l-pink-4">
-    {showPageHeader && <PageHead title={title} desc={desc} date={date} back={back} backLabel={backLabel} />}
+  <main
+    class="ml-4 pb-4 pt-3 px-4 border-l-1 border-dashed border-l-red-7 dark:border-l-pink-4"
+  >
+    {
+      showPageHeader && (
+        <PageHead
+          title={title}
+          desc={desc}
+          date={date}
+          back={back}
+          backLabel={backLabel}
+          icon={icon}
+        />
+      )
+    }
 
     <slot />
   </main>

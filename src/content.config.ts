@@ -12,6 +12,7 @@ const blog = defineCollection({
     tags: z.array(z.string()).optional(),
     tldr: z.string().optional(),
     publish: z.boolean().default(false),
+    icon: z.string().default("fa-solid fa-hash")
   }),
 });
 

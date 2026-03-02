@@ -17,7 +17,7 @@ const data = post.data;
 let title = data.title || "/" + post.id;
 ---
 
-<Layout title={title} desc={data.desc} date={data.date}>
+<Layout title={title} desc={data.desc} date={data.date} icon={data.icon}>
 	<Prose>
 		<Content />
 	</Prose>

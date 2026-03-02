@@ -1,15 +1,6 @@
-function dynamicEmail(): string { // lol
-	return "ivy" + "@ivy.rs";
-}
-
 export const author = {
 	name: "ivy",
 	pronouns: "she/her",
-	email: dynamicEmail(),
-	work: {
-		title: "Freelancer",
-		employer: "Love Computer",
-	},
 	social: {
 		fedi: "@ivy@social.lol",
 		bsky: "@ivy.rs",
