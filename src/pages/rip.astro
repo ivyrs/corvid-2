@@ -1,0 +1,14 @@
+---
+import Page from "~/layouts/Page.astro";
+import clacks from "~/data/rip.json";
+---
+
+<Page title="RIP">
+    <ul>
+    {
+        clacks.map((a)=>{
+            return <li>{a}</li>
+        })
+    }
+    </ul>
+</Page>
