@@ -5,8 +5,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "#*": ["*"],
       "~/*": ["src/*"],
-      "c/*": ["content/*"]
+      "c#*": ["content/*"]
     }
   }
 }

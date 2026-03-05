@@ -2,7 +2,7 @@
 import Page from "~/layouts/Page.astro";
 import { getBlogPosts } from "~/lib/blog";
 import { render } from "astro:content";
-import Prose from "~/components/ui/prose.astro";
+import Prose from "~/components/prose.astro";
 
 export async function getStaticPaths() {
 	const posts = await getBlogPosts();

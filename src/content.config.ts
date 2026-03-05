@@ -2,10 +2,10 @@ import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
 
 const pattern = ["*.md", "*.mdx"]
-const path = "content/"
+const p = "content/"
 
 const blog = defineCollection({
-  loader: glob({ pattern: pattern, base: path + "blog" }),
+  loader: glob({ pattern: pattern, base: p + "blog" }),
   schema: z.object({
     date: z.date(),
     title: z.string(),
@@ -17,7 +17,7 @@ const blog = defineCollection({
 });
 
 const pages = defineCollection({
-  loader: glob({ pattern: pattern, base: path + "pages" }),
+  loader: glob({ pattern: pattern, base: p + "pages" }),
   schema: z.object(
     {
       date: z.date().optional(),
@@ -30,7 +30,7 @@ const pages = defineCollection({
 });
 
 const now = defineCollection({
-  loader: glob({ pattern: pattern, base: path + "now" })
+  loader: glob({ pattern: pattern, base: p + "now" })
 })
 
 export const collections = { blog, pages, now };
