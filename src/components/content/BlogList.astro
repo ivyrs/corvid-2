@@ -1,13 +1,13 @@
 ---
 import { getBlogPosts } from "~/lib/blog";
-import PostItem from "./PostItem.astro";
+import Post from "./BlogPost.astro";
 const posts = await getBlogPosts();
 ---
 
 <ul class="flex flex-col gap-4">
   {
     posts.map((i) => {
-      return <PostItem i={i} />;
+      return <Post i={i} />;
     })
   }
 </ul>
