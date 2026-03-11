@@ -7,13 +7,16 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy-local": "ssh lovecomputer /opt/sites/ivy.rs/deploy.sh"
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.13",
-    "@astrojs/node": "^9.4.3",
+    "@astrojs/node": "^9.5.4",
     "@astrojs/rss": "^4.0.15",
-    "@astrojs/svelte": "^7.1.0",
+    "@astrojs/svelte": "^7.2.5",
     "@iconify-json/devicon-plain": "^1.2.42",
     "@iconify-json/fa6-solid": "^1.2.4",
     "@iconify-json/fa7-brands": "^1.2.0",
@@ -22,7 +25,7 @@
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.1.11",
     "@types/luxon": "^3.7.1",
-    "astro": "^5.13.5",
+    "astro": "^5.18.0",
     "astro-icon": "^1.1.5",
     "lucide-static": "^0.542.0",
     "luxon": "^3.7.1",
@@ -36,5 +39,8 @@
     "svelte": "^5.37.1",
     "tailwindcss": "^4.1.11",
     "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "oxlint": "^1.51.0"
   }
 }

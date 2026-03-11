@@ -1,7 +1,7 @@
 ---
 import Layout from "~/layouts/Page.astro";
 import { getCollection, render } from "astro:content";
-import Prose from "~/components/prose.astro";
+import Prose from "~/components/Prose.astro";
 
 export async function getStaticPaths() {
 	const posts = await getCollection("pages");
