@@ -1,6 +1,14 @@
 ---
 import { Icon } from "astro-icon/components";
 const { href, relme, xstyle, icon = "fa6-solid:arrow-right" } = Astro.props;
+
+function iconName() {
+    if (icon.startsWith("fa6-")) return icon;
+    if (icon.startsWith("fa-")) { // check for fa css classes
+       let s = icon.split(/[^a-z]+/g);
+       return `fa6-${s[1]}:${s[3]}`
+    }
+}
 ---
 
 <a
@@ -8,7 +16,6 @@ const { href, relme, xstyle, icon = "fa6-solid:arrow-right" } = Astro.props;
 	rel={relme && "me"}
 	href={href}
 >
-	<!-- <i class={icon + " text-xl text-red-7 dark:text-pink-4"}></i> -->
-	<Icon name={icon} class={"text-xl text-red-7 dark:text-pink-4"} />
+	<Icon name={iconName()} class={"text-xl text-red-7 dark:text-pink-4"} />
 	<span class="link ml-1"><slot /></span>
 </a>
