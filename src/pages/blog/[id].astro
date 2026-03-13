@@ -17,7 +17,7 @@ const { Content } = await render(post);
 const data = post.data;
 ---
 
-<Page title={data.title} desc={data.tldr} date={data.date}>
+<Page title={data.title} desc={data.tldr} date={data.date} publish={data.publish}>
 	<Prose>
 		<Content />
 	</Prose>

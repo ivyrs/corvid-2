@@ -1,0 +1,36 @@
+---
+import Page from "~/layouts/Page.astro";
+import NowItem from "~/components/content/NowItem.astro";
+import { getCollection, render } from "astro:content";
+
+// clean this up at some point, yikes
+const entries = await getCollection("now");
+const sorted = await entries.sort(
+    (a, b) =>
+      new Date(b.data.date).getTime() -
+      new Date(a.data.date).getTime()
+  );
+
+const renderedPosts = await Promise.all(
+  sorted.map(async (post) => {
+    const { Content } = await render(post);
+
+    return {
+      ...post,
+      Content,
+    };
+  })
+);
+---
+
+<Page 
+    title="/now" 
+    desc="a page that tells you what this person is focused on at this point in their life"
+    icon="fa-solid fa-calendar-days"
+>
+    {
+        renderedPosts.map((i) => {
+            <NowItem i={i} />
+        })
+    }
+</Page>

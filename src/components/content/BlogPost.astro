@@ -1,6 +1,6 @@
 ---
 import Item from "~/components/Box.astro";
-import Link from "~/components/Link.astro";
+import Link from "~/components/link.astro";
 import Date from "~/components/Date.astro";
 
 const { i } = Astro.props;
@@ -9,8 +9,14 @@ const data = i.data;
 
 <li>
 	<Item>
+        {
+            !data.publish && 
+            <span class="text-red-7 dark:text-pink-4 text-sm">
+				draft
+			</span>
+        }
 		<p class="flex gap-16">
-			<Link icon="fa6-solid:hashtag" href={`/blog/${i.id}`}>
+			<Link icon={data.icon} href={`/blog/${i.id}`}>
 				{data.title}
 			</Link>
 		</p>

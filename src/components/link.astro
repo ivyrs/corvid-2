@@ -14,8 +14,8 @@ function iconName() {
 <a
 	class:list={["flex items-center gap-1 my-1 no-underline", xstyle]}
 	rel={relme && "me"}
-	href={href}
+	href={href || "#"}
 >
-	<Icon name={iconName()} class={"text-xl text-red-7 dark:text-pink-4"} />
+	<Icon name={iconName()} class={"text-xl text-red-7 dark:text-pink-4 mt-0.5"} />
 	<span class="link ml-1"><slot /></span>
 </a>

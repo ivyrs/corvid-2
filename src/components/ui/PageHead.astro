@@ -1,29 +1,37 @@
 ---
 import Date from "~/components/Date.astro";
 
-const { title, desc, date, back, backLabel, icon, breadcrumb } = Astro.props;
+const { title, desc, date, back, backLabel, icon, breadcrumb, publish = true } = Astro.props;
+
+const isSlash = title.startsWith("/");
 ---
 
 <div class="mb-2 flex flex-col">
-	{
-		back && (
-			<a href={back} class="link mb-1">
-				{`<- ${backLabel || `back to ${back}`}`}
-			</a>
-		)
-	}
-	<h2 class="text-2xl font-bold">
-		{icon && <i class={icon}></i>}
-		<span>{breadcrumb}</span>
-		{title}
-	</h2>
-	{desc && <p class="text-yin-6 dark:text-yin-4">{desc}</p>}
-	{
-		date && (
-			<p class="text-base text-yin-6 dark:text-yin-4 flex gap-1 items-baseline">
-				<i class="fa-solid fa-calendar-days"></i>
-				<Date date={date} />
-			</p>
-		)
-	}
+    {
+        back && (
+            <a href={back} class="link mb-1">
+                {`<- ${backLabel || `back to ${back}`}`}
+            </a>
+        )
+    }
+    {
+        !publish && 
+        <span class="text-red-7 dark:text-pink-4 text-base">
+			draft
+		</span>
+    }
+    <h2 class="text-2xl font-bold">
+        {icon && <i class={icon} />}
+
+        <span>{isSlash ? <><span class="text-yin-6 dark:text-yin-4">/</span>{title.substring(1)}</> : title}</span>
+    </h2>
+    {desc && <p class="text-yin-6 dark:text-yin-4">{desc}</p>}
+    {
+        date && (
+            <p class="text-base text-yin-6 dark:text-yin-4 flex gap-1 items-baseline">
+                <i class="fa-solid fa-calendar-days" />
+                <Date date={date} />
+            </p>
+        )
+    }
 </div>
