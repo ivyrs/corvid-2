@@ -9,4 +9,16 @@ export function currentEnv(): { mode: string; prod: boolean; dev: boolean } {
 }
 
 export const e = import.meta.env;
+
 export const astroVersion = pkg.dependencies.astro.substring(1);
+
+export function iconName(icon: string): string {
+    if (icon.startsWith("fa6-")) return icon; // astro-icon
+
+    if (icon.startsWith("fa-")) {
+       let s = icon.split(/[^a-z]+/g);
+       return `fa6-${s[1]}:${s[3]}`;
+    };
+
+    return "fa6-solid:web-awesome";
+}

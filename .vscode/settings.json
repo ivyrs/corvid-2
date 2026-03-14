@@ -2,6 +2,7 @@
   "oxc.fmt.configPath": ".oxfmtrc.json",
   "editor.defaultFormatter": "oxc.oxc-vscode",
   "editor.formatOnSave": true,
+  "astro.content-intellisense": true,
   "[astro]": {
     "editor.defaultFormatter": "astro-build.astro-vscode"
   },

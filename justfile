@@ -1,3 +1,3 @@
 deploy:
     pnpm run build
-    scp -R dist lovecomputer:/root/test
+    scp -r dist lovecomputer:/opt/sites/ivy.rs/dist
