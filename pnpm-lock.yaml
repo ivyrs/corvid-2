@@ -56,9 +56,6 @@ importers:
       lucide-static:
         specifier: ^0.542.0
         version: 0.542.0
-      luxon:
-        specifier: ^3.7.1
-        version: 3.7.1
       markdown-it:
         specifier: ^14.1.0
         version: 14.1.0
@@ -1642,10 +1639,6 @@ packages:
 
   lucide-static@0.542.0:
     resolution: {integrity: sha512-jnXxFQYH0F24Nj5Zjje5jmMbGjClohnuSEYwTjAGuAa7UYDQiUjl0H7t4Ha19lkKryhCQA3VfeAJMjarrhzNZQ==}
-
-  luxon@3.7.1:
-    resolution: {integrity: sha512-RkRWjA926cTvz5rAb1BqyWkKbbjzCGchDUIKMCUvNi17j6f6j8uHGDV82Aqcqtzd+icoYpELmG3ksgGiFNNcNg==}
-    engines: {node: '>=12'}
 
   magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
@@ -4110,8 +4103,6 @@ snapshots:
   lru-cache@11.2.6: {}
 
   lucide-static@0.542.0: {}
-
-  luxon@3.7.1: {}
 
   magic-string@0.30.17:
     dependencies:

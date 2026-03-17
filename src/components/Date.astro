@@ -1,7 +1,7 @@
 ---
 import { formattedDate, isoDate } from "~/lib/time";
 interface Props {
-  date: Date;
+  date: Date | string;
   showTime?: boolean;
 }
 const { date, showTime } = Astro.props;

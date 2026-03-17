@@ -1,5 +1,3 @@
-import { DateTime } from "luxon";
-
 export function formattedDate(input: Date | string, showTime = false): string {
 	const date = checkDate(input);
 

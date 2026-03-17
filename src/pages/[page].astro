@@ -1,24 +1,31 @@
 ---
 import Layout from "~/layouts/Page.astro";
 import { getCollection, render } from "astro:content";
-import Prose from "~/components/Prose.astro";
+import Prose from "~/components/prose.astro";
 
 export async function getStaticPaths() {
-	const posts = await getCollection("pages");
-	return posts.map((post) => ({
-		params: { page: post.id },
-		props: { post },
-	}));
+    const posts = await getCollection("pages");
+    return posts.map((post) => ({
+        params: { page: post.id },
+        props: { post },
+    }));
 }
 const { post } = Astro.props;
 const { Content } = await render(post);
 const data = post.data;
 
-let title = data.title || "/" + post.id;
+let title = data.title || post.id;
 ---
 
-<Layout title={title} desc={data.desc} date={data.date} icon={data.icon}>
-	<Prose>
-		<Content />
-	</Prose>
+<Layout
+    title={title}
+    desc={data.desc}
+    date={data.date}
+    icon={data.icon}
+    prefix={data.prefix}
+    prefixmeta={data.prefixmeta}
+>
+    <Prose>
+        <Content />
+    </Prose>
 </Layout>

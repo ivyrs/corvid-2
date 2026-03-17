@@ -1,38 +1,40 @@
 ---
 import { site, author } from "~/site.config";
 import { titleConstructor, descriptionConstructor } from "~/lib/meta";
-import { getClacks } from "~/lib/fun";
+import { clacksString } from "~/lib/fun";
 const { title, description } = Astro.props;
 ---
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{titleConstructor(title)}</title>
-  <meta name="description" content={descriptionConstructor(description)} />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{titleConstructor(title)}</title>
+    <meta name="description" content={descriptionConstructor(description)} />
 
-  <meta name="author" content={author.name} />
-  <meta name="fediverse:creator" content={author.social.fedi} />
+    <meta name="author" content={author.name} />
+    <meta name="fediverse:creator" content={author.social.fedi} />
 
-  {/* og */}
-  <meta property="og:title" content={titleConstructor(title)} />
-  <meta
-    property="og:description"
-    content={descriptionConstructor(description)}
-  />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content={site.url} />
-  <meta property="og:image" content="https://ivy.rs/image.jpg" />
-  <link rel="icon" href="https://fav.farm/%F0%9F%92%9C" />
+    {/* og */}
+    <meta property="og:title" content={titleConstructor(title)} />
+    <meta
+        property="og:description"
+        content={descriptionConstructor(description)}
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={site.url} />
+    <meta property="og:image" content="https://ivy.rs/image.jpg" />
+    <link rel="icon" href="https://fav.farm/%F0%9F%92%9C" />
 
-  <meta name="theme-color" content="#5E409D" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#5E409D" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
-  <link rel="me" href="https://social.lol/@ivy" />
-  <link rel="me" href="https://github.com/ivyturner" />
+    <link rel="me" href="https://social.lol/@ivy" />
+    <link rel="me" href="https://github.com/ivyturner" />
 
-  {/* font awesome */}
-  <script src="https://kit.fontawesome.com/55957f3f20.js" crossorigin="anonymous"></script>
+    {/* font awesome */}
+    <script
+        src="https://kit.fontawesome.com/55957f3f20.js"
+        crossorigin="anonymous"></script>
 
-  <meta http-equiv="X-Clacks-Overhead" content={`GNU ${getClacks()}`} />
+    <meta http-equiv="X-Clacks-Overhead" content={`GNU ${clacksString()}`} />
 </head>

@@ -1,36 +1,22 @@
 ---
 import Page from "~/layouts/Page.astro";
-import NowItem from "~/components/content/NowItem.astro";
-import { getCollection, render } from "astro:content";
+import { getBlogPosts } from "~/lib/blog";
+import { render } from "astro:content";
+import Prose from "~/components/prose.astro";
 
-// clean this up at some point, yikes
-const entries = await getCollection("now");
-const sorted = await entries.sort(
-    (a, b) =>
-      new Date(b.data.date).getTime() -
-      new Date(a.data.date).getTime()
-  );
+const posts = await getBlogPosts("now");
+const latest = posts[0];
 
-const renderedPosts = await Promise.all(
-  sorted.map(async (post) => {
-    const { Content } = await render(post);
-
-    return {
-      ...post,
-      Content,
-    };
-  })
-);
+const { Content } = await render(latest);
+const data = latest.data;
 ---
 
-<Page 
-    title="/now" 
-    desc="a page that tells you what this person is focused on at this point in their life"
-    icon="fa-solid fa-calendar-days"
->
-    {
-        renderedPosts.map((i) => {
-            <NowItem i={i} />
-        })
-    }
+<Page prefix="/" title={"now"} desc="a page that tells you what this person* is focused on at this point in their life" date={data.date} icon={"fa-solid fa-calendar"}>
+    <Prose>
+        <Content />
+    </Prose>
+    <p class="text-base text-yin-6 dark:text-yin-4">
+        this page is auto generated from the latest blog post with the #now tag.
+        you can find it <a class="link" href=`/blog/${latest.id}`>here</a>
+    </p>
 </Page>

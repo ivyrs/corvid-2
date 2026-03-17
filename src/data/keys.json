@@ -1,15 +1,15 @@
 {
-    "ssh": [
-        {   
-            "host": "turing",
-            "id": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICtFawaAWSklr1GGYiBZzGr/ydKSSOatBfGfY72eqKGZ"
-        }
-    ],
-    "pgp": [
-        {
-            "user": "ivy@ivy.rs",
-            "id": "F63DAD01C528DFF60114E1EA419ABC047DAB3B76",
-            "key": "/keys/ivy.asc"
-        }
-    ]
+	"ssh": [
+		{
+			"host": "turing",
+			"id": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICtFawaAWSklr1GGYiBZzGr/ydKSSOatBfGfY72eqKGZ"
+		}
+	],
+	"pgp": [
+		{
+			"user": "ivy@ivy.rs",
+			"id": "F63DAD01C528DFF60114E1EA419ABC047DAB3B76",
+			"key": "/keys/ivy.asc"
+		}
+	]
 }
