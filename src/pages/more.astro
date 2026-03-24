@@ -3,48 +3,53 @@ import { getCollection } from "astro:content";
 import Page from "~/layouts/Page.astro";
 
 const extra = [
-    {
-        id: "blank",
-        data: {
-            title: "",
-            icon: "fa-solid fa-square",
-            desc: "▓▓▓▓▓▓▓▓▓▓",
-            hide: false,
-        },
-    },
-    {
-        id: "rip",
-        data: {
-            icon: "fa-solid fa-hand-holding-heart",
-        },
-    },
+	{
+		id: "blank",
+		data: {
+			title: "",
+			icon: "fa-solid fa-square",
+			desc: "▓▓▓▓▓▓▓▓▓▓",
+			hide: false,
+		},
+	},
+	{
+		id: "rip",
+		data: {
+			icon: "fa-solid fa-hand-holding-heart",
+		},
+	},
 ];
 
 const entries = await getCollection("pages");
 const sorted = [...entries, ...extra]
-    .filter((i) => !i.data.hide)
-    .sort((a, b) => {
-        const titleA = a.data.title || a.id;
-        const titleB = b.data.title || b.id;
-        return titleA.localeCompare(titleB);
-    });
+	.filter((i) => !i.data.hide)
+	.sort((a, b) => {
+		const titleA = a.data.title || a.id;
+		const titleB = b.data.title || b.id;
+		return titleA.localeCompare(titleB);
+	});
 ---
 
-<Page title="more" prefix="/" desc="all the pages not linked to in the header">
-    <ul class="fa-ul">
-        {
-            sorted.map((i) => {
-                return (
-                    <li>
-                        <i class={`fa-li ${i.data.icon}`} />
-                        <a
-                            class="link"
-                            href={`/${i.id}`}
-                        >{`${i.data.title || "/" + i.id}`}</a>{" "}
-                        {i.data.desc && `- ${i.data.desc}`}
-                    </li>
-                );
-            })
-        }
-    </ul>
+<Page
+	title="more"
+	prefix="/"
+	desc="all the pages not linked to in the header"
+	icon="fa-solid fa-ellipsis"
+>
+	<ul class="fa-ul">
+		{
+			sorted.map((i) => {
+				return (
+					<li>
+						<i class={`fa-li ${i.data.icon}`} />
+						<a
+							class="link"
+							href={`/${i.id}`}
+						>{`${i.data.title || "/" + i.id}`}</a>{" "}
+						{i.data.desc && `- ${i.data.desc}`}
+					</li>
+				);
+			})
+		}
+	</ul>
 </Page>
