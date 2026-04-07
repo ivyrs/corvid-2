@@ -26,7 +26,7 @@ const pages = defineCollection({
 		hide: z.boolean().default(false), // hides from /more
 		icon: z.string().optional().default("fa-solid fa-star"),
 		prefix: z.string().optional().default("/"),
-		prefixmeta: z.boolean().default(true),
+		prefixmeta: z.boolean().optional().default(true),
 	}),
 });
 
