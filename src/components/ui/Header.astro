@@ -10,11 +10,12 @@ const nav = ["about", "now", "blog", "contact", "more"];
 			{`${site.title}`}
 		</h1>
 	</a>
+	<p class="md:inline hidden pt-0.5">⚧︎</p>
 	<nav class="flex flex-row gap-4 pt-1 first:pl-8">
 		{
 			nav.map((i) => {
 				return (
-					<a class="text-purple-7 dark:text-purple-2" href={"/" + i}>
+					<a class="text-red-7 dark:text-pink-4" href={"/" + i}>
 						{i}
 					</a>
 				);

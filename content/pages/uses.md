@@ -14,6 +14,7 @@ headphones: ["Apple AirPods Pro 3", "Apple Airpods Max", "AKG M220"]
 ### the fleet
 
 #### aspen - 15' macbook air
-```
+
+```yaml
 
 ```

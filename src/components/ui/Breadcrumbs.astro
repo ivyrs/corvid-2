@@ -1,0 +1,34 @@
+---
+interface Props {
+    title?: string;
+}
+
+const { title } = Astro.props;
+const { pathname } = Astro.url;
+const paths = pathname.split('/').filter(Boolean);
+
+const breadcrumbs = [
+  { label: '~', href: '/' },
+  ...paths.map((segment, i) => ({
+    label: i === paths.length - 1 && title ? title : segment,
+    href: '/' + paths.slice(0, i + 1).join('/'),
+  })),
+];
+---
+
+<nav aria-label="Breadcrumbs">
+  <ol class="md:flex gap-1">
+    {breadcrumbs.map((crumb, i) => (
+      <li>
+        {i < breadcrumbs.length - 1 ? (
+          <>
+            <a class="text-red-7 dark:text-pink-4" href={crumb.href}>{crumb.label}</a>
+            <span class="text-yin-7 dark:text-yin-3">/</span>
+          </>
+        ) : (
+          <span aria-current="page" class="">{crumb.label}</span>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>

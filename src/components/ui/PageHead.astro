@@ -1,36 +1,21 @@
 ---
 import Date from "~/components/Date.astro";
+import Breadcrumbs from "~/components/ui/Breadcrumbs.astro";
 
 interface Props {
-    title: string;
+    title?: string;
     desc?: string;
     date?: Date | string;
-    back?: string;
     icon?: string;
-    prefix?: string;
 }
 
-const { title, desc, date, back, icon, prefix } = Astro.props;
+const { title, desc, date, icon } = Astro.props;
 ---
 
 <div class="mb-2 flex flex-col">
-    {
-        back && (
-            <a href={back} class="link mb-1">
-                {`<- back to ${back}`}
-            </a>
-        )
-    }
-    <h2 class="text-2xl font-bold">
+    <h2 class="text-2xl font-bold flex items-center gap-2">
         {icon && <i class={icon} />}
-
-        <span>
-            {
-                prefix && (
-                    <span class="text-yin-6 dark:text-yin-4">{prefix}</span>
-                )
-            }{title}
-        </span>
+        <Breadcrumbs title={title} />
     </h2>
 
     {desc && <p class="text-yin-6 dark:text-yin-4">{desc}</p>}

@@ -32,4 +32,4 @@ lint-dry:
 # copies site over to lc
 deploy:
     pnpm run build
-    scp -r dist lovecomputer:/opt/sites/ivy.rs/dist
+    scp -r dist lovecomputer:/opt/sites/ivy.rs

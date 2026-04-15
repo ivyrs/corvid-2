@@ -1,3 +1,7 @@
+---
+desc: everything ivy's self-hosting
+icon: fa-solid fa-upload
+---
 
 ### elm
 
@@ -5,9 +9,9 @@
 
 ### houseplants
 
-- gotosocial
+- [gotosocial](https://fedi.ivy.rs)
 - miniflux
-- maloja
+- [maloja](https://fm.ivy.rs)
 - multiscrobbler
 - [gonk](https://codeberg.org/ivyrs/gonk)
   

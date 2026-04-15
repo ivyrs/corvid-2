@@ -6,3 +6,4 @@ hide: true
 ---
 
 - bounty (the chocolate) is shit
+- treat your friends more like your lovers, treat your lovers more like your friends

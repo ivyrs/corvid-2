@@ -1,4 +1,11 @@
 ---
+interface Props {
+	href: string;
+	relme?: boolean;
+	xstyle?: string;
+	icon: string;
+}
+
 import { Icon } from "astro-icon/components";
 import { iconName } from "~/lib/utils";
 const { href, relme, xstyle, icon = "fa6-solid:arrow-right" } = Astro.props;
@@ -6,9 +13,9 @@ const { href, relme, xstyle, icon = "fa6-solid:arrow-right" } = Astro.props;
 
 <a
 	class:list={["flex items-center gap-1 my-1 no-underline", xstyle]}
-	rel={relme && "me"}
+	rel={relme ? "me" : ""}
 	href={href || "#"}
 >
-	<Icon name={iconName(icon)} class={"text-xl text-red-7 dark:text-pink-4 mt-0.5"} />
+	<Icon name={iconName(icon)} class={"text-xl text-red-7 dark:text-pink-4 mt-1"} />
 	<span class="link ml-1"><slot /></span>
 </a>

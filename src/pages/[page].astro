@@ -2,6 +2,7 @@
 import Layout from "~/layouts/Page.astro";
 import { getCollection, render } from "astro:content";
 import Prose from "~/components/prose.astro";
+import Breadcrumbs from "~/components/ui/Breadcrumbs.astro";
 
 export async function getStaticPaths() {
     const posts = await getCollection("pages");
@@ -22,8 +23,8 @@ let title = data.title || post.id;
     desc={data.desc}
     date={data.date}
     icon={data.icon}
-    prefix={data.prefix}
-    prefixmeta={data.prefixmeta}
+    prefix={data.prefix || "/"}
+    prefixmeta={data.prefixmeta || false}
 >
     <Prose>
         <Content />

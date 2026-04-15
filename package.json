@@ -28,6 +28,7 @@
 		"@types/luxon": "^3.7.1",
 		"astro": "^6.0.4",
 		"astro-icon": "^1.1.5",
+		"hastscript": "^9.0.1",
 		"lucide-static": "^0.542.0",
 		"markdown-it": "^14.1.0",
 		"prettier": "^3.6.2",
