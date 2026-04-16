@@ -2,6 +2,8 @@
 hide: true
 icon: fa-solid fa-address-card
 ---
+import Link from "~/components/link.astro";
+
 <ul className="fa-ul">
 	<li>
 		<i className="fa-li fa-solid fa-envelope"></i>
@@ -36,3 +38,14 @@ icon: fa-solid fa-address-card
   ```
 </details>
 
+<details className="ml-4">
+  <summary>gpg key</summary>
+  ```
+  pub   ed25519 2025-09-25 [SC] [expires: 2026-09-25]
+      4C71AEDCFFA0412997FE5CBB513AD93FFF082A64
+  uid           [ultimate] Ivy Turner <ivy@ivy.rs>
+  sub   cv25519 2025-09-25 [E] [expires: 2026-09-25]
+      AB3082993E050704B6494DB4E8C328A68674AFC1
+  ```
+  <Link href="/keys/ivy.asc">download my key</Link>
+</details>
