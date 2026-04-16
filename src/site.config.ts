@@ -13,9 +13,3 @@ export const site = {
 	desc: `${author.name}'s personal site`,
 };
 
-export const settings = {
-	analytics: {
-		enabled: true,
-		source: "goat",
-	},
-};
