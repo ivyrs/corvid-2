@@ -20,10 +20,10 @@ const blog = defineCollection({
 const pages = defineCollection({
 	loader: glob({ pattern: pattern, base: p + "pages" }),
 	schema: z.object({
-		date: z.date().optional(),
+		hide: z.boolean().optional().default(false), // hides from /more
 		title: z.string().optional(),
 		desc: z.string().optional(),
-		hide: z.boolean().optional().default(false), // hides from /more
+		date: z.date().optional(),
 		icon: z.string().optional().default("fa-solid fa-star")
 	}),
 });
