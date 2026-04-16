@@ -3,7 +3,7 @@ import { Image } from "astro:assets"
 import buttons from "~/data/buttons.json"
 ---
 
-<div class="flex flex-row gap-2 mt-4">
+<div class="flex flex-wrap gap-1">
     {
         buttons.map((i)=>{
             return <a href={"https://" + i.link} target="_blank">
