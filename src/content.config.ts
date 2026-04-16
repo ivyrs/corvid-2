@@ -24,9 +24,7 @@ const pages = defineCollection({
 		title: z.string().optional(),
 		desc: z.string().optional(),
 		hide: z.boolean().optional().default(false), // hides from /more
-		icon: z.string().optional().default("fa-solid fa-star"),
-		prefix: z.string().optional(),
-		prefixmeta: z.boolean().optional(),
+		icon: z.string().optional().default("fa-solid fa-star")
 	}),
 });
 
