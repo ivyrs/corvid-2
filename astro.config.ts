@@ -8,8 +8,8 @@ import icon from "astro-icon";
 
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import { rehypeFootnoteHr } from "~/lib/rehype";
-// https://astro.build/config
+// import { rehypeFootnoteHr } from "~/lib/rehype";
+
 export default defineConfig({
 	site: "https://ivy.rs",
 
