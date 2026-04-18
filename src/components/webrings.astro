@@ -1,0 +1,28 @@
+---
+import webrings from "~/data/webrings.json";
+---
+
+{
+  webrings.map((i) => (
+    <div>
+      <a href={i.prev} target="_top">
+        « prev
+      </a>{" "}
+      |
+      <a href={i.home} target="_blank">
+      	{i.text}
+      </a>
+      <a
+        style="font-size:60%"
+        href={i.rand}
+        target="_top"
+      >
+        (random)
+      </a>{" "}
+      |
+      <a href={i.next} target="_top">
+        next »
+      </a>
+    </div>
+  ))
+}
