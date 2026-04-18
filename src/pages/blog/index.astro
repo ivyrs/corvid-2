@@ -1,8 +1,10 @@
 ---
 import PostList from "~/components/content/BlogList.astro";
+import Link from "~/components/link.astro";
 import Page from "~/layouts/Page.astro";
 ---
 
-<Page prefix="/" title="blog" icon="fa-solid fa-signature">
+<Page title="blog" icon="fa-solid fa-signature">
+    <Link href="/blog/tags">see every tag</Link>
     <PostList />
 </Page>

@@ -1,13 +1,13 @@
 import rss from "@astrojs/rss";
-import { getBlogPosts } from "~/lib/blog";
+import { getBlogPosts, getAllTags } from "~/lib/blog";
 import sanitizeHtml from "sanitize-html";
 import MarkdownIt from "markdown-it";
 const parser = new MarkdownIt();
 
 import { site } from "~/site.config";
 
-export async function GET() {
-	const blog = await getBlogPosts();
+export async function GET({params}) {
+	const blog = await getBlogPosts(params.tag);
 	return rss({
 		title: site.title,
 		description: site.desc,
@@ -25,4 +25,11 @@ export async function GET() {
 		customData: `<language>en-gb</language>`,
 		trailingSlash: false,
 	});
-}
+};
+
+export async function getStaticPaths() {
+	const tags = await getAllTags();
+	return tags.map((tag) => ({
+		params: { tag },
+	}));
+};

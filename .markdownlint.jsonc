@@ -1,0 +1,8 @@
+{
+	"$schema": "https://raw.githubusercontent.com/DavidAnson/markdownlint/v0.40.0/schema/markdownlint-config-schema.json",
+	"MD013": false, // annoying
+	"MD041": false, // we don't do that here
+	"MD033": false, // no html - mdx
+	"MD026": false, // no ending punctuation - silly
+	"MD001": false // we use h3 here sir
+}

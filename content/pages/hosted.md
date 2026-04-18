@@ -1,11 +1,12 @@
 ---
+hide: false
 desc: everything ivy's self-hosting
 icon: fa-solid fa-upload
 ---
 
 ### elm
 
-- nothing rn
+nothing at the moment
 
 ### houseplants
 
@@ -17,10 +18,13 @@ icon: fa-solid fa-upload
   
 ### love computer
 
-- all of my sites (and more)
+- all of my sites and more
 - pocketid
 - forgejo
 
 #### fountain.lovecomputer
 
-- forgejo, eventually
+soon
+
+- forgejo
+- pocketid / authentik

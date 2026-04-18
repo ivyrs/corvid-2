@@ -12,12 +12,6 @@ const extra = [
 			hide: false,
 		},
 	},
-	{
-		id: "rip",
-		data: {
-			icon: "fa-solid fa-hand-holding-heart",
-		},
-	},
 ];
 
 const entries = await getCollection("pages");
@@ -32,7 +26,6 @@ const sorted = [...entries, ...extra]
 
 <Page
 	title="more"
-	prefix="/"
 	desc="all the pages not linked to in the header"
 	icon="fa-solid fa-ellipsis"
 >

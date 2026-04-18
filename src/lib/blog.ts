@@ -16,3 +16,8 @@ export async function getLatestPost(tag?: string) {
 	const posts = await getBlogPosts(tag);
 	return posts[0] ?? null;
 }
+
+export async function getAllTags() {
+	const posts = await getBlogPosts();
+return [...new Set(posts.map((post: any) => post.data.tags).flat())];
+}

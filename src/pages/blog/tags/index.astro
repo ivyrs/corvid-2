@@ -1,0 +1,21 @@
+---
+import Link from "~/components/link.astro";
+import Page from "~/layouts/Page.astro";
+import { getAllTags, getBlogPosts } from "~/lib/blog";
+
+const tags = await getAllTags();
+---
+
+<Page title="tags" icon="fa-solid fa-tag">
+	<ul class="ml-4">
+		{
+			tags.map(async (i) => {
+				return (
+					<Link href={"/blog/tags/" + i} icon="fa-solid fa-hashtag">
+						{i} ({(await getBlogPosts(i)).length})
+					</Link>
+				);
+			})
+		}
+	</ul>
+</Page>

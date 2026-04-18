@@ -1,4 +1,5 @@
 ---
+hide: false
 desc: how i use ai
 icon: fa-solid fa-robot
 ---

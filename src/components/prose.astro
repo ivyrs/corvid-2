@@ -1,5 +1,28 @@
+---
+const classes = [
+  "text-lg",
+  "prose",
+  "dark:prose-invert",
+  "prose-headings:mt-3",
+  "prose-p:my-2",
+  "prose-headings:mb-2",
+  "prose-headings:text-light-tx",
+  "dark:prose-headings:text-dark-tx",
+  "prose-p:mt-0.5",
+  "prose-p:text-light-tx",
+  "dark:prose-p:text-dark-tx",
+  "prose-a:text-red-7",
+  "dark:prose-a:text-pink-4",
+  "prose-a:decoration-dashed",
+  "prose-li:text-light-tx",
+  "dark:prose-li:text-dark-tx",
+  "prose-a:underline-offset-6",
+  "prose-hr:my-4",
+];
+---
+
 <div
-	class="text-lg prose dark:prose-invert prose-headings:mt-3 prose-p:my-2 prose-headings:mb-2 prose-headings:text-yin dark:prose-headings:text-yang prose-p:mt-0.5 prose-p:text-yin dark:prose-p:text-yang prose-a:text-red-7 dark:prose-a:text-pink-4 prose-a:decoration-dashed prose-li:text-yin dark:prose-li:text-yang prose-a:underline-offset-6 transition-colors prose-hr:my-4"
+  class:list={classes}
 >
-  <slot />
+    <slot />
 </div>

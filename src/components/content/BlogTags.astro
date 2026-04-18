@@ -1,0 +1,15 @@
+---
+const { tags } = Astro.props;
+---
+
+<div class="flex gap-4 mt-2 text-sm">
+	{
+		tags.map((i: string[]) => {
+			return (
+				<span class="bg-red-7 text-yang dark:bg-pink-4 dark:text-yin px-1.5 py-0.5 rounded-sm">
+					<a href={"/blog/tags/" + i}>#{i}</a>
+				</span>
+			);
+		})
+	}
+</div>

@@ -8,12 +8,12 @@ const p = "content/";
 const blog = defineCollection({
 	loader: glob({ pattern: pattern, base: p + "blog" }),
 	schema: z.object({
-		date: z.date(),
+		date: z.coerce.date(),
 		title: z.string(),
 		tags: z.array(z.string()).optional(),
-		tldr: z.string().optional(),
+		desc: z.string().optional(),
 		publish: z.boolean().default(false),
-		icon: z.string().optional().default("fa-solid fa-signature"),
+		icon: z.string().default("fa-solid fa-signature").optional(),
 	}),
 });
 
@@ -28,8 +28,4 @@ const pages = defineCollection({
 	}),
 });
 
-// const now = defineCollection({
-//     loader: glob({ pattern: pattern, base: p + "now" }),
-// });
-
-export const collections = { blog, pages /* now */ };
+export const collections = { blog, pages };

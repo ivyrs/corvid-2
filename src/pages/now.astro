@@ -11,7 +11,7 @@ const { Content } = await render(latest);
 const data = latest.data;
 ---
 
-<Page prefix="/" title={"now"} desc="a page that tells you what this person* is focused on at this point in their life" date={data.date} icon={"fa-solid fa-calendar"}>
+<Page title={"now"} desc="a page that tells you what this person* is focused on at this point in their life" date={data.date} icon={"fa-solid fa-calendar"}>
     <Prose>
         <Content />
     </Prose>

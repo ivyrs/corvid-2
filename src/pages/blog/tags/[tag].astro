@@ -1,0 +1,19 @@
+---
+import PostList from "~/components/content/BlogList.astro";
+import Page from "~/layouts/Page.astro";
+import { getAllTags } from "~/lib/blog";
+
+export async function getStaticPaths() {
+	const tags = await getAllTags();
+	return tags.map((tag) => ({
+		params: { tag },
+		props: { tag },
+	}));
+};
+
+const { tag } = Astro.props;
+---
+
+<Page title={tag} icon="fa-solid fa-tag">
+	<PostList tag={tag} />
+</Page>

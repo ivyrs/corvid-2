@@ -1,7 +1,6 @@
 {
 	"oxc.fmt.configPath": ".oxfmtrc.json",
 	"editor.defaultFormatter": "oxc.oxc-vscode",
-	"editor.formatOnSave": true,
 	"astro.content-intellisense": true,
 	"[astro]": {
 		"editor.defaultFormatter": "astro-build.astro-vscode"
@@ -9,5 +8,14 @@
 	"markdown.validate.enabled": false,
 	"[markdown]": {
 		"editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+	},
+	"files.associations": {
+  		"*.css": "tailwindcss"
+	},
+	"[css]": {
+		"editor.defaultFormatter": "vscode.css-language-features"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
 	}
 }

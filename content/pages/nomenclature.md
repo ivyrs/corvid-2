@@ -1,6 +1,6 @@
 ---
+hide: false
 desc: info about my name and pronouns
-date: 2025-11-28
 icon: fa-solid fa-file-signature
 ---
 
