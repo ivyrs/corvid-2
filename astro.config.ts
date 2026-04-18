@@ -3,31 +3,12 @@ import { defineConfig } from "astro/config";
 
 import tailwindcss from "@tailwindcss/vite";
 import svelte from "@astrojs/svelte";
-
 import mdx from "@astrojs/mdx";
-import rehypeSlug from "rehype-slug";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import icon from "astro-icon";
 
-import { h } from 'hastscript';
-
-function rehypeFootnoteHr() {
-  return (tree) => {
-    const { children } = tree;
-    for (let i = 0; i < children.length; i++) {
-      const node = children[i];
-      if (
-        node.type === 'element' &&
-        node.tagName === 'section' &&
-        node.properties?.dataFootnotes !== undefined
-      ) {
-        children.splice(i, 0, h('hr', { class: 'footnotes-sep' }));
-        break;
-      }
-    }
-  };
-}
-
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import { rehypeFootnoteHr } from "~/lib/rehype";
 // https://astro.build/config
 export default defineConfig({
 	site: "https://ivy.rs",
