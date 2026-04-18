@@ -30,7 +30,7 @@ export default defineConfig({
 		remarkRehype: { footnoteLabel: "footnotes", footnoteLabelTagName: 'h3', footnoteBackLabel: "Back to reference 1" },
 		rehypePlugins: [
 			rehypeSlug,
-			rehypeFootnoteHr,
+			// rehypeFootnoteHr,
 			[
   				rehypeAutolinkHeadings,
   				{

@@ -1,7 +1,7 @@
 import { h } from 'hastscript';
 
 export function rehypeFootnoteHr() {
-  return (tree) => {
+  return (tree: any) => {
     const { children } = tree;
     for (let i = 0; i < children.length; i++) {
       const node = children[i];
