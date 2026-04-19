@@ -1,11 +1,11 @@
 ---
 import { Image } from "astro:assets";
-import buttons from "~/data/buttons.json";
+import others from "~/data/others.json";
 ---
 
-<div class="flex flex-wrap gap-0.5">
+<div class="flex flex-wrap gap-2">
 	{
-		buttons.map((i) => {
+		others.buttons.map((i) => {
 			return (
 				<a href={"https://" + i.link} target="_blank">
 					<Image

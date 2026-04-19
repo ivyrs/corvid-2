@@ -2,10 +2,21 @@
 import Base from "~/layouts/Base.astro";
 import { Content } from "c#index.mdx";
 import Prose from "~/components/prose.astro";
+import Buttons from "~/components/Buttons.astro";
+import Webrings from "~/components/webrings.astro";
 ---
 
 <Base>
-	<Prose>
-		<Content />
-	</Prose>
+  <Prose>
+    <Content />
+  </Prose>
+  <details class="text-yin-7 dark:text-yin-3 text-sm">
+    <summary>or check out some other sites</summary>
+    <div
+      class="mt-2 flex flex-col gap-2 text-base text-yin-7 dark:text-yin-3 not-prose"
+    >
+      <Buttons />
+      <Webrings />
+    </div>
+  </details>
 </Base>

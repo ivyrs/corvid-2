@@ -44,3 +44,21 @@ headphones: ["Apple AirPods Pro 3", "Apple Airpods Max", "AKG M220"]
     - ssd: 120GB
     - ssd: 2048GB
 ```
+
+also 3 hetzner vps boxes but those are boring
+
+---
+
+### software
+
+```yaml
+editor: ["neovim", "gram", "vscode"]
+
+# macOS
+launcher: raycast
+
+# NixOS (and linux in general)
+wm: niri + noctalia shell
+term: foot
+
+```
