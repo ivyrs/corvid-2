@@ -1,0 +1,47 @@
+{
+  "webrings": [
+    {
+      "text": "no-ai webring",
+      "home": "https://baccyflap.com/noai",
+      "prev": "https://baccyflap.com/noai/?prv&s=irf",
+      "next": "https://baccyflap.com/noai/?nxt&s=irf",
+      "rand": "https://baccyflap.com/noai/?rnd"
+    },
+    {
+      "text": "nix webring",
+      "home": "https://nixwebr.ing",
+      "prev": "https://nixwebr.ing/prev/ivy",
+      "next": "https://nixwebr.ing/next/ivy",
+      "rand": "https://nixwebr.ing/rand"
+    }
+  ],
+  "buttons": [
+    {
+      "link": "/",
+      "image": "/img/ivy-rs.png",
+      "alt": "purple text on a light purple background saying ivy.rs"
+    },
+    {
+      "link": "msmsmsm.com",
+      "image": "/img/msmsmsm.png",
+      "alt": "RIP SOPHIE"
+    },
+    {
+      "link": "xela.zone",
+      "image": "https://geo.thei.rs/88x31/xela.png"
+    },
+    {
+      "link": "thei.rs/i0",
+      "image": "https://geo.thei.rs/88x31/i0-a.png",
+      "alt": "i0"
+    },
+    {
+      "link": "kittycat.moe",
+      "image": "/img/kittycat.moe.png"
+    },
+    {
+      "link": "bun.work",
+      "image": "https://bun.work/88x31.png"
+    }
+  ]
+}
