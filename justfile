@@ -28,8 +28,3 @@ lint:
 [group('lint')]
 lint-dry:
 	pnpm run lint
-
-# copies site over to lc
-deploy:
-    pnpm run build
-    scp -r dist lovecomputer:/opt/sites/ivy.rs
