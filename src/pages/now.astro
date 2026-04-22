@@ -2,7 +2,7 @@
 import Page from "~/layouts/Page.astro";
 import { getBlogPosts } from "~/lib/blog";
 import { render } from "astro:content";
-import Prose from "~/components/prose.astro";
+import Prose from "~/components/ui/Prose.astro";
 
 const posts = await getBlogPosts("now");
 const latest = posts[0];
