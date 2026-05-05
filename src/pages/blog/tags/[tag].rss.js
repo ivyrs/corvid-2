@@ -6,7 +6,7 @@ const parser = new MarkdownIt();
 
 import { site } from "~/site.config";
 
-export async function GET({params}) {
+export async function GET({ params }) {
 	const blog = await getBlogPosts(params.tag);
 	return rss({
 		title: site.title,
@@ -25,11 +25,11 @@ export async function GET({params}) {
 		customData: `<language>en-gb</language>`,
 		trailingSlash: false,
 	});
-};
+}
 
 export async function getStaticPaths() {
 	const tags = await getAllTags();
 	return tags.map((tag) => ({
 		params: { tag },
 	}));
-};
+}

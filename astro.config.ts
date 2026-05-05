@@ -27,33 +27,37 @@ export default defineConfig({
 		shikiConfig: {
 			theme: "catppuccin-mocha",
 		},
-		remarkRehype: { footnoteLabel: "footnotes", footnoteLabelTagName: 'h3', footnoteBackLabel: "Back to reference 1" },
+		remarkRehype: {
+			footnoteLabel: "footnotes",
+			footnoteLabelTagName: "h3",
+			footnoteBackLabel: "Back to reference 1",
+		},
 		rehypePlugins: [
 			rehypeSlug,
 			// rehypeFootnoteHr,
 			[
-  				rehypeAutolinkHeadings,
-  				{
-    				behavior: "append",
-    				content: {
-      					type: "raw",
-      					value: '<i class="fa-solid fa-link"></i>',
-    				},
+				rehypeAutolinkHeadings,
+				{
+					behavior: "append",
+					content: {
+						type: "raw",
+						value: '<i class="fa-solid fa-link"></i>',
+					},
 					headingProperties: {
 						className: ["anchor", "group"],
 					},
 					properties: {
 						className: [
-							"ml-3", 
-							"text-base", 
+							"ml-3",
+							"text-base",
 							"anchor-link",
 							"opacity-0",
-        					"group-hover:opacity-100",
+							"group-hover:opacity-100",
 							"transition-opacity",
 							"duration-100",
 						],
 					},
-  				},
+				},
 			],
 		],
 	},

@@ -1,5 +1,5 @@
 @theme {
-    /* Disable default colors */
+	/* Disable default colors */
 	--color-amber-*: initial;
 	--color-lime-*: initial;
 	--color-emerald-*: initial;

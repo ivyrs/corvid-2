@@ -28,7 +28,7 @@ headphones: ["Apple AirPods Pro 3", "Apple Airpods Max", "AKG M220"]
 #### maple - thinkpad t480
 
 ```yaml
-- os: NixOS unstable
+- os: Arch Linux
 - cpu: i5-8270
 - ram: 64GB
 - ssd: 256GB
@@ -41,11 +41,9 @@ headphones: ["Apple AirPods Pro 3", "Apple Airpods Max", "AKG M220"]
 - cpu: i5-7500
 - ram: 16GB
 - storage:
-    - ssd: 120GB
-    - ssd: 2048GB
+      - ssd: 120GB
+      - ssd: 2048GB
 ```
-
-also 3 hetzner vps boxes but those are boring
 
 ---
 
@@ -53,12 +51,12 @@ also 3 hetzner vps boxes but those are boring
 
 ```yaml
 editor: ["neovim", "gram", "vscode"]
+shell: zsh
 
 # macOS
 launcher: raycast
 
-# NixOS (and linux in general)
+# linux
 wm: niri + noctalia shell
 term: foot
-
 ```

@@ -10,7 +10,7 @@
 		"editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
 	},
 	"files.associations": {
-  		"*.css": "tailwindcss"
+		"*.css": "tailwindcss"
 	},
 	"[css]": {
 		"editor.defaultFormatter": "vscode.css-language-features"

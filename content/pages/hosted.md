@@ -11,20 +11,17 @@ nothing at the moment
 ### houseplants
 
 - [gotosocial](https://fedi.ivy.rs)
-- miniflux
+- [miniflux](https://rss.houseplants.cloud)
 - [maloja](https://fm.ivy.rs)
 - multiscrobbler
 - [gonk](https://codeberg.org/ivyrs/gonk)
-  
+
 ### love computer
 
 - all of my sites and more
 - pocketid
-- forgejo
 
 #### fountain.lovecomputer
 
-soon
-
 - forgejo
-- pocketid / authentik
+- authentik

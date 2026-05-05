@@ -8,29 +8,17 @@ const { i } = Astro.props;
 const data = i.data;
 ---
 
-<li class="pb-1">
-	<Item>
-		<p class="flex gap-4">
-			<Link icon={data.icon} href={`/blog/${i.id}`}>
-				{data.title}
-			</Link>
-		</p>
+<li>
+  <Item>
+    <Link icon={data.icon} href={`/blog/${i.id}`}>
+      {data.title}
+    </Link>
 
-		<p class="text-yin-7 dark:text-yin-3 flex flex-col text-base">
-			<span class="flex gap-1">
-				<DateWithIcon date={data.date} />
-				{
-					!data.publish && (
-						<span class="ml-1 mt-0.5 text-red-7 dark:text-pink-4 text-sm">
-							draft
-						</span>
-					)
-				}
-			</span>
-
-			<span>{data.desc}</span>
-		</p>
-
-		{data.tags && <BlogTags tags={data.tags} />}
-	</Item>
+    <span class="flex flex-col gap-0.5 pl-4 border-l-1 border-l-text-yin-3 text-base text-yin-7 dark:text-yin-3">
+      <DateWithIcon date={data.date} />
+      <span class="">{data.desc}</span>
+    </span>
+    
+    {data.tags && <BlogTags tags={data.tags} />}
+  </Item>
 </li>

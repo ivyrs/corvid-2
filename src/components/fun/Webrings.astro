@@ -13,9 +13,11 @@ import others from "~/data/others.json";
         <a href={i.home} target="_blank">
           {i.text}
         </a>
-        <a class="font-sm" href={i.rand} target="_top">
-          (random)
-        </a>{" "}
+        {i.rand && (
+          <a href={i.rand} target="_top">
+            (random)
+          </a>
+        )}
         |
         <a href={i.next} target="_top">
           next »

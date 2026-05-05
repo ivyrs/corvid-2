@@ -1,4 +1,8 @@
 {
-	"recommendations": ["astro-build.astro-vscode", "oxc.oxc-vscode", "DavidAnson.vscode-markdownlint"],
+	"recommendations": [
+		"astro-build.astro-vscode",
+		"oxc.oxc-vscode",
+		"DavidAnson.vscode-markdownlint"
+	],
 	"unwantedRecommendations": []
 }

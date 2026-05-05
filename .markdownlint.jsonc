@@ -4,5 +4,5 @@
 	"MD041": false, // we don't do that here
 	"MD033": false, // no html - mdx
 	"MD026": false, // no ending punctuation - silly
-	"MD001": false // we use h3 here sir
+	"MD001": false, // we use h3 here sir
 }

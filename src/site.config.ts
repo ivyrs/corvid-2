@@ -3,13 +3,12 @@ export const author = {
 	pronouns: "she/her",
 	social: {
 		fedi: "@ivy@ivy.rs",
-		bsky: "@ivyro.se"
+		bsky: "@ivyro.se",
 	},
 };
 
 export const site = {
 	title: "ivy!",
 	url: "https://ivy.rs",
-	desc: `${author.name}'s personal site`
+	desc: `${author.name}'s personal site`,
 };
-

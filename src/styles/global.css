@@ -3,8 +3,8 @@
 @import url("https://geo.thei.rs/fonts/berkeley-mono:ligatures,variable.css");
 
 @import "tailwindcss";
-@import "./uchu.css"; /* colourscheme */ 
-@plugin '@tailwindcss/typography';
+@import "./uchu.css"; /* colourscheme */
+@plugin "@tailwindcss/typography";
 
 @theme {
 	--font-sans: "IBM Plex Sans", sans-serif;
@@ -12,7 +12,7 @@
 }
 
 mark {
-	@apply bg-[rgba(0,0,0,0)] text-red-7 dark:text-pink-4;
+	@apply text-red-7 dark:text-pink-4 bg-[rgba(0,0,0,0)];
 }
 
 .link {
@@ -20,7 +20,7 @@ mark {
 }
 
 hr {
-	@apply h-px w-128 my-4 bg-pink-4 border-0
+	@apply bg-pink-4 my-4 h-px w-128 border-0;
 }
 
 @layer utilities {

@@ -9,14 +9,6 @@ export function footerReminders(): string {
 	return randomiseStrings(flavourText.footer);
 }
 
-export function isBirthday(): boolean {
-	const today = new Date();
-	const birthday = new Date(today.getFullYear(), 9, 16); // October 16
-	const check =
-		today.getMonth() === birthday.getMonth() && today.getDate() === birthday.getDate();
-	return check;
-}
-
 // https://gnuterrypratchett.com/index.php
 export function clacksString(): string {
 	return clacks.join(", ");

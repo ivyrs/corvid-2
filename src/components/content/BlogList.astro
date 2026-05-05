@@ -6,10 +6,10 @@ const { tag } = Astro.props;
 const posts = await getBlogPosts(tag);
 ---
 
-<ul class="flex flex-col gap-4">
-	{
-		posts.map((i) => {
-			return <Post i={i} />;
-		})
-	}
+<ul class="flex flex-col gap-2">
+  {
+    posts.map((i) => {
+      return <Post i={i} />;
+    })
+  }
 </ul>

@@ -1,38 +1,38 @@
 name: deploy site
 on:
-  push:
-    branches:
-      - main
+    push:
+        branches:
+            - main
 jobs:
-  deploy:
-    runs-on: ubuntu-22.04
-    steps:
-      - name: checkout code
-        uses: actions/checkout@v4
+    deploy:
+        runs-on: ubuntu-22.04
+        steps:
+            - name: checkout code
+              uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v6
-        with:
-          version: 10
+            - uses: pnpm/action-setup@v6
+              with:
+                  version: 10
 
-      - name: get deps
-        run: pnpm install
+            - name: get deps
+              run: pnpm install
 
-      - name: build site
-        run: pnpm build
+            - name: build site
+              run: pnpm build
 
-      - name: tailscale
-        uses: https://github.com/tailscale/github-action@v4
-        with:
-          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
-          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
-          tags: tag:ci
-          tailscaled-args: "--tun=userspace-networking --socks5-server=localhost:1055 --outbound-http-proxy-listen=localhost:1055"
+            - name: tailscale
+              uses: https://github.com/tailscale/github-action@v4
+              with:
+                  oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+                  oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+                  tags: tag:ci
+                  tailscaled-args: "--tun=userspace-networking --socks5-server=localhost:1055 --outbound-http-proxy-listen=localhost:1055"
 
-      - name: install deps
-        run: apt-get update && apt-get install -y rsync netcat-openbsd
+            - name: install deps
+              run: apt-get update && apt-get install -y rsync netcat-openbsd
 
-      - name: rsync
-        run: |
-          rsync -av --progress --delete \
-            -e "ssh -o ProxyCommand='nc -x localhost:1055 %h %p' -o StrictHostKeyChecking=no -o ServerAliveInterval=15 -o ServerAliveCountMax=4" \
-            ./dist/ root@lovecomputer:/opt/sites/ivy.rs
+            - name: rsync
+              run: |
+                  rsync -av --progress --delete \
+                    -e "ssh -o ProxyCommand='nc -x localhost:1055 %h %p' -o StrictHostKeyChecking=no -o ServerAliveInterval=15 -o ServerAliveCountMax=4" \
+                    ./dist/ root@lovecomputer:/opt/sites/ivy.rs
