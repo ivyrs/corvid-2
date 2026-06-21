@@ -14,6 +14,7 @@ const blog = defineCollection({
 		desc: z.string().optional(),
 		publish: z.boolean().default(false),
 		icon: z.string().default("fa-solid fa-signature").optional(),
+		cw: z.string().optional(),
 	}),
 });
 
@@ -28,4 +29,8 @@ const pages = defineCollection({
 	}),
 });
 
-export const collections = { blog, pages };
+const now = defineCollection({
+	loader: glob({ pattern: pattern, base: p + "now" })
+})
+
+export const collections = { blog, pages, now };

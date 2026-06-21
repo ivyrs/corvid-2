@@ -16,13 +16,15 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
-    const d = post.data;
+const d = post.data;
 ---
 
-<Page title={d.title} desc={d.desc} date={d.date} icon={d.icon}>
+<Page title={d.title} desc={d.desc} date={d.date} icon={d.icon} publish={d.publish}>
 	{
-		!d.publish && (
-			<span class="my-4 text-red-7 dark:text-pink-4">draft</span>
+		d.cw && (
+			<p class="my-2 text-yin-7 dark:text-yin-3">
+				<i class="fa-solid fa-burst" /> cw: {d.cw}
+			</p>
 		)
 	}
 

@@ -4,17 +4,15 @@ desc: what ivy uses
 icon: fa-solid fa-shelves
 ---
 
-### the normal stuff
-
 ```yaml
 phone: Apple iPhone 16 (128gb, teal)
-smart-watch: Apple Watch SE2 (black with grey band)
+watch: Apple Watch SE2 (black with grey band)
 headphones: ["Apple AirPods Pro 3", "Apple Airpods Max", "AKG M220"]
 ```
 
 ### the fleet
 
-> there will eventually be photos.. maybe
+<!-- todo: make these actual neofetches -->
 
 #### aspen - 15' macbook air
 
@@ -42,7 +40,7 @@ headphones: ["Apple AirPods Pro 3", "Apple Airpods Max", "AKG M220"]
 - ram: 16GB
 - storage:
       - ssd: 120GB
-      - ssd: 2048GB
+      - ssd: 2048GB # possibly borked :(
 ```
 
 ---
@@ -50,7 +48,7 @@ headphones: ["Apple AirPods Pro 3", "Apple Airpods Max", "AKG M220"]
 ### software
 
 ```yaml
-editor: ["neovim", "gram", "vscode"]
+editor: ["neovim", "gram"]
 shell: zsh
 
 # macOS

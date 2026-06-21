@@ -1,0 +1,37 @@
+---
+import Page from "~/layouts/Page.astro";
+import Prose from "~/components/ui/Prose.astro";
+import { getCollection, render } from "astro:content";
+import CDate from "~/components/ui/Date.astro";
+
+const posts = await getCollection("now");
+const sorted = posts.sort(
+	(a, b) => new Date(b.id).getTime() - new Date(a.id).getTime(),
+);
+
+const rendered = await Promise.all(
+	sorted.map(async (post) => ({
+		post,
+		Content: (await render(post)).Content,
+	})),
+);
+---
+
+<Page
+	title="now"
+	desc="a page that tells you what this person* is focused on at this point in their life"
+	icon="fa-solid fa-calendar"
+>
+	{
+		rendered.map(({ post, Content }) => (
+			<article id={post.id} class="mb-4">
+				<h3 class="w-[600px] text-red-7 dark:text-pink-4 font-bold text-xl mb-1">
+					<CDate date={post.id} />
+				</h3>
+				<Prose>
+					<Content />
+				</Prose>
+			</article>
+		))
+	}
+</Page>
