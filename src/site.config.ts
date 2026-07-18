@@ -1,5 +1,5 @@
 export const author = {
-	name: "ivy",
+	name: "ivy rose forever",
 	pronouns: "she/her",
 	social: {
 		fedi: "@ivy@ivy.rs",
