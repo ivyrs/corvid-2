@@ -11,7 +11,7 @@ export async function GET({ params }) {
 	return rss({
 		title: site.title,
 		description: site.desc,
-		site: "https://ivy.rs",
+		site: site.url,
 
 		items: blog.map((post) => ({
 			title: post.data.title,

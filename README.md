@@ -13,9 +13,9 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠉⠀⠀⠀⠀⠀
 ```
 
-# ivy.rs
+# corvid
 
-the source code for ivy.rs.
+ivy's website source code. built using astro.
 
 ## want to work on this site?
 

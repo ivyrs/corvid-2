@@ -1,6 +1,6 @@
 {
-	"name": "ivy.rs",
-	"version": "0.0.1",
+	"name": "corvid",
+	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
 		"dev": "astro dev",
