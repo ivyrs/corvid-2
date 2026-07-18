@@ -29,3 +29,7 @@ hr {
 		font-variation-settings: "slnt" -14;
 	}
 }
+
+abbr {
+	@apply underline-offset-4 decoration-red-7 dark:decoration-pink-4;
+}

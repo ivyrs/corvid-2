@@ -13,8 +13,9 @@ const { title, desc, showHeader = true, showFooter = true } = Astro.props;
 	<Metadata title={title} desc={desc} />
 
 	<body
-		class="bg-yang text-yin dark:bg-yin dark:text-yang p-4 sm:p-8 md:px-16 text-lg text-pretty"
+		class="bg-yang text-yin dark:bg-yin dark:text-yang p-4 sm:p-8 md:px-24 font-sans text-pretty"
 	>
+		<!-- todo: fix -->
 		<a href="#content" class="hidden selection:inline">skip to content</a>
 		{showHeader && <Header />}
 
