@@ -17,7 +17,7 @@ export default defineConfig({
 	vite: {
 		plugins: [tailwindcss()],
 		server: {
-			allowedHosts: ["turing"], // so i can use tailscale magicDNS
+			allowedHosts: ["aspen"], // so i can use tailscale magicDNS
 		},
 	},
 
