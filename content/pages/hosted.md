@@ -4,24 +4,18 @@ desc: everything ivy's self-hosting
 icon: fa-solid fa-upload
 ---
 
-### elm
-
-nothing at the moment
-
-### houseplants
+### elm - home server
 
 - [gotosocial](https://fedi.ivy.rs)
-- [miniflux](https://rss.houseplants.cloud)
-- [maloja](https://fm.ivy.rs)
-- multiscrobbler
-- [gonk](https://codeberg.org/ivyrs/gonk)
+- miniflux
+- [forgejo](https://git.houseplants.cloud)
+- nextcloud
+- pocket id
 
-### love computer
+### houseplants - hetzner vps
 
-- all of my sites and more
-- pocketid
+- caddy as a reverse proxy for elm
 
-#### fountain.lovecomputer
+### love computer - hetzner vps
 
-- forgejo
-- authentik
+- caddy to host mine and lc.net client sites
