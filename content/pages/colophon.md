@@ -13,7 +13,7 @@ i'm using Tailwind CSS for styling as it works nicely with my brain.
 
 the colour-scheme is [uchu](https://uchu.style), as is nice. [^1]
 
-fonts in use are IBM's Plex Sans, and [US Graphics Co.](https://usgraphics.com/)'s Berkeley Mono.
+fonts in use are [Aporetic Sans](https://github.com/protesilaos/aporetic) for text, and Aporetic Sans Mono for code.
 
 icons are provided by Font Awesome. [^2]
 

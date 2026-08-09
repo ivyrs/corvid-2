@@ -1,10 +1,41 @@
-hey, i'm ivy, welcome to my site!
+import Link from "~/components/ui/Link.astro";
+import LinkRow from "~/components/ui/LinkRow.astro";
+import Box from "~/components/ui/Box.astro";
+import NowPlaying from "~/components/ui/NowPlaying.astro";
+import DiscordStatus from "~/components/ui/DiscordStatus.astro";
+import TimeCompare from "~/components/ui/TimeCompare.astro";
 
-i'm a software developer and CS student! (on break right now) <br></br>
+hey, i'm ivy, i'm currently a student, and software dev.
 
-when i'm not in front of my laptop screen, <br></br>
-i'm usually practicing for <abbr title="no website yet">my band</abbr>'s next performance,
-[writing about things](/blog), <br></br> taking photos
-or just taking a walk around <abbr title="it's lovely here">my local area</abbr>.
+<Box xstyle="my-4">
+      <span class="text-base block">status</span>
+      <DiscordStatus userId="295975431058751498" />
+      <NowPlaying user="ivyt" />
+      <TimeCompare timezone="Europe/London" />
+</Box>
 
-take a look around my site if you'd like, or maybe [/contact](/contact) me?
+i like working with the web (especially [Astro](https://astro.build)), 
+but i want to get more into systems and low level work, so i'm learning Rust!
+
+<span class="block text-sm mb-2">(and elixir.... and go and...)</span>
+
+right now, i'm working on this site as well as 
+[a discord bot for Navidrome](https://codeberg.org/ivyrs/navi) in Python (with my girlfriend)
+
+<LinkRow>
+      <Link href="https://codeberg.org/ivyrs">codeberg</Link>
+      <Link href="/">love computer, my web design thing (ironically, no website yet)</Link>
+</LinkRow>
+
+aside from software dev, i'm a huge fan of Linux and especially NixOS, 
+currently using it on all of my systems (including my daily driver MacBook Air)
+
+<LinkRow>
+      <Link href="/uses">/uses - my setup</Link>
+      <Link href="https://codeberg.org/ivyrs/nix">my flake</Link>
+</LinkRow>
+
+when i'm not at a computer screen, i'm usually practicing for my band's next performance,
+doing a crossword or listening to music. i also like taking walks around my local area (it's pretty here)
+
+you can also [/contact](/contact) me if you'd like :D

@@ -1,7 +1,7 @@
 ---
 import { site } from "~/site.config";
 
-const nav = ["now", "blog", "contact", "more"];
+const nav = ["about", "now", "blog", "contact", "more"];
 ---
 
 <header class="w-fit sm:flex gap-4 text-xl mb-4">
@@ -10,7 +10,6 @@ const nav = ["now", "blog", "contact", "more"];
 			{`${site.title}`}
 		</h1>
 	</a>
-	<p class="md:inline hidden pt-0.5">⚧︎</p>
 	<nav class="flex flex-row gap-4 pt-1 first:pl-8">
 		{
 			nav.map((i) => {

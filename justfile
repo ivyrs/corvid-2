@@ -1,5 +1,15 @@
-dev: 
+dev:
 	pnpm run dev
+
+# host the dev server publicly via tailscale funnel, so others can view it
+funnel:
+	pnpm run dev -- --host &
+	sleep 2
+	sudo tailscale funnel --bg 4321
+
+# stop the funnel
+funnel-off:
+	sudo tailscale funnel --https=443 off
 
 build:
 	pnpm run build

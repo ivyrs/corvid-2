@@ -1,0 +1,64 @@
+---
+hide: false
+desc: what ivy uses
+icon: fa-solid fa-shelves
+---
+
+import Neofetch from "~/components/ui/Neofetch.astro";
+import aspenFetch from "~/data/neofetch/aspen.ansi?raw";
+import alderFetch from "~/data/neofetch/alder.ansi?raw";
+import mapleFetch from "~/data/neofetch/maple.ansi?raw";
+import elmFetch from "~/data/neofetch/elm.ansi?raw";
+
+```yaml
+phone: Apple iPhone 16 (128gb, teal)
+watch: Apple Watch SE2 (black with grey band)
+headphones: Apple AirPods Pro 3
+```
+
+### the fleet
+
+#### aspen - 15' macbook air
+
+<Neofetch raw={aspenFetch} />
+
+#### alder - 15' macbook air (nixos partition)
+
+<Neofetch raw={alderFetch} />
+
+#### maple - thinkpad t480 (inactive)
+
+<Neofetch raw={mapleFetch} />
+
+#### elm - thinkcenter homelab
+
+<Neofetch raw={elmFetch} />
+
+---
+
+### software
+
+```yaml
+editor: neovim
+terminal: ghostty
+shell: zsh
+	prompt: starship
+	multiplexer: tmux
+files: yazi
+git: lazygit
+browser: firefox
+email: aerc
+chat: vesktop
+notes: obsidian
+pdf: zathura
+ebooks: calibre
+password manager: ["pass", "1password"]
+music: navidrome + feishin
+
+# macOS
+launcher: raycast
+wm: aerospace
+
+# linux
+wm: niri + noctalia shell
+```

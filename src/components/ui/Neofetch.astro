@@ -1,0 +1,55 @@
+---
+import Convert from "ansi-to-html";
+
+interface Props {
+	raw: string;
+}
+
+const { raw } = Astro.props;
+
+// ansi-to-html only understands SGR (colour) codes, not cursor movement —
+// hyfetch uses `ESC[<n>G` (cursor horizontal absolute) to align info values
+// into a column, so expand those into literal spaces before conversion or
+// they get dropped to a stray "G" in the output.
+function expandCursorColumns(input: string): string {
+	return input
+		.split("\n")
+		.map((line) => {
+			let visibleLen = 0;
+			let result = "";
+			let i = 0;
+			while (i < line.length) {
+				const escMatch = line.slice(i).match(/^\x1b\[[0-9;]*[A-Za-z]/);
+				if (escMatch) {
+					const seq = escMatch[0];
+					const colMatch = seq.match(/^\x1b\[(\d*)G$/);
+					if (colMatch) {
+						const targetCol = colMatch[1] ? parseInt(colMatch[1], 10) : 1;
+						const pad = targetCol - 1 - visibleLen;
+						if (pad > 0) {
+							result += " ".repeat(pad);
+							visibleLen += pad;
+						}
+					} else {
+						result += seq;
+					}
+					i += seq.length;
+					continue;
+				}
+				result += line[i];
+				visibleLen += 1;
+				i += 1;
+			}
+			return result;
+		})
+		.join("\n");
+}
+
+const convert = new Convert({ escapeXML: true });
+const html = convert.toHtml(expandCursorColumns(raw.replace(/\s+$/, "")));
+---
+
+<pre
+	class="neofetch overflow-x-auto rounded-md bg-black/50 p-4 text-sm leading-tight my-2"
+	set:html={html}
+/>

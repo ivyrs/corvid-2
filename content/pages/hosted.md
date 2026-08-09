@@ -15,7 +15,3 @@ icon: fa-solid fa-upload
 ### houseplants - hetzner vps
 
 - caddy as a reverse proxy for elm
-
-### love computer - hetzner vps
-
-- caddy to host mine and lc.net client sites

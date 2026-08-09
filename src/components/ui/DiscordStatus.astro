@@ -1,0 +1,97 @@
+---
+interface Props {
+	userId: string;
+}
+
+const { userId } = Astro.props;
+---
+
+<div
+	class="not-prose inline-flex items-center gap-2 text-base"
+	id="discord-status"
+	data-user-id={userId}
+>
+	<span class="relative flex size-2.5">
+		<span id="discord-status-ping" class="absolute inline-flex h-full w-full rounded-full bg-yin-5 opacity-75"
+		></span>
+		<span id="discord-status-dot" class="relative inline-flex size-2.5 rounded-full bg-yin-5"></span>
+	</span>
+	<span id="discord-status-text" class="text-yin-7 dark:text-yin-3">loading...</span>
+</div>
+
+<script>
+	const STATUS_CLASSES: Record<string, string> = {
+		online: "bg-green-5",
+		idle: "bg-yellow-6",
+		dnd: "bg-red-6",
+		offline: "bg-yin-5",
+	};
+
+	const ACTIVITY_VERBS: Record<number, string> = {
+		0: "playing",
+		1: "streaming",
+		2: "listening to",
+		3: "watching",
+		5: "competing in",
+	};
+
+	function setStatusColour(status: string, dot: HTMLElement, ping: HTMLElement) {
+		const cls = STATUS_CLASSES[status] ?? STATUS_CLASSES.offline;
+		dot.className = `relative inline-flex size-2.5 rounded-full ${cls}`;
+		ping.className = `absolute inline-flex h-full w-full rounded-full opacity-75 ${cls} ${status === "online" ? "animate-ping" : "hidden"}`;
+	}
+
+	async function fetchStatus(userId: string, dot: HTMLElement, ping: HTMLElement, text: HTMLElement) {
+		try {
+			const res = await fetch(`https://api.lanyard.rest/v1/users/${userId}`);
+			const { data, success } = await res.json();
+			if (!success) throw new Error("lanyard lookup failed");
+
+			setStatusColour(data.discord_status, dot, ping);
+
+			const custom = data.activities?.find((a: { type: number }) => a.type === 4);
+			if (custom) {
+				text.replaceChildren();
+
+				if (custom.emoji?.id) {
+					const img = document.createElement("img");
+					img.src = `https://cdn.discordapp.com/emojis/${custom.emoji.id}.${custom.emoji.animated ? "gif" : "png"}`;
+					img.alt = custom.emoji.name ?? "";
+					img.className = "inline-block size-6 align-text-bottom mr-2";
+					text.appendChild(img);
+				} else if (custom.emoji?.name) {
+					text.appendChild(document.createTextNode(`${custom.emoji.name} `));
+				}
+
+				if (custom.state) {
+					text.appendChild(document.createTextNode(custom.state));
+				} else if (!custom.emoji) {
+					text.textContent = data.discord_status;
+				}
+				return;
+			}
+
+			const activity = data.activities?.find((a: { type: number }) => a.type !== 4);
+			if (activity) {
+				const verb = ACTIVITY_VERBS[activity.type as number] ?? "doing";
+				text.textContent = `${verb} ${activity.name}`;
+				return;
+			}
+
+			text.textContent = data.discord_status;
+		} catch {
+			text.textContent = "couldn't load discord status";
+		}
+	}
+
+	const container = document.getElementById("discord-status");
+	const dot = document.getElementById("discord-status-dot");
+	const ping = document.getElementById("discord-status-ping");
+	const text = document.getElementById("discord-status-text");
+	const userId = container?.dataset.userId;
+
+	if (container && dot && ping && text && userId) {
+		fetchStatus(userId, dot, ping, text);
+		setInterval(() => fetchStatus(userId, dot, ping, text), 60_000);
+	}
+</script>

@@ -17,7 +17,7 @@ export default defineConfig({
 	vite: {
 		plugins: [tailwindcss()],
 		server: {
-			allowedHosts: ["aspen"], // so i can use tailscale magicDNS
+			allowedHosts: ["aspen", "alder", "alder.ocelot-perch.ts.net"], // so i can use tailscale magicDNS
 		},
 	},
 
@@ -40,8 +40,10 @@ export default defineConfig({
 				{
 					behavior: "append",
 					content: {
-						type: "raw",
-						value: '<i class="fa-solid fa-link"></i>',
+						type: "element",
+						tagName: "i",
+						properties: { className: ["fa-solid", "fa-link"] },
+						children: [],
 					},
 					headingProperties: {
 						className: ["anchor", "group"],

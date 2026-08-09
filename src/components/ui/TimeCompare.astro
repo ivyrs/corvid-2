@@ -1,0 +1,71 @@
+---
+import { Icon } from "astro-icon/components";
+import { iconName } from "~/lib/utils";
+
+interface Props {
+	timezone: string;
+}
+
+const { timezone } = Astro.props;
+---
+
+<div class="not-prose flex items-center gap-2 text-base my-2" id="time-compare" data-timezone={timezone}>
+	<Icon name={iconName("fa-solid fa-clock")} class="text-red-7 dark:text-pink-4" />
+	<span id="time-compare-text" class="text-yin-7 dark:text-yin-3">loading...</span>
+</div>
+
+<script>
+	function formatTime(tz: string) {
+		return new Date().toLocaleTimeString("en-GB", {
+			timeZone: tz,
+			hour: "2-digit",
+			minute: "2-digit",
+		});
+	}
+
+	function friendlyName(tz: string) {
+		return tz.split("/").pop()?.replace(/_/g, " ") ?? tz;
+	}
+
+	// my birthday is 16th october (see /about)
+	function isBirthday(tz: string): boolean {
+		const parts = new Intl.DateTimeFormat("en-GB", {
+			timeZone: tz,
+			month: "2-digit",
+			day: "2-digit",
+		}).formatToParts(new Date());
+
+		const month = parts.find((p) => p.type === "month")?.value;
+		const day = parts.find((p) => p.type === "day")?.value;
+		return month === "10" && day === "16";
+	}
+
+	function tick(mine: string, text: HTMLElement) {
+		let theirs: string;
+		try {
+			theirs = Intl.DateTimeFormat().resolvedOptions().timeZone;
+		} catch {
+			theirs = mine;
+		}
+
+		const mineTime = formatTime(mine);
+		const birthday = isBirthday(mine) ? " 🎂 it's my birthday!" : "";
+
+		if (theirs === mine) {
+			text.textContent = `it's ${mineTime} for us both!${birthday}`;
+			return;
+		}
+
+		const theirsTime = formatTime(theirs);
+		text.textContent = `it's ${mineTime} for me, ${theirsTime} for you (${friendlyName(theirs)})${birthday}`;
+	}
+
+	const container = document.getElementById("time-compare");
+	const text = document.getElementById("time-compare-text");
+	const mine = container?.dataset.timezone;
+
+	if (container && text && mine) {
+		tick(mine, text);
+		setInterval(() => tick(mine, text), 30_000);
+	}
+</script>

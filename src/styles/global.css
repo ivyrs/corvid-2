@@ -1,7 +1,5 @@
-@import url(https://fonts.bunny.net/css?family=ibm-plex-mono:400,700,700i|ibm-plex-sans:400,700,700i);
 @import url(https://sunworms.github.io/aporetic-web-fonts/fonts.css);
 @import url(https://cdn.cache.lol/profiles/icons/omg.lol-icons.css);
-@import url("https://geo.thei.rs/fonts/berkeley-mono:ligatures,variable.css");
 
 @import "tailwindcss";
 @import "./uchu.css"; /* colourscheme */
