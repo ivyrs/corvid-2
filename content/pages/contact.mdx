@@ -4,15 +4,17 @@ icon: fa-solid fa-address-card
 ---
 
 import Link from "~/components/ui/Link.astro";
+import { Icon } from "astro-icon/components";
+import { iconName } from "~/lib/utils";
 
 <ul className="fa-ul">
 	<li>
-		<i className="fa-li fa-solid fa-envelope"></i>
+		<span className="fa-li"><Icon name={iconName("fa-solid fa-envelope")} /></span>
 		ivy@ivy.rs
 	</li>
 	
 	<li>
-		<i className="fa-li fa-brands fa-signal-messenger"></i>
+		<span className="fa-li"><Icon name={iconName("fa-brands fa-signal-messenger")} /></span>
 		[@ivyrs.78](https://ivy.omg.lol/signal)
 	</li>
 
@@ -30,7 +32,7 @@ import Link from "~/components/ui/Link.astro";
 	</li>
 
     <li>
-      <i className="fa-li fa-brands fa-github"></i>
+      <span className="fa-li"><Icon name={iconName("fa-brands fa-github")} /></span>
        [@ivyturner](https://github.com/ivyturner) (only for contributing)
     </li>
 

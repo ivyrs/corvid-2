@@ -17,6 +17,9 @@ pnpm-debug.log*
 .env
 .env.production
 
+# licensed Font Awesome Pro assets - keep out of the public repo
+src/icons/fa-pro/**/*.svg
+
 # macOS-specific files
 .DS_Store
 

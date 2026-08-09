@@ -1,4 +1,6 @@
 ---
+import { Icon } from "astro-icon/components";
+import { iconName } from "~/lib/utils";
 import Page from "~/layouts/Page.astro";
 import Prose from "~/components/ui/Prose.astro";
 import BlogTags from "~/components/content/BlogTags.astro";
@@ -23,7 +25,7 @@ const d = post.data;
 	{
 		d.cw && (
 			<p class="my-2 text-yin-7 dark:text-yin-3">
-				<i class="fa-solid fa-burst" /> cw: {d.cw}
+				<Icon name={iconName("fa-solid fa-burst")} /> cw: {d.cw}
 			</p>
 		)
 	}

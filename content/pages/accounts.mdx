@@ -5,20 +5,23 @@ icon: fa-solid fa-at
 hide: true
 ---
 
+import { Icon } from "astro-icon/components";
+import { iconName } from "~/lib/utils";
+
 <ul class="fa-ul">
 	<h3 id="forges">Git Forges</h3>
 	<li>
-		<i class="fa-li fa-solid fa-code-branch"></i>
+		<span class="fa-li"><Icon name={iconName("fa-solid fa-code-branch")} /></span>
 		[ivy@LCgit](https://git.lovecomputer.net) - My self-hosted git for Love Computer work,
 		infrastructure and projects I don't expect to / want contributions on.
 	</li>
 	<li>
-		<i class="fa-li fa-solid fa-mountain-city"></i>
+		<span class="fa-li"><Icon name={iconName("fa-solid fa-mountain-city")} /></span>
 		[ivyrs@codeberg.org](https://codeberg.org/ivyrs) - Where I put the things I'd like
 		contributions on.
 	</li>
 	<li>
-		<i class="fa-li fa-brands fa-github"></i>
+		<span class="fa-li"><Icon name={iconName("fa-brands fa-github")} /></span>
 		[ivyturner@github.com](https://github.com/ivyturner) - Only using for contributing to
 		projects.
 	</li>
