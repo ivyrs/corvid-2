@@ -53,7 +53,11 @@ abbr {
 	align-items: center;
 	justify-content: center;
 }
-.fa-li svg {
+/* astro-icon SVGs read smaller than the font-glyph icons they replaced
+   (Font Awesome's glyphs fill more of their em-box); bump them up
+   everywhere rather than special-casing each place Icon is used */
+svg[data-icon] {
 	width: 1.25em;
 	height: 1.25em;
+	vertical-align: middle;
 }

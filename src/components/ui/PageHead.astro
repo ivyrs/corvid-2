@@ -1,7 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import { iconName } from "~/lib/utils";
-import Date from "~/components/ui/Date.astro";
+import DateWithIcon from "~/components/ui/DateWithIcon.astro";
 import Breadcrumbs from "~/components/ui/Breadcrumbs.astro";
 
 interface Props {
@@ -23,13 +23,6 @@ const { title, desc, date, icon, publish } = Astro.props;
 	<div class="flex gap-2 text-yin-6 dark:text-yin-4">
 		{desc && <p>{desc}</p>}
 		{desc && date && <span>·</span>}
-		{
-			date && (
-				<p class="mt-0.5 text-base flex gap-1 items-baseline">
-					<Icon name={iconName("fa-solid fa-calendar-days")} />
-					<Date date={date} />
-				</p>
-			)
-		}
+		{date && <DateWithIcon date={date} />}
 	</div>
 </div>
