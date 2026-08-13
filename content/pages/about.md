@@ -11,6 +11,8 @@ icon: fa-solid fa-user
 
 you can also shorten to either ivy, rosie or iv
 
+i also use the usernames sunset, stardust etc. sometimes
+
 my `i0` is `i0:3/qs4rsckcoupyhi34"` ([what?](https://thei.rs/i0))
 
 --- 
@@ -21,7 +23,9 @@ on the internet, it is "forever" <br>
 in real life, it is {{none of your business}}
 
 some places on the internet may say a different last name. <br>
-[please contact me](/contact) if you find one so i can fix it.
+[please contact me](/contact) if you find one so i can fix it. 
+
+if you know my irl last name, stop that
 
 #### pronouns
 
