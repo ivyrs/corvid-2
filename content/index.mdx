@@ -4,8 +4,9 @@ import Box from "~/components/ui/Box.astro";
 import NowPlaying from "~/components/ui/NowPlaying.astro";
 import DiscordStatus from "~/components/ui/DiscordStatus.astro";
 import TimeCompare from "~/components/ui/TimeCompare.astro";
+import OtherSites from "~/components/fun/OtherSites.astro";
 
-hey, i'm ivy, i'm currently a student, and software dev.
+hey, i'm ivy, i'm a software dev, musician and student.
 
 <Box xstyle="my-4">
       <span class="text-base block">status</span>
@@ -14,19 +15,19 @@ hey, i'm ivy, i'm currently a student, and software dev.
       <TimeCompare timezone="Europe/London" />
 </Box>
 
-i like working with the web (especially [Astro](https://astro.build)), 
-but i want to get more into systems and low level work, so i'm learning Rust! <span class="text-sm mb-2">(and elixir and go...)</span>
+i like working with the web, especially [Astro](https://astro.build), 
+but i want to get more into systems and low level work, so i'm learning Rust! <span class="text-sm mb-2">and elixir and go...</span>
 
 right now, i'm working on this site as well as 
-[a discord bot for Navidrome](https://codeberg.org/ivyrs/navi) in Python (with my girlfriend)
+[a discord bot for Navidrome](https://codeberg.org/ivyrs/navi) in Python, with my girlfriend.
 
 <LinkRow>
-      <Link href="https://codeberg.org/ivyrs">codeberg</Link>
-      <Link href="/">love computer, my web design thing (ironically, no website yet)</Link>
+    <Link href="/now">/now</Link>
+	<Link href="https://codeberg.org/ivyrs" icon="fa-brands fa-codeberg">my code</Link>
 </LinkRow>
 
 aside from software dev, i'm a huge fan of Linux and especially NixOS, 
-currently using it on all of my systems (including my daily driver MacBook Air)
+currently using it on all of my systems, including my daily driver MacBook Air.
 
 <LinkRow>
       <Link href="/uses" icon="fa-pro-solid fa-shelves">/uses - my setup</Link>
@@ -34,6 +35,11 @@ currently using it on all of my systems (including my daily driver MacBook Air)
 </LinkRow>
 
 when i'm not at a computer screen, i'm usually practicing for my band's next performance,
-doing a crossword or listening to music. i also like taking walks around my local area (it's pretty here)
+doing a crossword, taking a walk or listening to music.
 
-you can also [/contact](/contact) me if you'd like :D
+<LinkRow>
+      <Link href="https://www.puzzmo.com/user/rs/ivyrose" icon="fa-solid fa-puzzle-piece">me on puzzmo</Link>
+</LinkRow>
+
+
+<OtherSites />
