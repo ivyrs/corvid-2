@@ -14,6 +14,11 @@ funnel-off:
 build:
 	pnpm run build
 
+# sync licensed fa-pro icons (src/icons/fa-pro/**/*.svg, gitignored) to lovecomputer,
+# so CI builds there can see icons that only exist locally
+sync-icons:
+	rsync -av --include="*/" --include="*.svg" --exclude="*" src/icons/fa-pro/ ivy@lovecomputer:/home/ivy/fa-pro-icons/
+
 preview:
 	pnpm run preview
 
