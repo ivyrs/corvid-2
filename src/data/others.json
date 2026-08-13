@@ -34,7 +34,8 @@
 		},
 		{
 			"link": "xela.zone",
-			"image": "https://geo.thei.rs/88x31/xela.png"
+			"image": "https://geo.thei.rs/88x31/xela.png",
+			"alt": "an orange to purple gradient background with the text xela.zone over top"
 		},
 		{
 			"link": "thei.rs/i0",
@@ -48,6 +49,22 @@
 		{
 			"link": "bun.work",
 			"image": "https://bun.work/88x31.png"
+		},
+		{
+			"link": "015.sh",
+			"image": "https://015.sh/assets/015sh88x31.gif"
+		},
+		{
+			"link": "byemc.xyz",
+			"image": "https://byemc.xyz/assets/buttons/byebutton.gif"
+		},
+		{
+			"link": "rknight.me",
+			"image": "https://rknight.me/assets/img/buttons/robbknight.gif"
+		},
+		{
+			"link": "nyoemii.dev",
+			"image": "https://nyoemii.dev/media/img/button.png"
 		}
 	]
 }
