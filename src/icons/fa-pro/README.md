@@ -21,5 +21,5 @@ plain `fa-light fa-shelves` already routes here automatically.
 
 ## Currently needed
 
-- `solid/shelves.svg` — used on `/uses` and the homepage `/uses` link.
+- `solid/shelves.svg` — used on `/setup` and the homepage `/setup` link.
   Removed from Font Awesome 7's free tier (was free in v6).

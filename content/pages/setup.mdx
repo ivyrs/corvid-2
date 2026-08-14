@@ -1,0 +1,41 @@
+---
+hide: false
+desc: my fleet of technology
+icon: fa-pro-solid fa-shelves
+---
+
+import Neofetch from "~/components/ui/Neofetch.astro";
+import aspenFetch from "~/data/neofetch/aspen.ansi?raw";
+import alderFetch from "~/data/neofetch/alder.ansi?raw";
+import mapleFetch from "~/data/neofetch/maple.ansi?raw";
+import elmFetch from "~/data/neofetch/elm.ansi?raw";
+
+| category   | item                     |
+|------------|------------------------- |
+| phone      | birch - iPhone 16        |
+| watch      | rowan - Apple Watch SE 2 |
+| headphones | holly - AirPods Pro 3    |
+
+### the fleet's neofetches
+
+<Neofetch raw={alderFetch} name="alder - macbook air (nixOS partition)" />
+
+<Neofetch raw={aspenFetch} name="aspen - macbook air (macOS partition)" />
+
+<Neofetch raw={elmFetch} name="elm - home server" />
+
+<Neofetch raw={mapleFetch} name="maple - broken thinkpad" />
+
+### software
+
+| category            | tool                    |
+| ------------------- | ----------------------- |
+| editor              | neovim, emacs           |
+| terminal            | ghostty                 |
+| shell               | zsh                     |
+| multiplexer         | tmux                    |
+| browser             | firefox                 |
+| email               | aerc                    |
+| notes               | obsidian                |
+| password manager    | pass, 1password         |
+| music               | navidrome + feishin     |

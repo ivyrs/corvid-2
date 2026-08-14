@@ -3,9 +3,11 @@ import Convert from "ansi-to-html";
 
 interface Props {
 	raw: string;
+	name?: string;
+	open?: boolean;
 }
 
-const { raw } = Astro.props;
+const { raw, name, open = false } = Astro.props;
 
 // ansi-to-html only understands SGR (colour) codes, not cursor movement —
 // hyfetch uses `ESC[<n>G` (cursor horizontal absolute) to align info values
@@ -49,7 +51,10 @@ const convert = new Convert({ escapeXML: true });
 const html = convert.toHtml(expandCursorColumns(raw.replace(/\s+$/, "")));
 ---
 
-<pre
-	class="neofetch overflow-x-auto rounded-md bg-black/50 p-4 text-sm leading-tight my-2"
-	set:html={html}
-/>
+<details class="my-2" open={open}>
+	{name && <summary class="cursor-pointer select-none link">{name}</summary>}
+	<pre
+		class="neofetch overflow-x-auto rounded-md bg-black/50 p-4 text-sm leading-tight my-2"
+		set:html={html}
+	/>
+</details>

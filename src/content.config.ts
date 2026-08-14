@@ -22,10 +22,12 @@ const pages = defineCollection({
 	loader: glob({ pattern: pattern, base: p + "pages" }),
 	schema: z.object({
 		hide: z.boolean().optional().default(false), // hides from /more
+		collection: z.boolean().optional().default(false), // shows on /collections instead
 		title: z.string().optional(),
 		desc: z.string().optional(),
 		date: z.date().optional(),
 		icon: z.string().optional().default("fa-solid fa-star"),
+		related: z.array(z.string()).optional(), // ids of other pages to link at the bottom
 	}),
 });
 

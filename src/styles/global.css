@@ -22,6 +22,22 @@ hr {
 	@apply bg-pink-4 my-4 h-px w-128 border-0;
 }
 
+.prose table {
+	@apply w-fit border-collapse my-2 text-base;
+}
+.prose thead {
+	@apply border-b-2 border-dashed border-red-7 dark:border-pink-4;
+}
+.prose th {
+	@apply text-left font-bold text-red-7 dark:text-pink-4 py-1 pr-6 last:pr-0;
+}
+.prose td {
+	@apply py-1 pr-6 last:pr-0 border-b border-dashed border-yin-4 dark:border-yin-6;
+}
+.prose tbody tr:last-child td {
+	@apply border-b-0;
+}
+
 @layer utilities {
 	/* font fix 4 safari */
 	.italic {

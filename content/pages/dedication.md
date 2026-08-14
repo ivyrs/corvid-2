@@ -1,0 +1,10 @@
+---
+date: 2026-08-13
+---
+
+this website is dedicated to:
+- my mother
+- my girlfriend
+- adam newbold, the closest thing to a mentor i've ever had 
+
+([what?](https://binovarghese.com/desk/2026/01/introducing-this-is-for-page/))
