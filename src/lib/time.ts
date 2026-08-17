@@ -3,16 +3,17 @@ export function formattedDate(input: Date | string, showTime = false): string {
 
 	const options: Intl.DateTimeFormatOptions = {
 		year: "numeric",
-		month: "short",
+		month: "2-digit",
 		day: "2-digit",
 	};
 
 	if (showTime) {
 		options.hour = "2-digit";
 		options.minute = "2-digit";
+		options.hour12 = false;
 	}
 
-	return date.toLocaleString("en-GB", options);
+	return date.toLocaleString("en-CA", options);
 }
 
 export function isoDate(input: Date | string): string {
