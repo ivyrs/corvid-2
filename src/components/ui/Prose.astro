@@ -1,4 +1,6 @@
 ---
+const { class: className } = Astro.props;
+
 const classes = [
   "text-lg",
   "prose",
@@ -22,7 +24,7 @@ const classes = [
 ---
 
 <div
-  class:list={classes}
+  class:list={[classes, className]}
 >
     <slot />
 </div>
