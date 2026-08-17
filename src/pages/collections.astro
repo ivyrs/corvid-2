@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import { Icon } from "astro-icon/components";
-import { iconName } from "~/lib/utils";
+import Icon from "~/components/ui/Icon.astro";
 import Page from "~/layouts/Page.astro";
 
 const entries = await getCollection("pages");
@@ -24,7 +23,7 @@ const sorted = entries
         return (
           <li>
             <span class="fa-li">
-              <Icon name={iconName(i.data.icon)} />
+              <Icon name={i.data.icon} />
             </span>
             <a
               class="link"
