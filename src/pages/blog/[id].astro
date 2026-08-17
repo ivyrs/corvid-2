@@ -24,13 +24,14 @@ const d = post.data;
 <Page title={d.title} desc={d.desc} date={d.date} icon={d.icon} publish={d.publish}>
 	{
 		d.cw && (
-			<p class="my-2 text-yin-7 dark:text-yin-3">
-				<Icon name={iconName("fa-solid fa-burst")} /> cw: {d.cw}
+			<p class="my-2 text-yin-7 dark:text-yin-3 flex gap-2">
+				<Icon name={iconName("fa-solid fa-burst")} />
+				<span>cw: {d.cw}</span>
 			</p>
 		)
 	}
 
-	<Prose>
+	<Prose class="!prose-headings:mt-12 !prose-headings:mb-8">
 		<Content />
 	</Prose>
 
