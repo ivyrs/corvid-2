@@ -4,22 +4,21 @@ icon: fa-solid fa-address-card
 ---
 
 import Link from "~/components/ui/Link.astro";
-import { Icon } from "astro-icon/components";
-import { iconName } from "~/lib/utils";
+import Icon from "~/components/ui/Icon.astro";
 
 <ul className="fa-ul">
 	<li>
-		<span className="fa-li"><Icon name={iconName("fa-solid fa-envelope")} /></span>
+		<span className="fa-li"><Icon name="fa-solid fa-envelope" /></span>
 		ivy@ivy.rs
 	</li>
 	
 	<li>
-		<span className="fa-li"><Icon name={iconName("fa-brands fa-signal-messenger")} /></span>
+		<span className="fa-li"><Icon name="fa-brands fa-signal-messenger" /></span>
 		[@ivyrs.78](https://ivy.omg.lol/signal)
 	</li>
 
     <li>
-      <i className="omg-li omg-icon omg-fediverse"></i>
+      <span className="fa-li"><Icon name="omg-fediverse" /></span>
       [@ivy@ivy.rs](https://ivy.rs/@ivy)
     </li>
 
@@ -27,13 +26,13 @@ import { iconName } from "~/lib/utils";
 
 <ul className="fa-ul">
 	<li>
-		<i className="omg-li omg-icon omg-codeberg"></i>
+		<span className="fa-li"><Icon name="omg-codeberg" /></span>
 		[@ivyrs](https://codeberg.org/ivyrs)
 	</li>
 
     <li>
-      <span className="fa-li"><Icon name={iconName("fa-brands fa-github")} /></span>
-       [@ivyturner](https://github.com/ivyturner) (only for contributing)
+      <span className="fa-li"><Icon name="fa-brands fa-github" /></span>
+       [@ivyrs](https://github.com/ivyrs) (only for contributing)
     </li>
 
 </ul>
