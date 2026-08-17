@@ -5,18 +5,14 @@ icon: fa-solid fa-globe
 hide: false
 ---
 
-this site is built using Astro, then served over Caddy on my own web hosting service, Love Computer.
+this site is built with [Astro](https://astro.build),
+and hosted on [Love Computer](https://lovecomputer.net).
 
-### design
+styling is written in [Tailwind CSS](https://tailwindcss.com),
+as it's quick to type and my brain works well with it.
 
-i'm using Tailwind CSS for styling as it works nicely with my brain.
+font is [Aporetic Sans](https://github.com/protesilaos/aporetic), and
+colourscheme is [uchu](https://uchu.style).
 
-the colour-scheme is [uchu](https://uchu.style), as is nice. [^1]
-
-fonts in use are [Aporetic Sans](https://github.com/protesilaos/aporetic) for text, and Aporetic Sans Mono for code.
-
-icons are provided by Font Awesome. [^2]
-
-[^1]: spoken as [the Heavy from Team Fortress 2](https://wiki.teamfortress.com/w/images/b/b8/Heavy_mvm_loot_common01.wav)
-
-[^2]: thank u to eva for letting me have a seat on her pro+ plan <3
+this site's code is licensed under the [Opinionated Queer License](https://oql.avris.it/license/v1.4).
+blog posts are licensed under a [custom non-commercial, no-derivatives license](https://codeberg.org/ivyrs/corvid/src/branch/main/CONTENT-LICENSE.md), no AI training allowed.

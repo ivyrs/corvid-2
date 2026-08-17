@@ -28,4 +28,7 @@ pnpm run dev
 
 ## licensing
 
-This repository is licensed under the Opinionated Queer License version 1.4 ([full text here](https://git.lovecomputer.net/ivy/site/src/branch/main/LICENSE.md))
+this repository is dual licensed:
+
+- code is licensed under the Opinionated Queer License version 1.4 ([full text here](LICENSE.md))
+- blog posts ([`content/blog`](content/blog)) are licensed under a custom Non-Commercial No-Derivatives license ([full text here](CONTENT-LICENSE.md))
