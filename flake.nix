@@ -24,7 +24,7 @@
             runtimeInputs = [ pkgs.nodejs_22 pkgs.pnpm ];
             text = ''
               ${nodeModulesCheck}
-              exec pnpm run ${script}
+              exec pnpm run ${script} -- "$@"
             '';
           };
       in
@@ -49,6 +49,18 @@
           };
           preview = flake-utils.lib.mkApp {
             drv = mkPnpmApp "ivy-rs-preview" "preview";
+          };
+          astro = flake-utils.lib.mkApp {
+            drv = mkPnpmApp "ivy-rs-astro" "astro";
+          };
+          fmt = flake-utils.lib.mkApp {
+            drv = mkPnpmApp "ivy-rs-fmt" "fmt";
+          };
+          fmt-check = flake-utils.lib.mkApp {
+            drv = mkPnpmApp "ivy-rs-fmt-check" "fmt:check";
+          };
+          lint = flake-utils.lib.mkApp {
+            drv = mkPnpmApp "ivy-rs-lint" "lint";
           };
           default = flake-utils.lib.mkApp {
             drv = mkPnpmApp "ivy-rs-dev" "dev";
