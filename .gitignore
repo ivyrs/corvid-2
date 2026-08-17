@@ -23,6 +23,10 @@ src/icons/fa-pro/**/*.svg
 # macOS-specific files
 .DS_Store
 
+# Emacs lock/autosave files
+.#*
+\#*#
+
 # jetbrains setting folder
 .idea/
 /nvim.log
