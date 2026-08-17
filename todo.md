@@ -1,1 +1,2 @@
 - [ ] new button
+- [ ] make an og-image, wire it up to og:image in Metadata.astro (generated one looked bad)
