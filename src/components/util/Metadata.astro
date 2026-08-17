@@ -24,10 +24,17 @@ const { title, description } = Astro.props;
   <meta property="og:type" content="website" />
   <meta property="og:url" content={site.url} />
   <meta property="og:image" content="https://ivy.rs/image.jpg" />
-  <link rel="icon" href="https://fav.farm/%F0%9F%92%9C" />
 
-  <meta name="theme-color" content="#5E409D" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon-96x96-lm.png" media="(prefers-color-scheme: light)" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon-96x96-dm.png" media="(prefers-color-scheme: dark)" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/img/web-app-manifest-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/img/web-app-manifest-512x512.png" />
+  <link rel="icon" type="image/svg+xml" href="/img/favicon-lm.svg" media="(prefers-color-scheme: light)" />
+  <link rel="icon" type="image/svg+xml" href="/img/favicon-dm.svg" media="(prefers-color-scheme: dark)" />
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+  <link rel="manifest" href="/img/site.webmanifest" />
+  <meta name="theme-color" content="#ffffff" />
 
   <link rel="me" href="https://social.lol/@ivy" />
   <link rel="me" href="https://github.com/ivyturner" />
