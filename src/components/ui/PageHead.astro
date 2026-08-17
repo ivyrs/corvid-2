@@ -1,6 +1,5 @@
 ---
-import { Icon } from "astro-icon/components";
-import { iconName } from "~/lib/utils";
+import Icon from "~/components/ui/Icon.astro";
 import DateWithIcon from "~/components/ui/DateWithIcon.astro";
 import Breadcrumbs from "~/components/ui/Breadcrumbs.astro";
 
@@ -17,10 +16,10 @@ const { title, desc, date, icon, publish } = Astro.props;
 
 <div class="mb-2 flex flex-col gap-px">
 	<h2 class="text-2xl font-bold flex items-center gap-2">
-		{icon && <Icon name={iconName(icon)} />}
+		{icon && <Icon name={icon} />}
 		<Breadcrumbs title={title} />
 	</h2>
-	<div class="flex gap-2 text-yin-6 dark:text-yin-4">
+	<div class="flex gap-2 text-yin-7 dark:text-yin-3">
 		{desc && <p>{desc}</p>}
 		{desc && date && <span>·</span>}
 		{date && <DateWithIcon date={date} />}

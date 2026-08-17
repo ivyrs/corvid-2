@@ -1,6 +1,5 @@
 ---
-import { Icon } from "astro-icon/components";
-import { iconName } from "~/lib/utils";
+import Icon from "~/components/ui/Icon.astro";
 
 interface Props {
 	user: string;
@@ -10,7 +9,7 @@ const { user } = Astro.props;
 ---
 
 <div class="flex items-center gap-2 text-base my-2" id="now-playing" data-user={user}>
-	<Icon name={iconName("fa-solid fa-music")} class="text-red-7 dark:text-pink-4 mt-0.5" />
+	<Icon name="fa-solid fa-music" class="text-red-7 dark:text-purple-2 mt-0.5" />
 	<span id="now-playing-text" class="text-yin-7 dark:text-yin-3">loading...</span>
 </div>
 

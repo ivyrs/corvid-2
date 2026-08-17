@@ -1,7 +1,6 @@
 ---
-import { Icon } from "astro-icon/components";
+import Icon from "~/components/ui/Icon.astro";
 import Date from "./Date.astro";
-import { iconName } from "~/lib/utils";
 
 interface Props {
   date: Date | string;
@@ -12,6 +11,6 @@ const { date, showTime, icon } = Astro.props;
 ---
 
 <div class="flex items-center gap-2 text-yin-7 dark:text-yin-3 text-base font-mono">
-    <Icon name={iconName(icon || "fa-solid fa-calendar-days")} />
+    <Icon name={icon || "fa-solid fa-calendar-days"} />
     <Date date={date} showTime={showTime} />
 </div>
