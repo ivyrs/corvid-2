@@ -1,16 +1,90 @@
 ---
 title: hi its been a while
 date: 2026-04-18T09:26:52+0100
-desc: test
-tags: ["personal", "test"]
-cw: "{mental, physical} health struggles"
+desc: i've done some things
+tags: ["personal"]
+cw: "mentions of mental health struggles"
+publish: false
+icon: fa-solid fa-sun
 ---
 
+hey, i finally got the motivation for a blog post. it's been a while.
+i've been through some stuff since my last post, so here's a few paragraphs about it, i guess.
 
-okay so i already made a ‘hi im back’ post but a) it was unfinished, b) i accidentally published it and then unpublished it then it became veeeeery out of date.
+### i got diagnosed with things
 
-so here i am again writing another thing about it cause i have no idea how to start off this blog otherwise.
+after 3 years of waiting, most of which were because i didn't have the energy to fill out the pre-assessment forms[^1],
+i finally got my ADHD diagnosis! 
+it's been really validating to finally be told my brain isnt broken, by an authority figure at least.
 
-my life over the last **261 days????** has gone... well it's certainly gone.
+*take that 15 years of mainstream education! /s*
 
-i've been struggling, A Lot
+i also had my assessments for gender affirming care, and am now on the pathway to start medical transition!
+this has been,,, huge for me. i came out as trans 4 and a half years ago. [^2]
+i've been waiting so fucking long for my life to start, and now it is.
+
+these also happened within about a week of each other, so that was *emotional*, to say the least.
+
+[^1]: my therapist told me to recontextualise that as it not being the right time. Damn it, i hate when she's right. /s
+[^2]: 8, if you count coming out as non-binary in 2018
+
+### i finally got help
+
+after like 8 years of having medium to *Severe* mental health problems,
+i finally went to my doctor about it! And they helped! *wow.mp3*
+
+so i was given a diagnosis of `severe chronic depression` and then prescribed with fluoxetine, 
+commonly known as Prozac[^3]. 
+in the two months i've taken it daily... okay almost daily :p, it's been really positive!
+i basically don't get any side-effects apart from the lowering of my temperature tolerance, 
+which is admittedly *very annoying* but better than near-constant thoughts of suicide.
+
+[^3]: especially in the US, where most* people call medicine by its brand name, which is ridiculous, but i digress
+
+### it's fucking warm, batman
+
+wow that was a lot, now let's talk about how *the sun is a deadly lazer*.
+
+the week i started fluoxetine was also the week that a massive week-long heatwave swept the uk, 
+and i had a concert to go to in the hottest venue in town. holy shit that was an experience. 
+i also got tinnitus from standing underneath the front of house speakers.. not my finest moment :p
+
+### i changed my name
+
+since the 30th of july, i have been legally Ivy Rose {{last name}}.
+
+it was a bit of an impulse decision as i changed it, after being told that my
+child's deed poll that i made when i was 15, had expired. 
+
+when i was 16.
+
+**FOUR WHOLE YEARS AGO.**
+
+so, after a few days of deliberation and finding two people to sign as
+witnesses, i changed my name while leaning over a coffee shop bar surrounded
+by my witnesses[^4], and a bunch of screaming kids.
+
+what a rockstar lifestyle i lead :p
+
+speaking of rockstar lifestyles...
+
+[^4]: if you read this Adam or Corey, ayup la :) 
+
+### i did some gigs
+
+so if you don't know, i'm in a punk / metal cover band as the sing-...
+(pompous ass voice enabled) *vocalist*.
+
+and we did two gigs this month, one at a local-_esque_ bar, 
+which went really good! i actually did some crowd work that wasnt just
+making sorta eye contact with people that knew the lyrics better than i did!
+i got off stage! and walked in a circle! *wow.mp3*
+
+so that was fun. i also got to sing MCR which is always a positive :3
+
+### bolted on conclusion
+
+so that was.. a thing..
+
+i'm not even including everything! i went to an anime convention for the first
+time, and spent way too much money! 
