@@ -19,7 +19,7 @@ mark {
 }
 
 hr {
-	@apply bg-red-7 dark:bg-purple-2 my-4 h-px w-128 border-0;
+	@apply my-4 w-128 border-0 border-t border-red-7 dark:border-purple-2;
 }
 
 .prose table {
