@@ -19,7 +19,7 @@ const blog = defineCollection({
 });
 
 const pages = defineCollection({
-	loader: glob({ pattern: pattern, base: p + "pages" }),
+	loader: glob({ pattern: ["**/*.md", "**/*.mdx"], base: p + "pages" }),
 	schema: z.object({
 		hide: z.boolean().optional().default(false), // hides from /more
 		collection: z.boolean().optional().default(false), // shows on /collections instead

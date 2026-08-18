@@ -15,7 +15,7 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 const data = post.data;
 
-let title = data.title || post.id;
+let title = data.title || post.id.split("/").pop();
 ---
 
 <Layout
