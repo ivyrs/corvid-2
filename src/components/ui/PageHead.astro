@@ -9,15 +9,16 @@ interface Props {
 	date?: Date | string;
 	icon?: string;
 	publish?: boolean;
+	path?: string;
 }
 
-const { title, desc, date, icon, publish } = Astro.props;
+const { title, desc, date, icon, publish, path } = Astro.props;
 ---
 
 <div class="mb-2 flex flex-col gap-px">
 	<h2 class="text-2xl font-bold flex items-center gap-2">
 		{icon && <Icon name={icon} />}
-		<Breadcrumbs title={title} />
+		<Breadcrumbs title={title} path={path} />
 	</h2>
 	<div class="flex gap-2 text-yin-7 dark:text-yin-3">
 		{desc && <p>{desc}</p>}

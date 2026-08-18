@@ -1,10 +1,11 @@
 ---
 interface Props {
     title?: string;
+    path?: string;
 }
 
-const { title } = Astro.props;
-const { pathname } = Astro.url;
+const { title, path } = Astro.props;
+const pathname = path ?? Astro.url.pathname;
 const paths = pathname.split('/').filter(Boolean);
 
 const breadcrumbs = [
@@ -17,7 +18,7 @@ const breadcrumbs = [
 ---
 
 <nav aria-label="Breadcrumbs">
-  <ol class="md:flex gap-1">
+  <ol class="md:flex">
     {breadcrumbs.map((crumb, i) => (
       <li>
         {i < breadcrumbs.length - 1 ? (
