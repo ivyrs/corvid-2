@@ -18,9 +18,12 @@ export async function GET({ params }) {
 			pubDate: post.data.date,
 			description: post.data.desc,
 			link: `/blog/${post.id}`,
-			content: sanitizeHtml(parser.render(post.body), {
-				allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
-			}),
+			content: sanitizeHtml(
+				(post.data.cw ? `<p>cw: ${post.data.cw}</p>` : "") + parser.render(post.body),
+				{
+					allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
+				},
+			),
 		})),
 		customData: `<language>en-gb</language>`,
 		trailingSlash: false,
