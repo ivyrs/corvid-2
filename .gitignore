@@ -20,9 +20,6 @@ pnpm-debug.log*
 # licensed Font Awesome Pro assets - keep out of the public repo
 src/icons/fa-pro/**/*.svg
 
-# generated from resume/resume.typ, see justfile's `resume` recipe
-resume/resume.html
-
 # macOS-specific files
 .DS_Store
 

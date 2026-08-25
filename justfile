@@ -1,4 +1,4 @@
-dev: resume
+dev:
 	nix run .#dev
 
 # host the dev server publicly via tailscale funnel, so others can view it
@@ -11,12 +11,8 @@ funnel:
 funnel-off:
 	sudo tailscale funnel --https=443 off
 
-build: resume
+build:
 	nix run .#build
-
-# compile resume/resume.typ to resume/resume.html for the /resume page
-resume:
-	nix run .#resume
 
 # sync licensed fa-pro icons (src/icons/fa-pro/**/*.svg, gitignored) to lovecomputer,
 # so CI builds there can see icons that only exist locally

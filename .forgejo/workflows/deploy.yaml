@@ -32,9 +32,6 @@ jobs:
             - name: licensed fa-pro icons
               run: rsync -a ~/fa-pro-icons/ src/icons/fa-pro/
 
-            - name: build resume html
-              run: nix run .#resume
-
             - name: build site
               run: pnpm build
 
