@@ -33,6 +33,7 @@
           packages = [
             pkgs.nodejs_22
             pkgs.pnpm
+            pkgs.typst
           ];
 
           shellHook = ''
@@ -41,6 +42,15 @@
         };
 
         apps = {
+          resume = flake-utils.lib.mkApp {
+            drv = pkgs.writeShellApplication {
+              name = "ivy-rs-resume";
+              runtimeInputs = [ pkgs.typst ];
+              text = ''
+                typst compile --features html --format html resume/resume.typ resume/resume.html
+              '';
+            };
+          };
           dev = flake-utils.lib.mkApp {
             drv = mkPnpmApp "ivy-rs-dev" "dev";
           };
