@@ -1,3 +1,61 @@
 - [ ] new button
 - [ ] make an og-image, wire it up to og:image in Metadata.astro (generated one looked bad)
 - [ ] make atom and json feeds
+
+- [ ] share a recipe
+- [ ] publish a photo
+- [ ] make a shrine (band/show/something that makes me happy)
+- [ ] make an image map
+- [ ] list of favourite books
+- [ ] movie recommendations page
+- [ ] easter egg
+- [ ] guestbook
+- [ ] background image on a page
+- [ ] scavenger hunt
+- [ ] annotate head tag / templates with explanatory HTML comments
+- [ ] list of web pages i've enjoyed recently
+- [ ] audit alt text on all images
+- [ ] run WAVE accessibility check
+- [ ] run PageSpeed Insights, speed up slow pages
+- [ ] antilibrary page (books i own but haven't read)
+- [ ] word game
+- [ ] blog post about something i added to the site (#sitedocumentation)
+- [ ] list of words learned recently
+- [ ] "on this day" feature linking past posts
+- [ ] mascot
+- [ ] translate a page
+- [ ] print stylesheet
+- [ ] check all links work
+- [ ] start a blog carnival
+- [ ] Omake
+- [ ] resume page (HTML)
+- [ ] review head tag, remove unused scripts/tags
+- [ ] search feature
+- [ ] sparkline of post frequency
+- [ ] review heading sizes (not too close together)
+- [ ] asterism/fleuron at end of blog posts
+- [ ] use lite-youtube for embedded videos
+- [ ] try a new colour scheme
+- [ ] style page showing every HTML element's styling
+- [ ] write a quiz
+- [ ] webmention support
+- [ ] extract a web component to share
+- [ ] hover effect on an image
+- [ ] audio recording of my name pronunciation
+- [ ] holiday theme
+- [ ] draw a picture and share it
+- [ ] interactive pixel grid on homepage
+- [ ] "not by AI" button
+- [ ] list of favourite podcasts
+- [ ] blog post about the history of my site
+- [ ] background audio on a page
+- [ ] moodboard
+- [ ] custom text selection colour
+- [ ] write "how this site works" doc for future me
+- [ ] review of a piece of art
+- [ ] blog post with a friend
+- [ ] update an old blog post
+- [ ] sidenotes on a blog post
+- [ ] table of contents for a long post
+- [ ] external link icon via CSS
+- [ ] hovercards
