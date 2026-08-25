@@ -3,65 +3,30 @@ hide: true
 icon: fa-solid fa-address-card
 ---
 
-import Link from "~/components/ui/Link.astro";
-import Icon from "~/components/ui/Icon.astro";
+import PGP from "~/../public/keys/ivy.asc?raw";
+import sshKeys from "~/../public/ssh?raw";
 
-<ul className="fa-ul">
-	<li>
-		<span className="fa-li"><Icon name="fa-solid fa-envelope" /></span>
-		ivy@ivy.rs
-	</li>
-	
-	<li>
-		<span className="fa-li"><Icon name="fa-brands fa-signal-messenger" /></span>
-		[@ivyrs.78](https://ivy.omg.lol/signal)
-	</li>
+|           |                                     |
+| --------- | ----------------------------------- |
+| email     | ivy@ivy.rs                          |
+| signal    | [@ivyrs.78](/signal)                |
+| fediverse | [@ivy@ivy.rs](/@ivy)                |
+| codeberg  | [ivyrs](https://codeberg.org/ivyrs) |
+| github    | [ivyrs](https://github.com/ivyrs)   |
 
-    <li>
-      <span className="fa-li"><Icon name="omg-fediverse" /></span>
-      [@ivy@ivy.rs](https://ivy.rs/@ivy)
-    </li>
 
-</ul>
+### ssh keys
+<pre><code>
+    {sshKeys}
+</code></pre>
 
-<ul className="fa-ul">
-	<li>
-		<span className="fa-li"><Icon name="omg-codeberg" /></span>
-		[@ivyrs](https://codeberg.org/ivyrs)
-	</li>
+also at `ivyro.se/ssh`
 
-    <li>
-      <span className="fa-li"><Icon name="fa-brands fa-github" /></span>
-       [@ivyrs](https://github.com/ivyrs) (only for contributing)
-    </li>
+### pgp key
 
-</ul>
-
-<details className="-mt-2 ml-4">
-	<summary>other messaging apps</summary>
-    (i'd prefer you just use email or signal)
-	<ul>
-		<li>discord: @ivy.rs</li>
-		<li>matrix: [@ivy:skji.org](https://matrix.to/#/@ivy:skji.org)</li>
-	</ul>
-</details>
-
-<details className="ml-4">
-	<summary>ssh keys</summary>
-	``` 
-	ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICtFawaAWSklr1GGYiBZzGr/ydKSSOatBfGfY72eqKGZ ivy@aspen
-	```
-</details>
-
-<details className="ml-4">
-  <summary>gpg key</summary>
-  ```txt
-  pub   ed25519 2025-09-25 [SC] [expires: 2026-09-25]
-      4C71AEDCFFA0412997FE5CBB513AD93FFF082A64
-  uid           [ultimate] Ivy Turner <ivy@ivy.rs>
-  sub   cv25519 2025-09-25 [E] [expires: 2026-09-25]
-      AB3082993E050704B6494DB4E8C328A68674AFC1
-  ```
-  
-  <Link href="/keys/ivy.asc">download my key</Link>
+<details>
+    <summary>show key text</summary>
+    <pre><code>
+        {PGP}
+    </code></pre>
 </details>
