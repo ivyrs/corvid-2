@@ -1,5 +1,6 @@
 ---
 import { site } from "~/site.config";
+import ThemeToggle from "~/components/ui/ThemeToggle.astro";
 
 const nav = ["about", "now", "blog", "contact", "more"];
 ---
@@ -20,5 +21,6 @@ const nav = ["about", "now", "blog", "contact", "more"];
 				);
 			})
 		}
+		<ThemeToggle />
 	</nav>
 </header>

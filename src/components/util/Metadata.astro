@@ -6,6 +6,11 @@ const { title, description } = Astro.props;
 ---
 
 <head>
+  <script is:inline>
+    const stored = localStorage.getItem("theme");
+    const dark = stored ? stored === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    document.documentElement.classList.toggle("dark", dark);
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{titleConstructor(title)}</title>

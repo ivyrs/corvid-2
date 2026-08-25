@@ -1,0 +1,21 @@
+---
+import Icon from "~/components/ui/Icon.astro";
+---
+
+<button
+	id="theme-toggle"
+	type="button"
+	aria-label="toggle dark mode"
+	class="text-red-7 dark:text-purple-2"
+>
+	<Icon name="fa-solid fa-moon" class="dark:hidden" />
+	<Icon name="fa-solid fa-sun" class="hidden dark:inline" />
+</button>
+
+<script>
+	const btn = document.getElementById("theme-toggle");
+	btn?.addEventListener("click", () => {
+		const dark = document.documentElement.classList.toggle("dark");
+		localStorage.setItem("theme", dark ? "dark" : "light");
+	});
+</script>

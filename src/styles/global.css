@@ -5,6 +5,9 @@
 @import "./uchu.css"; /* colourscheme */
 @plugin "@tailwindcss/typography";
 
+/* dark: now follows the .dark class (set by the theme toggle) instead of prefers-color-scheme */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
 	--font-sans: "Aporetic Sans", sans-serif;
 	--font-mono: "Aporetic Sans Mono", monospace;
