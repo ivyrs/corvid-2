@@ -24,7 +24,7 @@
             runtimeInputs = [ pkgs.nodejs_22 pkgs.pnpm ];
             text = ''
               ${nodeModulesCheck}
-              exec pnpm run ${script} -- "$@"
+              exec pnpm run ${script} "$@"
             '';
           };
       in
