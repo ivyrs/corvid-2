@@ -1,30 +1,35 @@
 dev:
 	nix run .#dev
 
-# host the dev server publicly via tailscale funnel, so others can view it
-funnel:
-	nix run .#dev -- --host &
-	sleep 2
-	sudo tailscale funnel --bg 4321
-
-# stop the funnel
-funnel-off:
-	sudo tailscale funnel --https=443 off
-
 build:
 	nix run .#build
-
-# sync licensed fa-pro icons (src/icons/fa-pro/**/*.svg, gitignored) to lovecomputer,
-# so CI builds there can see icons that only exist locally
-sync-icons:
-	rsync -av --include="*/" --include="*.svg" --exclude="*" src/icons/fa-pro/ ivy@lovecomputer:/home/ivy/fa-pro-icons/
 
 preview:
 	nix run .#preview
 
 # runs the astro cli
-astro:
-	nix run .#astro
+@astro *args:
+	nix run .#astro -- {{args}}
+
+# new /now post
+[group('content')]
+@new-note:
+  #!/usr/bin/env bash
+
+  DATE=$(date -u +%Y-%m-%d)
+  echo $DATE
+
+  nvim "content/now/$DATE.mdx"
+
+# new /blog post
+[group('content')]
+@new-post:
+  #!/usr/bin/env bash
+
+  DATE=$(date -u +%Y-%m-%d)
+  echo $DATE
+
+  nvim "content/blog/$DATE.mdx"
 
 [group('format')]
 fmt:
@@ -39,7 +44,19 @@ fmt-dry:
 lint:
 	nix run .#lint
 
-# dry run linter
-[group('lint')]
-lint-dry:
-	nix run .#lint
+# host the dev server via tailscale funnel
+[group('net')]
+funnel:
+	nix run .#dev -- --host &
+	sleep 2
+	sudo tailscale funnel --bg 4321
+
+# stop the funnel
+[group('net')]
+funnel-off:
+	sudo tailscale funnel --https=443 off
+
+# sync fa pro icons (src/icons/fa-pro/**/*.svg, gitignored) to webserver
+sync-icons:
+	rsync -av --include="*/" --include="*.svg" --exclude="*" src/icons/fa-pro/ ivy@lovecomputer:/home/ivy/fa-pro-icons/
+
