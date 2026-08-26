@@ -1,5 +1,5 @@
 {
-  description = "ivy.rs — Astro site";
+  description = "corvid, my astro site";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
