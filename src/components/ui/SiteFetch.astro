@@ -1,0 +1,77 @@
+---
+import pkg from "../../../package.json";
+
+const astroVersion = pkg.dependencies.astro.replace(/^[\^~]/, "");
+const depCount = Object.keys(pkg.dependencies).length;
+const devDepCount = Object.keys(pkg.devDependencies ?? {}).length;
+const builtAt = new Date().toISOString().slice(0, 16).replace("T", " ");
+
+const rows: [string, string][] = [
+	["Framework", `astro ${astroVersion}`],
+	["UI", "svelte + tailwindcss"],
+	["Icons", "astro-icon (fa7)"],
+	["Packages", `${depCount} (${devDepCount} dev)`],
+	["Toolchain", "oxlint + oxfmt"],
+	["Built", builtAt],
+];
+
+const nameLine = `${pkg.name}@${pkg.version}`;
+---
+
+<div
+	class="sitefetch flex gap-6 items-start rounded-md bg-yin text-yang p-4 my-2 font-mono text-sm w-fit"
+>
+	<svg
+		class="shrink-0 w-28 h-28 mt-6 text-yang"
+		xmlns="http://www.w3.org/2000/svg"
+		fill="none"
+		viewBox="0 0 128 128"
+	>
+		<path
+			fill="currentColor"
+			d="M47.7 107.1c-5.5-5-7.2-15.7-4.9-23.4 4 4.9 9.6 6.4 15.4 7.3 8.9 1.3 17.6.8 25.9-3.2l2.8-1.7a18 18 0 0 1-7.2 20l-5.5 3.8c-5.6 3.8-7.2 8.2-5 14.7l.2.7a14 14 0 0 1-6.6-5.6 15.8 15.8 0 0 1-2.6-8.6c0-1.5 0-3-.2-4.5-.5-3.7-2.2-5.3-5.5-5.4-3.3-.1-5.9 2-6.6 5.2l-.2.7Z"
+		></path>
+		<path
+			fill="currentColor"
+			d="M16 82.4s16.5-8 33-8l12.4-38.3c.5-2 1.8-3.2 3.3-3.2 1.6 0 3 1.3 3.4 3.2l12.4 38.3c19.6 0 33 8 33 8l-28-76c-.8-2.3-2.2-3.7-4-3.7H48c-1.8 0-3.1 1.4-4 3.7l-28 76Z"
+		></path>
+		<path
+			fill="url(#sitefetch-astro-flame)"
+			d="M47.7 107.1c-5.5-5-7.2-15.7-4.9-23.4 4 4.9 9.6 6.4 15.4 7.3 8.9 1.3 17.6.8 25.9-3.2l2.8-1.7a18 18 0 0 1-7.2 20l-5.5 3.8c-5.6 3.8-7.2 8.2-5 14.7l.2.7a14 14 0 0 1-6.6-5.6 15.8 15.8 0 0 1-2.6-8.6c0-1.5 0-3-.2-4.5-.5-3.7-2.2-5.3-5.5-5.4-3.3-.1-5.9 2-6.6 5.2l-.2.7Z"
+		></path>
+		<defs>
+			<linearGradient
+				id="sitefetch-astro-flame"
+				x1="64.7"
+				x2="77.4"
+				y1="119.2"
+				y2="77.4"
+				gradientUnits="userSpaceOnUse"
+			>
+				<stop stop-color="#D83333"></stop>
+				<stop offset="1" stop-color="#F041FF"></stop>
+			</linearGradient>
+		</defs>
+	</svg>
+
+	<div class="flex flex-col gap-0.5 leading-tight">
+		<span class="text-purple-2 font-bold">{nameLine}</span>
+		<span class="text-purple-2">{"-".repeat(nameLine.length)}</span>
+		{
+			rows.map(([label, value]) => (
+				<span>
+					<span class="text-purple-2 font-bold">{label}</span>
+					<span class="text-purple-2">: </span>
+					{value}
+				</span>
+			))
+		}
+		<span class="flex mt-1">
+			<span class="bg-red-5 w-4 h-4" />
+			<span class="bg-purple-5 w-4 h-4" />
+			<span class="bg-blue-5 w-4 h-4" />
+			<span class="bg-green-5 w-4 h-4" />
+			<span class="bg-yellow-5 w-4 h-4" />
+		</span>
+	</div>
+</div>
