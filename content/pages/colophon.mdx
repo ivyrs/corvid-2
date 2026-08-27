@@ -4,6 +4,7 @@ date: 2026-02-17T00:00:00.000Z
 icon: fa-solid fa-globe
 hide: false
 ---
+
 import SiteFetch from "~/components/widgets/SiteFetch.astro";
 
 <SiteFetch />
@@ -17,84 +18,157 @@ as it's quick to type and my brain works well with it.
 the font is [Aporetic Sans](https://github.com/protesilaos/aporetic).
 
 ### colours
+
 i'm using the [uchu](https://uchu.style) palette, here's all the colours i use from it:
+
 <details>
-<summary>show colour table</summary>
-<table>
-  <thead>
-    <tr><th></th><th>name</th><th>used for</th><th>hex</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><span class="inline-block w-4 h-4 rounded-sm bg-red-7"></span></td>
-      <td><code>red-7</code></td>
-      <td>accent (light mode)</td>
-      <td><code>#b80c35</code></td>
-    </tr>
-    <tr>
-      <td><span class="inline-block w-4 h-4 rounded-sm bg-purple-2"></span></td>
-      <td><code>purple-2</code></td>
-      <td>accent (dark mode)</td>
-      <td><code>#c7abe9</code></td>
-    </tr>
-    <tr>
-      <td><span class="inline-block w-4 h-4 rounded-sm bg-yin border border-yin-4"></span></td>
-      <td><code>yin</code></td>
-      <td>background (dark mode) / text (light mode)</td>
-      <td><code>#080a0d</code></td>
-    </tr>
-    <tr>
-      <td><span class="inline-block w-4 h-4 rounded-sm bg-yang border border-yin-4"></span></td>
-      <td><code>yang</code></td>
-      <td>background (light mode) / text (dark mode)</td>
-      <td><code>#fdfdfd</code></td>
-    </tr>
-    <tr>
-      <td><span class="inline-block w-4 h-4 rounded-sm bg-yin-3"></span></td>
-      <td><code>yin-3</code></td>
-      <td>muted text (dark mode)</td>
-      <td><code>#b2b4b6</code></td>
-    </tr>
-    <tr>
-      <td><span class="inline-block w-4 h-4 rounded-sm bg-yin-7"></span></td>
-      <td><code>yin-7</code></td>
-      <td>muted text (light mode)</td>
-      <td><code>#515255</code></td>
-    </tr>
-    <tr>
-      <td><span class="inline-block w-4 h-4 rounded-sm bg-yin-9"></span></td>
-      <td><code>yin-9</code></td>
-      <td>/now entry card borders</td>
-      <td><code>#202225</code></td>
-    </tr>
-    <tr>
-      <td><span class="inline-block w-4 h-4 rounded-sm bg-red-6"></span></td>
-      <td><code>red-6</code></td>
-      <td>discord status: do not disturb</td>
-      <td><code>#cf0c3a</code></td>
-    </tr>
-    <tr>
-      <td><span class="inline-block w-4 h-4 rounded-sm bg-green-5"></span></td>
-      <td><code>green-5</code></td>
-      <td>discord status: online</td>
-      <td><code>#3fcf4e</code></td>
-    </tr>
-    <tr>
-      <td><span class="inline-block w-4 h-4 rounded-sm bg-yellow-6"></span></td>
-      <td><code>yellow-6</code></td>
-      <td>discord status: idle</td>
-      <td><code>#e5c255</code></td>
-    </tr>
-    <tr>
-      <td><span class="inline-block w-4 h-4 rounded-sm bg-yin-5"></span></td>
-      <td><code>yin-5</code></td>
-      <td>discord status: offline</td>
-      <td><code>#828386</code></td>
-    </tr>
-  </tbody>
-</table>
+	<summary>show colour table</summary>
+	<table>
+		<thead>
+			<tr>
+				<th></th>
+				<th>name</th>
+				<th>used for</th>
+				<th>hex</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<span class="inline-block w-4 h-4 rounded-sm bg-red-7"></span>
+				</td>
+				<td>
+					<code>red-7</code>
+				</td>
+				<td>accent (light mode)</td>
+				<td>
+					<code>#b80c35</code>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span class="inline-block w-4 h-4 rounded-sm bg-purple-2"></span>
+				</td>
+				<td>
+					<code>purple-2</code>
+				</td>
+				<td>accent (dark mode)</td>
+				<td>
+					<code>#c7abe9</code>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span class="inline-block w-4 h-4 rounded-sm bg-yin border border-yin-4"></span>
+				</td>
+				<td>
+					<code>yin</code>
+				</td>
+				<td>background (dark mode) / text (light mode)</td>
+				<td>
+					<code>#080a0d</code>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span class="inline-block w-4 h-4 rounded-sm bg-yang border border-yin-4"></span>
+				</td>
+				<td>
+					<code>yang</code>
+				</td>
+				<td>background (light mode) / text (dark mode)</td>
+				<td>
+					<code>#fdfdfd</code>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span class="inline-block w-4 h-4 rounded-sm bg-yin-3"></span>
+				</td>
+				<td>
+					<code>yin-3</code>
+				</td>
+				<td>muted text (dark mode)</td>
+				<td>
+					<code>#b2b4b6</code>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span class="inline-block w-4 h-4 rounded-sm bg-yin-7"></span>
+				</td>
+				<td>
+					<code>yin-7</code>
+				</td>
+				<td>muted text (light mode)</td>
+				<td>
+					<code>#515255</code>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span class="inline-block w-4 h-4 rounded-sm bg-yin-9"></span>
+				</td>
+				<td>
+					<code>yin-9</code>
+				</td>
+				<td>/now entry card borders</td>
+				<td>
+					<code>#202225</code>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span class="inline-block w-4 h-4 rounded-sm bg-red-6"></span>
+				</td>
+				<td>
+					<code>red-6</code>
+				</td>
+				<td>discord status: do not disturb</td>
+				<td>
+					<code>#cf0c3a</code>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span class="inline-block w-4 h-4 rounded-sm bg-green-5"></span>
+				</td>
+				<td>
+					<code>green-5</code>
+				</td>
+				<td>discord status: online</td>
+				<td>
+					<code>#3fcf4e</code>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span class="inline-block w-4 h-4 rounded-sm bg-yellow-6"></span>
+				</td>
+				<td>
+					<code>yellow-6</code>
+				</td>
+				<td>discord status: idle</td>
+				<td>
+					<code>#e5c255</code>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span class="inline-block w-4 h-4 rounded-sm bg-yin-5"></span>
+				</td>
+				<td>
+					<code>yin-5</code>
+				</td>
+				<td>discord status: offline</td>
+				<td>
+					<code>#828386</code>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 </details>
---- 
+---
 
 this site's code is licensed under the [Opinionated Queer License](https://oql.avris.it/license/v1.4).
 

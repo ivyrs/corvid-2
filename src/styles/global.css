@@ -6,56 +6,64 @@
    below. Declare them ourselves against the same hosted files. */
 @font-face {
 	font-family: "Aporetic Sans";
-	src: url("https://sunworms.github.io/aporetic-web-fonts/fonts/aporetic-sans-normalregularupright.woff2") format("woff2");
+	src: url("https://sunworms.github.io/aporetic-web-fonts/fonts/aporetic-sans-normalregularupright.woff2")
+		format("woff2");
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
 	font-family: "Aporetic Sans";
-	src: url("https://sunworms.github.io/aporetic-web-fonts/fonts/aporetic-sans-normalregularitalic.woff2") format("woff2");
+	src: url("https://sunworms.github.io/aporetic-web-fonts/fonts/aporetic-sans-normalregularitalic.woff2")
+		format("woff2");
 	font-weight: 400;
 	font-style: italic;
 	font-display: swap;
 }
 @font-face {
 	font-family: "Aporetic Sans";
-	src: url("https://sunworms.github.io/aporetic-web-fonts/fonts/aporetic-sans-normalboldupright.woff2") format("woff2");
+	src: url("https://sunworms.github.io/aporetic-web-fonts/fonts/aporetic-sans-normalboldupright.woff2")
+		format("woff2");
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
 	font-family: "Aporetic Sans";
-	src: url("https://sunworms.github.io/aporetic-web-fonts/fonts/aporetic-sans-normalbolditalic.woff2") format("woff2");
+	src: url("https://sunworms.github.io/aporetic-web-fonts/fonts/aporetic-sans-normalbolditalic.woff2")
+		format("woff2");
 	font-weight: 700;
 	font-style: italic;
 	font-display: swap;
 }
 @font-face {
 	font-family: "Aporetic Sans Mono";
-	src: url("https://sunworms.github.io/aporetic-web-fonts/fonts/aporetic-sans-mono-normalregularupright.woff2") format("woff2");
+	src: url("https://sunworms.github.io/aporetic-web-fonts/fonts/aporetic-sans-mono-normalregularupright.woff2")
+		format("woff2");
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
 	font-family: "Aporetic Sans Mono";
-	src: url("https://sunworms.github.io/aporetic-web-fonts/fonts/aporetic-sans-mono-normalregularitalic.woff2") format("woff2");
+	src: url("https://sunworms.github.io/aporetic-web-fonts/fonts/aporetic-sans-mono-normalregularitalic.woff2")
+		format("woff2");
 	font-weight: 400;
 	font-style: italic;
 	font-display: swap;
 }
 @font-face {
 	font-family: "Aporetic Sans Mono";
-	src: url("https://sunworms.github.io/aporetic-web-fonts/fonts/aporetic-sans-mono-normalboldupright.woff2") format("woff2");
+	src: url("https://sunworms.github.io/aporetic-web-fonts/fonts/aporetic-sans-mono-normalboldupright.woff2")
+		format("woff2");
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
 	font-family: "Aporetic Sans Mono";
-	src: url("https://sunworms.github.io/aporetic-web-fonts/fonts/aporetic-sans-mono-normalbolditalic.woff2") format("woff2");
+	src: url("https://sunworms.github.io/aporetic-web-fonts/fonts/aporetic-sans-mono-normalbolditalic.woff2")
+		format("woff2");
 	font-weight: 700;
 	font-style: italic;
 	font-display: swap;
@@ -82,20 +90,20 @@ mark {
 }
 
 hr {
-	@apply my-4 w-128 border-0 border-t border-purple-7 dark:border-purple-2;
+	@apply border-purple-7 dark:border-purple-2 my-4 w-128 border-0 border-t;
 }
 
 .prose table {
-	@apply w-fit border-collapse my-2 text-base;
+	@apply my-2 w-fit border-collapse text-base;
 }
 .prose thead {
-	@apply border-b-2 border-dashed border-purple-7 dark:border-purple-2;
+	@apply border-purple-7 dark:border-purple-2 border-b-2 border-dashed;
 }
 .prose th {
-	@apply text-left font-bold text-purple-7 dark:text-purple-2 py-1 pr-6 last:pr-0;
+	@apply text-purple-7 dark:text-purple-2 py-1 pr-6 text-left font-bold last:pr-0;
 }
 .prose td {
-	@apply py-1 pr-6 last:pr-0 border-b border-dashed border-yin-7 dark:border-yin-3;
+	@apply border-yin-7 dark:border-yin-3 border-b border-dashed py-1 pr-6 last:pr-0;
 }
 .prose tbody tr:last-child td {
 	@apply border-b-0;
@@ -109,7 +117,7 @@ hr {
 }
 
 abbr {
-	@apply underline-offset-4 decoration-purple-7 dark:decoration-purple-2;
+	@apply decoration-purple-7 dark:decoration-purple-2 underline-offset-4;
 }
 
 /* icon-list layout, matching Font Awesome's fa-ul/fa-li so self-hosted

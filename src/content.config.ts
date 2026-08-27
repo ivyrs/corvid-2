@@ -32,7 +32,7 @@ const pages = defineCollection({
 });
 
 const now = defineCollection({
-	loader: glob({ pattern: pattern, base: p + "now" })
-})
+	loader: glob({ pattern: pattern, base: p + "now" }),
+});
 
 export const collections = { blog, pages, now };
