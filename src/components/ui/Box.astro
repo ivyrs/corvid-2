@@ -1,11 +1,13 @@
 ---
 interface Props {
+	title?: string;
 	xstyle?: string;
 }
 
-const { xstyle } = Astro.props;
+const { title, xstyle } = Astro.props;
 ---
 
 <div class:list={["border-l-purple-7 dark:border-purple-2 border-l-1 pl-4 ml-4 w-fit", xstyle]}>
+	{title && <span class="text-base block">{title}</span>}
 	<slot />
 </div>
