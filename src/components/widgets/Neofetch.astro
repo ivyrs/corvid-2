@@ -54,7 +54,7 @@ const html = convert.toHtml(expandCursorColumns(raw.replace(/\s+$/, "")));
 <details class="my-2" open={open}>
 	{name && <summary class="cursor-pointer select-none link">{name}</summary>}
 	<pre
-		class="neofetch overflow-x-auto rounded-md bg-black/50 p-4 text-sm leading-tight my-2"
+		class="neofetch overflow-x-auto rounded-md p-4 text-sm leading-tight my-2 bg-yin text-yang"
 		set:html={html}
 	/>
 </details>

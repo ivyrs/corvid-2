@@ -2,7 +2,7 @@
 import Layout from "~/layouts/Page.astro";
 import { getCollection, render } from "astro:content";
 import Prose from "~/components/ui/Prose.astro";
-import RelatedPages from "~/components/ui/RelatedPages.astro";
+import RelatedPages from "~/components/content/RelatedPages.astro";
 
 export async function getStaticPaths() {
     const posts = await getCollection("pages");
