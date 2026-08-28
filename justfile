@@ -1,15 +1,15 @@
 dev:
-	nix run .#dev
+	devenv shell -- dev
 
 build:
-	nix run .#build
+	devenv shell -- build
 
 preview:
-	nix run .#preview
+	devenv shell -- preview
 
 # runs the astro cli
 @astro *args:
-	nix run .#astro -- {{args}}
+	devenv shell -- astro {{args}}
 
 # new /now post
 [group('content')]
@@ -33,21 +33,21 @@ preview:
 
 [group('format')]
 fmt:
-	nix run .#fmt
+	devenv shell -- fmt
 
 # dry run formatter
 [group('format')]
 fmt-dry:
-	nix run .#fmt-check
+	devenv shell -- fmt-check
 
 [group('lint')]
 lint:
-	nix run .#lint
+	devenv shell -- lint
 
 # host the dev server via tailscale funnel
 [group('net')]
 funnel:
-	nix run .#dev -- --host &
+	devenv shell -- dev --host &
 	sleep 2
 	sudo tailscale funnel --bg 4321
 
