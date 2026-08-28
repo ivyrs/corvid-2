@@ -2,6 +2,7 @@
 import Icon from "~/components/ui/Icon.astro";
 import Page from "~/layouts/Page.astro";
 import Prose from "~/components/ui/Prose.astro";
+import Quote from "~/components/ui/Quote.astro";
 import BlogTags from "~/components/content/BlogTags.astro";
 
 import { getBlogPosts } from "~/lib/blog";
@@ -31,7 +32,7 @@ const d = post.data;
 	}
 
 	<Prose class="!prose-headings:mt-12 !prose-headings:mb-8">
-		<Content />
+		<Content components={{ blockquote: Quote }} />
 	</Prose>
 
 	{d.tags && <BlogTags tags={d.tags} />}
