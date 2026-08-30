@@ -109,10 +109,21 @@ hr {
 	@apply border-b-0;
 }
 
+.prose blockquote {
+	@apply text-yin dark:text-yang my-4 border-0 p-0 font-normal not-italic;
+}
+.prose blockquote p:first-of-type::before,
+.prose blockquote p:last-of-type::after {
+	content: none;
+}
+
 @layer utilities {
 	/* font fix 4 safari */
 	.italic {
 		font-variation-settings: "slnt" -14;
+	}
+	.not-italic {
+		font-variation-settings: "slnt" 0;
 	}
 }
 

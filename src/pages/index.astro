@@ -2,10 +2,11 @@
 import Base from "~/layouts/Base.astro";
 import { Content } from "c#index.mdx";
 import Prose from "~/components/ui/Prose.astro";
+import Quote from "~/components/ui/Quote.astro";
 ---
 
 <Base>
   <Prose>
-    <Content />
+    <Content components={{ blockquote: Quote }} />
   </Prose>
 </Base>

@@ -1,0 +1,15 @@
+---
+import Box from "~/components/ui/Box.astro";
+
+const html = await Astro.slots.render("default");
+const match = html.match(/<p>(?:—|--)\s*([\s\S]*?)<\/p>\s*$/);
+const body = match ? html.slice(0, match.index) : html;
+const author = match?.[1];
+---
+
+<blockquote>
+	<Box xstyle="italic">
+		<Fragment set:html={body} />
+		{author && <footer class="not-italic text-sm text-yin-7 dark:text-yin-3 mt-1" set:html={`— ${author}`} />}
+	</Box>
+</blockquote>

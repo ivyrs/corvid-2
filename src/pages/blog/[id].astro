@@ -2,6 +2,7 @@
 import Icon from "~/components/ui/Icon.astro";
 import Page from "~/layouts/Page.astro";
 import Prose from "~/components/ui/Prose.astro";
+import Quote from "~/components/ui/Quote.astro";
 import BlogTags from "~/components/content/BlogTags.astro";
 import TOC from "~/components/ui/TableOfContents.astro";
 
@@ -33,7 +34,7 @@ const d = post.data;
 	
 	<section class="lg:grid lg:grid-cols-[minmax(0,65ch)_16rem] lg:gap-12 lg:items-start" >
 		<Prose class="!prose-headings:mt-12 !prose-headings:mb-8 lg:pr-[19rem]">
-			<Content />
+			<Content components={{ blockquote: Quote }} />
 		</Prose>
 
 		{headings.length > 1 && <TOC headings={headings} />}
