@@ -1,0 +1,21 @@
+---
+import Box from "./Box.astro";
+
+import type { Props as BoxProps } from "./Box.astro";
+
+interface Props extends BoxProps {
+	number: number;
+}
+
+const { title, xstyle, number } = Astro.props;
+
+const style =
+	"not-prose bg-purple-7/10 rounded-r-lg py-1 pr-4 lg:float-right lg:clear-right lg:w-[19rem] lg:-mr-[19rem] lg:-mt-8";
+---
+
+<Box 
+	title={title ? `${number}: ${title}` : `#${number}`} 
+	xstyle={[style, xstyle].filter(Boolean).join(" ")}
+>
+	<slot />
+</Box>

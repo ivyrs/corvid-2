@@ -1,0 +1,23 @@
+---
+import Box from "./Box.astro";
+
+import type { MarkdownHeading } from "astro";
+
+interface Props {
+	headings: MarkdownHeading[];
+	xstyle?: string;
+}
+
+const {headings, xstyle} = Astro.props;
+
+const head = headings.filter((h) => h.depth >= 3 && h.slug != "footnote-label");
+---
+
+<Box title="table of contents" xstyle={xstyle + " my-2"}>
+	<ul>
+	{ head.length > 1 && head.map((i) => {
+		return <li><a class="link" href={'#' + i.slug}>{i.text}</a></li>	
+	})
+	}
+	</ul>
+</Box>
