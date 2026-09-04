@@ -8,6 +8,13 @@ interface Props {
 
 import Icon from "~/components/ui/Icon.astro";
 const { href, relme, xstyle, icon = "fa7-solid:arrow-right" } = Astro.props;
+
+// MDX paragraph-wraps slot children written on their own line (e.g. a
+// multi-line <Link>), which breaks the inline underline/alignment below.
+// Strip that wrapper so the DOM is the same regardless of formatting.
+let label = (await Astro.slots.render("default")).trim();
+const wrapped = label.match(/^<p>([\s\S]*)<\/p>$/);
+if (wrapped) label = wrapped[1].trim();
 ---
 
 <a
@@ -16,5 +23,5 @@ const { href, relme, xstyle, icon = "fa7-solid:arrow-right" } = Astro.props;
 	href={href || "#"}
 >
 	<Icon name={icon} class={"text-xl text-purple-7 dark:text-purple-2 mt-1"} />
-	<span class="link ml-1"><slot /></span>
+	<span class="link ml-1" set:html={label} />
 </a>
