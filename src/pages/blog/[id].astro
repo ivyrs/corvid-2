@@ -20,6 +20,7 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content, headings } = await render(post);
 const d = post.data;
+const hasSideNotes = post.body?.includes("<SideNote") ?? false;
 ---
 
 <Page title={d.title} desc={d.desc} date={d.date} icon={d.icon} publish={d.publish}>
@@ -33,7 +34,9 @@ const d = post.data;
 	}
 	
 	<section class="lg:grid lg:grid-cols-[minmax(0,65ch)_16rem] lg:gap-12 lg:items-start" >
-		<Prose class="!prose-headings:mt-12 !prose-headings:mb-8 lg:pr-[19rem]">
+		<Prose
+			class={`!prose-headings:mt-12 !prose-headings:mb-8 ${hasSideNotes ? "lg:pr-[19rem]" : ""}`}
+		>
 			<Content components={{ blockquote: Quote }} />
 		</Prose>
 
