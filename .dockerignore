@@ -1,0 +1,11 @@
+.astro
+.devenv*
+.direnv
+.git
+.gitignore
+.vscode
+dist
+node_modules
+nvim.log
+Dockerfile*
+fly.toml

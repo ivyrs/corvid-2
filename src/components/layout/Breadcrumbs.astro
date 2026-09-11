@@ -1,35 +1,47 @@
 ---
 interface Props {
-    title?: string;
-    path?: string;
+	title?: string;
+	path?: string;
 }
 
 const { title, path } = Astro.props;
 const pathname = path ?? Astro.url.pathname;
-const paths = pathname.split('/').filter(Boolean);
+const paths = pathname.split("/").filter(Boolean);
 
 const breadcrumbs = [
-  { label: '~', href: '/' },
-  ...paths.map((segment, i) => ({
-    label: i === paths.length - 1 && title ? title : segment,
-    href: '/' + paths.slice(0, i + 1).join('/'),
-  })),
+	{ label: "~", href: "/" },
+	...paths.map((segment, i) => ({
+		label: i === paths.length - 1 && title ? title : segment,
+		href: "/" + paths.slice(0, i + 1).join("/"),
+	})),
 ];
 ---
 
-<nav aria-label="Breadcrumbs">
-  <ol class="md:flex">
-    {breadcrumbs.map((crumb, i) => (
-      <li>
-        {i < breadcrumbs.length - 1 ? (
-          <>
-            <a class="text-purple-7 dark:text-purple-2" href={crumb.href}>{crumb.label}</a>
-            <span class="text-yin-7 dark:text-yin-3">/</span>
-          </>
-        ) : (
-          <span aria-current="page" class="">{crumb.label}</span>
-        )}
-      </li>
-    ))}
-  </ol>
+<nav aria-label="Breadcrumbs" class="min-w-0">
+	<ol class="flex min-w-0 flex-wrap">
+		{breadcrumbs.map((crumb, i) => (
+			<li
+				class:list={[
+					"min-w-0",
+					i === breadcrumbs.length - 1 && "break-words",
+				]}
+			>
+				{i < breadcrumbs.length - 1 ? (
+					<>
+						<a
+							class="text-purple-7 dark:text-purple-2"
+							href={crumb.href}
+						>
+							{crumb.label}
+						</a>
+						<span class="text-yin-7 dark:text-yin-3">/</span>
+					</>
+				) : (
+					<span aria-current="page">
+						{crumb.label}
+					</span>
+				)}
+			</li>
+		))}
+	</ol>
 </nav>

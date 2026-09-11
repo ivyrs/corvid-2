@@ -1,0 +1,87 @@
+---
+interface Props {
+	title: string;
+	theme?:
+		| "gray"
+		| "red"
+		| "pink"
+		| "purple"
+		| "blue"
+		| "green"
+		| "yellow"
+		| "orange"
+		| "yin";
+	link?: string;
+	linkText?: string;
+}
+
+const { title, theme = "yin", link, linkText } = Astro.props;
+
+const themes = {
+	gray: {
+		heading: "text-gray-7 dark:text-gray-2",
+		border: "border-gray-7 dark:border-gray-2",
+		links: "[&_a]:text-gray-7 dark:[&_a]:text-gray-2",
+	},
+	red: {
+		heading: "text-red-7 dark:text-red-2",
+		border: "border-red-7 dark:border-red-2",
+		links: "[&_a]:text-red-7 dark:[&_a]:text-red-2",
+	},
+	pink: {
+		heading: "text-pink-7 dark:text-pink-2",
+		border: "border-pink-7 dark:border-pink-2",
+		links: "[&_a]:text-pink-7 dark:[&_a]:text-pink-2",
+	},
+	purple: {
+		heading: "text-purple-7 dark:text-purple-2",
+		border: "border-purple-7 dark:border-purple-2",
+		links: "[&_a]:text-purple-7 dark:[&_a]:text-purple-2",
+	},
+	blue: {
+		heading: "text-blue-7 dark:text-blue-2",
+		border: "border-blue-7 dark:border-blue-2",
+		links: "[&_a]:text-blue-7 dark:[&_a]:text-blue-2",
+	},
+	green: {
+		heading: "text-green-7 dark:text-green-2",
+		border: "border-green-7 dark:border-green-2",
+		links: "[&_a]:text-green-7 dark:[&_a]:text-green-2",
+	},
+	yellow: {
+		heading: "text-yellow-7 dark:text-yellow-2",
+		border: "border-yellow-7 dark:border-yellow-2",
+		links: "[&_a]:text-yellow-7 dark:[&_a]:text-yellow-2",
+	},
+	orange: {
+		heading: "text-orange-7 dark:text-orange-2",
+		border: "border-orange-7 dark:border-orange-2",
+		links: "[&_a]:text-orange-7 dark:[&_a]:text-orange-2",
+	},
+	yin: {
+		heading: "text-yin-7 dark:text-yin-2",
+		border: "border-yin-7 dark:border-yin-2",
+		links: "[&_a]:text-yin-7 dark:[&_a]:text-yin-2",
+	},
+} as const;
+
+const colours = themes[theme];
+---
+
+<section
+	class:list={[
+		"not-prose w-full",
+		colours.links,
+	]}
+>
+	<h2 class={colours.heading}>{title}</h2>
+	<hr class:list={["mt-1 mb-2 border-dashed", colours.border]} />
+
+	<slot />
+
+	{link && (
+		<a href={link} class="mt-4 block">
+			→ {linkText || link}
+		</a>
+	)}
+</section>

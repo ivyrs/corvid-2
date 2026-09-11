@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import others from "~/data/others.json";
 ---
 
-<div class="grid grid-cols-[repeat(3,max-content)] md:grid-cols-[repeat(5,max-content)] gap-2">
+<div class="grid grid-cols-[repeat(3,max-content)] md:grid-cols-[repeat(6,max-content)] gap-2">
 	{
 		others.buttons.map((i) => {
 			return (
@@ -22,4 +22,4 @@ import others from "~/data/others.json";
 	}
 </div>
 
-<p>you can hot-link my button from this url: <code class="text-yin dark:text-yang">https://ivyro.se/img/ivy-rs.png</code></p>
+<!-- <p>you can hot-link my button from this url: <code class="text-yin dark:text-yang">https://ivyro.se/img/ivy-rs.png</code></p> -->

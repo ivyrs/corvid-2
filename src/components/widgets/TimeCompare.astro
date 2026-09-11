@@ -1,16 +1,19 @@
 ---
-import Icon from "~/components/ui/Icon.astro";
-
 interface Props {
-	timezone: string;
+	timezone?: string;
 }
 
-const { timezone } = Astro.props;
+const { timezone = "Europe/London" } = Astro.props;
 ---
 
-<div class="not-prose flex items-center gap-2 text-base my-2" id="time-compare" data-timezone={timezone}>
-	<Icon name="fa-solid fa-clock" class="text-purple-7 dark:text-purple-2" />
-	<span id="time-compare-text" class="text-yin-7 dark:text-yin-3">loading...</span>
+<div
+	class="not-prose flex items-center gap-2 text-base my-2"
+	id="ivy-time"
+	data-timezone={timezone}
+>
+	<span id="ivy-time-text" class="text-yin-7 dark:text-yin-3">
+		loading...
+	</span>
 </div>
 
 <script>
@@ -22,11 +25,6 @@ const { timezone } = Astro.props;
 		});
 	}
 
-	function friendlyName(tz: string) {
-		return tz.split("/").pop()?.replace(/_/g, " ") ?? tz;
-	}
-
-	// my birthday is 16th october (see /about)
 	function isBirthday(tz: string): boolean {
 		const parts = new Intl.DateTimeFormat("en-GB", {
 			timeZone: tz,
@@ -36,35 +34,23 @@ const { timezone } = Astro.props;
 
 		const month = parts.find((p) => p.type === "month")?.value;
 		const day = parts.find((p) => p.type === "day")?.value;
+
 		return month === "10" && day === "16";
 	}
 
-	function tick(mine: string, text: HTMLElement) {
-		let theirs: string;
-		try {
-			theirs = Intl.DateTimeFormat().resolvedOptions().timeZone;
-		} catch {
-			theirs = mine;
-		}
+	function tick(timezone: string, text: HTMLElement) {
+		const time = formatTime(timezone);
+		const birthday = isBirthday(timezone) ? " 🎂 it's my birthday!" : "";
 
-		const mineTime = formatTime(mine);
-		const birthday = isBirthday(mine) ? " 🎂 it's my birthday!" : "";
-
-		if (theirs === mine) {
-			text.textContent = `it's ${mineTime} for us both!${birthday}`;
-			return;
-		}
-
-		const theirsTime = formatTime(theirs);
-		text.textContent = `it's ${mineTime} for me, ${theirsTime} for you (${friendlyName(theirs)})${birthday}`;
+		text.textContent = `time: ${time} (${timezone})${birthday}`;
 	}
 
-	const container = document.getElementById("time-compare");
-	const text = document.getElementById("time-compare-text");
-	const mine = container?.dataset.timezone;
+	const container = document.getElementById("ivy-time");
+	const text = document.getElementById("ivy-time-text");
+	const timezone = container?.dataset.timezone;
 
-	if (container && text && mine) {
-		tick(mine, text);
-		setInterval(() => tick(mine, text), 30_000);
+	if (container && text && timezone) {
+		tick(timezone, text);
+		setInterval(() => tick(timezone, text), 30_000);
 	}
 </script>

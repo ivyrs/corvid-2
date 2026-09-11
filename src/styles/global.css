@@ -1,64 +1,8 @@
 @import url(https://cdn.cache.lol/profiles/icons/omg.lol-icons.css);
-
-@font-face {
-	font-family: "Aporetic Sans";
-	src: url("/fonts/aporetic/aporetic-sans-normalregularupright.woff2") format("woff2");
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: "Aporetic Sans";
-	src: url("/fonts/aporetic/aporetic-sans-normalregularitalic.woff2") format("woff2");
-	font-weight: 400;
-	font-style: italic;
-	font-display: swap;
-}
-@font-face {
-	font-family: "Aporetic Sans";
-	src: url("/fonts/aporetic/aporetic-sans-normalboldupright.woff2") format("woff2");
-	font-weight: 700;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: "Aporetic Sans";
-	src: url("/fonts/aporetic/aporetic-sans-normalbolditalic.woff2") format("woff2");
-	font-weight: 700;
-	font-style: italic;
-	font-display: swap;
-}
-@font-face {
-	font-family: "Aporetic Sans Mono";
-	src: url("/fonts/aporetic/aporetic-sans-mono-normalregularupright.woff2") format("woff2");
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: "Aporetic Sans Mono";
-	src: url("/fonts/aporetic/aporetic-sans-mono-normalregularitalic.woff2") format("woff2");
-	font-weight: 400;
-	font-style: italic;
-	font-display: swap;
-}
-@font-face {
-	font-family: "Aporetic Sans Mono";
-	src: url("/fonts/aporetic/aporetic-sans-mono-normalboldupright.woff2") format("woff2");
-	font-weight: 700;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: "Aporetic Sans Mono";
-	src: url("/fonts/aporetic/aporetic-sans-mono-normalbolditalic.woff2") format("woff2");
-	font-weight: 700;
-	font-style: italic;
-	font-display: swap;
-}
-
+@import "./fonts.css";
 @import "tailwindcss";
-@import "./uchu.css"; /* colourscheme */
+@import "./uchu.css";
+/* colourscheme */
 @plugin "@tailwindcss/typography";
 
 /* dark: now follows the .dark class (set by the theme toggle) instead of prefers-color-scheme */
@@ -69,30 +13,34 @@
 	--font-mono: "Aporetic Sans Mono", monospace;
 }
 
-mark {
-	@apply text-purple-7 dark:text-purple-2 bg-[rgba(0,0,0,0)];
-}
+/* mark { */
+/* 	@apply text-purple-7 dark:text-purple-2 bg-[rgba(0, 0, 0, 0)]; */
+/* } */
 
 .link {
 	@apply text-purple-7 dark:text-purple-2 underline decoration-dashed underline-offset-4;
 }
 
-hr {
-	@apply border-purple-7 dark:border-purple-2 my-4 w-128 border-0 border-t;
-}
+/* hr { */
+/* 	@apply border-purple-7 dark:border-purple-2 my-4 w-128 border-0 border-t; */
+/* } */
 
 .prose table {
 	@apply my-2 w-fit border-collapse text-base;
 }
+
 .prose thead {
 	@apply border-purple-7 dark:border-purple-2 border-b-2 border-dashed;
 }
+
 .prose th {
 	@apply text-purple-7 dark:text-purple-2 py-1 pr-6 text-left font-bold last:pr-0;
 }
+
 .prose td {
 	@apply border-yin-7 dark:border-yin-3 border-b border-dashed py-1 pr-6 last:pr-0;
 }
+
 .prose tbody tr:last-child td {
 	@apply border-b-0;
 }
@@ -100,6 +48,7 @@ hr {
 .prose blockquote {
 	@apply text-yin dark:text-yang my-4 border-0 p-0 font-normal not-italic;
 }
+
 .prose blockquote p:first-of-type::before,
 .prose blockquote p:last-of-type::after {
 	content: none;
@@ -110,6 +59,7 @@ hr {
 	.italic {
 		font-variation-settings: "slnt" -14;
 	}
+
 	.not-italic {
 		font-variation-settings: "slnt" 0;
 	}
@@ -126,9 +76,11 @@ abbr {
 	margin-left: 2.5em;
 	padding-left: 0;
 }
+
 .fa-ul > li {
 	position: relative;
 }
+
 .fa-li {
 	position: absolute;
 	left: -2em;
@@ -139,6 +91,7 @@ abbr {
 	align-items: center;
 	justify-content: center;
 }
+
 /* astro-icon SVGs read smaller than the font-glyph icons they replaced
    (Font Awesome's glyphs fill more of their em-box); bump them up
    everywhere rather than special-casing each place Icon is used */

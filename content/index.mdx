@@ -1,51 +1,10 @@
-import Link from "~/components/ui/Link.astro";
-import LinkRow from "~/components/ui/LinkRow.astro";
-import Box from "~/components/ui/Box.astro";
-import NowPlaying from "~/components/widgets/NowPlaying.astro";
-import DiscordStatus from "~/components/widgets/DiscordStatus.astro";
-import TimeCompare from "~/components/widgets/TimeCompare.astro";
-import OtherSites from "~/components/fun/OtherSites.astro";
-
 hey, i'm ivy, i'm a software dev, musician and student.
-
-<Box xstyle="my-4" title="status">
-	<DiscordStatus userId="295975431058751498" />
-	<NowPlaying user="ivyt" />
-	<TimeCompare timezone="Europe/London" />
-</Box>
 
 i like working with the web, but i want to get more into low level work,
 so i'm learning Rust! <span class="text-sm mb-2">and elixir and go...</span>
 
-right now, i'm working on this site as well as
-[a discord bot for Navidrome](https://codeberg.org/ivyrs/navi) in Python, with [my girlfriend](https://xela.zone).
-
-<LinkRow>
-	<Link href="/now">/now</Link>
-	<Link href="https://codeberg.org/ivyrs" icon="fa-brands fa-codeberg">
-		my code
-	</Link>
-</LinkRow>
-
 aside from software dev, i'm a huge fan of Linux and especially NixOS,
 currently using it on all of my systems, including my daily driver MacBook Air.
 
-<LinkRow>
-	<Link href="/setup" icon="fa-pro-solid fa-shelves">
-		/setup
-	</Link>
-	<Link href="https://codeberg.org/ivyrs/nix" icon="fa-solid fa-snowflake">
-		my flake
-	</Link>
-</LinkRow>
-
 when i'm not at a computer screen, i'm usually practicing for my band's next performance,
 doing a crossword, taking a walk or listening to music.
-
-<LinkRow>
-	<Link href="https://www.puzzmo.com/user/rs/ivyrose" icon="fa-solid fa-puzzle-piece">
-		puzzmo
-	</Link>
-</LinkRow>
-
-<OtherSites />

@@ -1,38 +1,33 @@
 {
 	"webrings": [
 		{
-			"text": "no-ai webring",
+			"text": "no-ai",
 			"home": "https://baccyflap.com/noai",
 			"prev": "https://baccyflap.com/noai/?prv&s=irf",
 			"next": "https://baccyflap.com/noai/?nxt&s=irf",
 			"rand": "https://baccyflap.com/noai/?rnd"
 		},
 		{
-			"text": "nix webring",
+			"text": "nix",
 			"home": "https://nixwebr.ing",
 			"prev": "https://nixwebr.ing/prev/ivy",
 			"next": "https://nixwebr.ing/next/ivy",
 			"rand": "https://nixwebr.ing/rand"
 		},
 		{
-			"text": "indiewebring",
+			"text": "indieweb",
 			"home": "https://xn--sr8hvo.ws",
 			"prev": "https://xn--sr8hvo.ws/previous",
 			"next": "https://xn--sr8hvo.ws/next"
 		},
 		{
-			"text": "bucketring",
+			"text": "bucket",
 			"prev": "https://webring.bucketfish.me/redirect.html?to=prev&name='ivy rose'",
 			"next": "https://webring.bucketfish.me/redirect.html?to=from&name='ivy rose'",
 			"home": "https://webring.bucketfish.me"
 		}
 	],
 	"buttons": [
-		{
-			"link": "/",
-			"image": "/img/ivy-rs.png",
-			"alt": "purple text on a light purple background saying ivy.rs"
-		},
 		{
 			"link": "msmsmsm.com",
 			"image": "/img/msmsmsm.png",

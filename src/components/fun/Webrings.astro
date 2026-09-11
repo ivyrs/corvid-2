@@ -2,27 +2,17 @@
 import others from "~/data/others.json";
 ---
 
-<div class="grid grid-cols-[repeat(1,max-content)] md:grid-cols-[repeat(2,max-content)] gap-4">
+<div class="mt-4 grid grid-cols-[repeat(1,max-content)] md:grid-cols-[repeat(4,max-content)] gap-8">
   {
     others.webrings.map((i) => (
-      <div class="flex gap-1">
-        <a href={i.prev} target="_top">
-          « prev
-        </a>
-		<span>|</span>
-        <a href={i.home} target="_blank">
-          {i.text}
-        </a>
-        {i.rand && (
-          <a href={i.rand} class="text-xs mt-1" target="_top">
-            (random)
-          </a>
-        )}
-		<span>|</span>
-        <a href={i.next} target="_top">
-          next »
-        </a>
-      </div>
-    ))
+		<div class="flex gap-2">
+			<span class="flex gap-1">
+				<a href={i.prev}>{'<-'}</a>
+				<span>{i.text}</span>
+				<a href={i.next}>{'->'}</a>
+				{i.rand && <a href={i.rand}>{'rnd'}</a>}
+			</span>
+		</div>
+	))
   }
 </div>

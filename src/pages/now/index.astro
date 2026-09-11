@@ -1,16 +1,14 @@
 ---
 import Page from "~/layouts/Page.astro";
 import Prose from "~/components/ui/Prose.astro";
-import { getCollection, render } from "astro:content";
+import { render } from "astro:content";
 import CDate from "~/components/ui/Date.astro";
+import { getNowPosts } from "~/lib/now";
 
-const posts = await getCollection("now");
-const sorted = posts.sort(
-	(a, b) => new Date(b.id).getTime() - new Date(a.id).getTime(),
-);
+const posts = await getNowPosts()
 
 const rendered = await Promise.all(
-	sorted.map(async (post) => ({
+	posts.map(async (post) => ({
 		post,
 		Content: (await render(post)).Content,
 	})),
@@ -25,7 +23,7 @@ const rendered = await Promise.all(
 	{
 		rendered.map(({ post, Content }) => (
 			<article id={post.id} class="mb-4">
-				<h3 class="w-[600px] text-purple-7 dark:text-purple-2 font-bold text-xl mb-1">
+				<h3 class="text-purple-7 dark:text-purple-2 font-bold mb-1">
 					<CDate date={post.id} />
 				</h3>
 				<Prose>

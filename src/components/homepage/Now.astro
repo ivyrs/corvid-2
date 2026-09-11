@@ -1,0 +1,23 @@
+---
+import Block from "./HPBlock.astro";
+import CDate from "~/components/ui/Date.astro";
+import { getNowPosts } from "~/lib/now";
+
+const posts = (await getNowPosts()).slice(0, 2);
+---
+
+<Block title="how i'm feeling /now" theme="orange" link="/now">
+	<div class="space-y-4">
+		{posts.map((post) => (
+			<article>
+				<div class="mb-1 text-yin-7 dark:text-yin-3">
+					<CDate date={post.id} />
+				</div>
+
+				<p class="line-clamp-3">
+					{post.body}
+				</p>
+			</article>
+		))}
+	</div>
+</Block>

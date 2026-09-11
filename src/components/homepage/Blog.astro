@@ -1,0 +1,50 @@
+---
+import Block from "./HPBlock.astro";
+import Date from "../ui/Date.astro";
+import { getBlogPosts } from "../../lib/blog";
+
+const posts = await getBlogPosts();
+const latest = posts.slice(0, 2);
+const older = posts.slice(2, 5);
+---
+
+<Block title="blog posts" theme="blue" link="/blog">
+	<div class="grid gap-6">
+		<div class="grid gap-4 sm:grid-cols-2">
+			{latest.map((post) => (
+				<article>
+					<a href={`/blog/${post.id}`}>
+						{post.data.title}
+					</a>
+
+					<span class="ml-2 text-yin-7 dark:text-yin-3">
+						<Date date={post.data.date} />
+					</span>
+
+					{post.data.desc && (
+						<p class="mt-1">
+							{post.data.desc}
+						</p>
+					)}
+				</article>
+			))}
+		</div>
+
+<div class="grid gap-x-6 gap-y-4 sm:grid-cols-2 xl:grid-cols-3">
+	{older.map((post) => (
+		<div>
+			<a
+				href={`/blog/${post.id}`}
+				class="block"
+			>
+				{post.data.title}
+			</a>
+
+			<span class="text-yin-7 dark:text-yin-3">
+				<Date date={post.data.date} />
+			</span>
+		</div>
+	))}
+</div>
+		</div>
+</Block>

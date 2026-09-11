@@ -1,0 +1,63 @@
+@font-face {
+	font-family: "Aporetic Sans";
+	src: url("/fonts/aporetic/aporetic-sans-normalregularupright.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "Aporetic Sans";
+	src: url("/fonts/aporetic/aporetic-sans-normalregularitalic.woff2") format("woff2");
+	font-weight: 400;
+	font-style: italic;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "Aporetic Sans";
+	src: url("/fonts/aporetic/aporetic-sans-normalboldupright.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "Aporetic Sans";
+	src: url("/fonts/aporetic/aporetic-sans-normalbolditalic.woff2") format("woff2");
+	font-weight: 700;
+	font-style: italic;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "Aporetic Sans Mono";
+	src: url("/fonts/aporetic/aporetic-sans-mono-normalregularupright.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "Aporetic Sans Mono";
+	src: url("/fonts/aporetic/aporetic-sans-mono-normalregularitalic.woff2") format("woff2");
+	font-weight: 400;
+	font-style: italic;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "Aporetic Sans Mono";
+	src: url("/fonts/aporetic/aporetic-sans-mono-normalboldupright.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "Aporetic Sans Mono";
+	src: url("/fonts/aporetic/aporetic-sans-mono-normalbolditalic.woff2") format("woff2");
+	font-weight: 700;
+	font-style: italic;
+	font-display: fallback;
+}

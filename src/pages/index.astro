@@ -2,11 +2,42 @@
 import Base from "~/layouts/Base.astro";
 import { Content } from "c#index.mdx";
 import Prose from "~/components/ui/Prose.astro";
-import Quote from "~/components/ui/Quote.astro";
+
+import Block from "~/components/homepage/HPBlock.astro";
+import Status from "~/components/homepage/Status.astro";
+import Blog from "~/components/homepage/Blog.astro";
+import Now from "~/components/homepage/Now.astro";
+import OtherSites from "~/components/homepage/OtherSites.astro";
 ---
 
 <Base>
-  <Prose>
-    <Content components={{ blockquote: Quote }} />
-  </Prose>
+	<div class="grid grid-cols-1 md:grid-cols-3 gap-y-4 md:gap-x-4">
+	<!-- intro / about -->
+	<div class="md:col-span-2">
+		<Block title="~/about.md" theme="purple">
+				<Prose>
+					<Content />
+				</Prose>
+		</Block>
+	</div>
+
+	<!-- live-ish state -->
+	<div class="md:col-span-1">
+		<Status />
+	</div>
+
+	<!-- now -->
+	<div class="md:col-span-1">
+		<Now />
+	</div>
+
+	<!-- blog -->
+	<div class="md:col-span-2">
+		<Blog />
+	</div>
+	
+	<div class="md:col-span-2">
+		<OtherSites />
+	</div>
+</div>
 </Base>
