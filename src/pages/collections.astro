@@ -28,7 +28,7 @@ const sorted = entries
             <a
               class="link"
               href={`/${i.id}`}
-            >{`${i.data.title || "" + i.id}`}</a>{" "}
+            >{`${i.data.title || "./" + i.id.replace(/^collections\//, "")}`}</a>{" "}
             {i.data.desc && `- ${i.data.desc}`}
           </li>
         );

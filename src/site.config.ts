@@ -8,7 +8,7 @@ export const author = {
 };
 
 export const site = {
-	title: "ivy!",
-	url: "https://ivy.rs",
+	title: "ivyro.se",
+	url: "https://ivyro.se",
 	desc: `${author.name}'s personal site`,
 };

@@ -1,51 +1,92 @@
 ---
-import Icon from "~/components/ui/Icon.astro";
-
 interface Props {
-	user: string;
+	user?: string;
 }
 
-const { user } = Astro.props;
+const { user = "ivyt" } = Astro.props;
 ---
 
-<div class="flex items-center gap-2 text-base my-2" id="now-playing" data-user={user}>
-	<span id="now-playing-text" class="">loading...</span>
+<div
+	class="text-base my-2"
+	id="now-playing"
+	data-user={user}
+>
+	<span id="listening-prefix" class="text-yin-7 dark:text-yin-3">
+		loading...
+	</span>
+	<span id="listening-track"></span>
+
+	<br />
+
+	<span id="listening-by" class="text-yin-7 dark:text-yin-3"></span>
+	<span id="listening-artist"></span>
 </div>
 
 <script>
-	async function fetchStatus(user: string, el: HTMLElement) {
+	async function fetchStatus(
+		user: string,
+		prefix: HTMLElement,
+		track: HTMLElement,
+		by: HTMLElement,
+		artist: HTMLElement,
+	) {
 		try {
-			const playingRes = await fetch(`https://api.listenbrainz.org/1/user/${user}/playing-now`);
+			const playingRes = await fetch(
+				`https://api.listenbrainz.org/1/user/${user}/playing-now`
+			);
 			const playingData = await playingRes.json();
 			const nowListen = playingData.payload?.listens?.[0];
 
 			if (nowListen) {
 				const { track_name, artist_name } = nowListen.track_metadata;
-				el.textContent = `listening to ${track_name} by ${artist_name}`;
+
+				prefix.textContent = "listening to ";
+				track.textContent = track_name;
+				by.textContent = "by ";
+				artist.textContent = artist_name;
+
 				return;
 			}
 
-			const recentRes = await fetch(`https://api.listenbrainz.org/1/user/${user}/listens?count=1`);
+			const recentRes = await fetch(
+				`https://api.listenbrainz.org/1/user/${user}/listens?count=1`
+			);
 			const recentData = await recentRes.json();
 			const lastListen = recentData.payload?.listens?.[0];
 
 			if (lastListen) {
 				const { track_name, artist_name } = lastListen.track_metadata;
-				el.textContent = `last listened to ${track_name} by ${artist_name}`;
+
+				prefix.textContent = "last listened to ";
+				track.textContent = track_name;
+				by.textContent = "by ";
+				artist.textContent = artist_name;
 			} else {
-				el.textContent = "no recent listens";
+				prefix.textContent = "no recent listens";
+				track.textContent = "";
+				by.textContent = "";
+				artist.textContent = "";
 			}
 		} catch {
-			el.textContent = "couldn't load listening status";
+			prefix.textContent = "couldn't load listening status";
+			track.textContent = "";
+			by.textContent = "";
+			artist.textContent = "";
 		}
 	}
 
 	const container = document.getElementById("now-playing");
-	const textEl = document.getElementById("now-playing-text");
+	const prefix = document.getElementById("listening-prefix");
+	const track = document.getElementById("listening-track");
+	const by = document.getElementById("listening-by");
+	const artist = document.getElementById("listening-artist");
 	const user = container?.dataset.user;
 
-	if (container && textEl && user) {
-		fetchStatus(user, textEl);
-		setInterval(() => fetchStatus(user, textEl), 60_000);
+	if (container && prefix && track && by && artist && user) {
+		const update = () =>
+			fetchStatus(user, prefix, track, by, artist);
+
+		update();
+		setInterval(update, 60_000);
 	}
 </script>

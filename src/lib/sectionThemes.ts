@@ -72,6 +72,7 @@ export const themeClasses = {
 export const sectionThemes = {
 	about: "purple",
 	blog: "blue",
+	collections: "yellow",
 	now: "orange",
 	sites: "green",
 	status: "yin",

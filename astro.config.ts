@@ -12,7 +12,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 // import { rehypeFootnoteHr } from "~/lib/rehype";
 
 export default defineConfig({
-	site: "https://ivy.rs",
+	site: "https://ivyro.se",
 
 	integrations: [svelte(), mdx(), icon()],
 	vite: {

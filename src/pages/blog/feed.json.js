@@ -1,5 +1,5 @@
 import { blogFeedResponse } from "~/lib/feeds";
 
 export async function GET() {
-	return blogFeedResponse("rss");
+	return blogFeedResponse("json");
 }

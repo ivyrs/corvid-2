@@ -23,6 +23,7 @@ const [latest, ...older] = await Promise.all(
 	desc="what i'm focused on"
 	icon="fa-solid fa-calendar"
 	theme={theme}
+	feedBase="/now/feed"
 >
 	{latest && (
 		<article id={latest.post.id} class="mb-8">

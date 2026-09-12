@@ -5,12 +5,12 @@ import Metadata from "~/components/layout/Metadata.astro";
 import Header from "~/components/layout/Header.astro";
 import Footer from "~/components/layout/Footer.astro";
 
-const { title, desc, showHeader = true, showFooter = true } = Astro.props;
+const { title, desc, feedBase, showHeader = true, showFooter = true } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-	<Metadata title={title} desc={desc} />
+	<Metadata title={title} desc={desc} feedBase={feedBase} />
 
 	<body
 		class="bg-yang text-yin dark:bg-yin dark:text-yang p-4 sm:p-8 font-sans text-pretty max-w-6xl [--section-accent:var(--color-yin-7)] dark:[--section-accent:var(--color-yin-2)]"

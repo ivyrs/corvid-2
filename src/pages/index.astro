@@ -11,11 +11,11 @@ import OtherSites from "~/components/homepage/OtherSites.astro";
 import { sectionThemes } from "~/lib/sectionThemes";
 ---
 
-<Base>
+<Base showHeader={false}>
 	<div class="grid grid-cols-1 md:grid-cols-3 gap-y-8 md:gap-x-8">
 	<!-- intro / about -->
 	<div class="md:col-span-2">
-		<Block title="~/about.md" theme={sectionThemes.about}>
+			<Block title="ivyro.se:~/about.md" theme={sectionThemes.about} link="/about">
 				<Prose>
 					<Content />
 				</Prose>
@@ -39,6 +39,17 @@ import { sectionThemes } from "~/lib/sectionThemes";
 	
 	<div class="md:col-span-2">
 		<OtherSites />
+	</div>
+
+	<div class="md:col-span-1">
+			<Block title="/etc" link="/etc">
+				everywhere without a block here
+				<div class="flex flex-col">
+					<a href="/setup">/setup</a>
+					<a href="/edc">/etc</a>
+					<a href="/colophon">/colophon</a>
+				</div>
+		</Block>
 	</div>
 </div>
 </Base>
