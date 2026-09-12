@@ -1,5 +1,5 @@
 ---
-import Block from "./HPBlock.astro";
+import Block from "./Block.astro";
 import CDate from "~/components/ui/Date.astro";
 import { getNowPosts } from "~/lib/now";
 import { sectionThemes } from "~/lib/sectionThemes";
@@ -7,7 +7,7 @@ import { sectionThemes } from "~/lib/sectionThemes";
 const posts = (await getNowPosts()).slice(0, 1);
 ---
 
-<Block title="how i'm feeling /now" theme={sectionThemes.now} link="/now">
+<Block title="how i'm feeling /now" theme={sectionThemes.now} links={[{href: "/now"}]}>
 	<div class="space-y-4">
 		{posts.map((post) => (
 			<article>

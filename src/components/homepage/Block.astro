@@ -1,14 +1,18 @@
 ---
 import { themeClasses, type Theme } from "~/lib/sectionThemes";
 
+interface BlockLink {
+	href: string;
+	text?: string;
+}
+
 interface Props {
 	title: string;
 	theme?: Theme;
-	link?: string;
-	linkText?: string;
+	links?: BlockLink[];
 }
 
-const { title, theme = "yin", link, linkText } = Astro.props;
+const { title, theme = "yin", links } = Astro.props;
 const colours = themeClasses[theme];
 ---
 
@@ -24,9 +28,12 @@ const colours = themeClasses[theme];
 
 	<slot />
 
-	{link && (
-		<a href={link} class="mt-4 block">
-			→ {linkText || link}
-		</a>
-	)}
-</section>
+{links && (
+	<div class="mt-4 flex flex-wrap gap-x-4">
+		{links.map(({ href, text }) => (
+			<a href={href}>
+				→ {text ?? href}
+			</a>
+		))}
+	</div>
+)}</section>

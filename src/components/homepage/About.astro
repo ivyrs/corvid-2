@@ -1,0 +1,18 @@
+---
+import Block from "./Block.astro";
+import { Content } from "c#index.mdx";
+import Prose from "~/components/ui/Prose.astro";
+
+import { sectionThemes } from "~/lib/sectionThemes";
+
+const links = [
+	{ href: '/about' },
+	{ href: '/contact' }
+];
+---
+
+<Block title="ivyro.se:~/about.md" theme={sectionThemes.about} links={links}>
+	<Prose>
+		<Content />
+	</Prose>
+</Block>

@@ -1,12 +1,12 @@
 ---
-import Block from "./HPBlock.astro";
+import Block from "./Block.astro";
 
 import Buttons from "../fun/Buttons.astro";
 import Webrings from "../fun/Webrings.astro";
 import { sectionThemes } from "~/lib/sectionThemes";
 ---
 
-<Block title="other sites" theme={sectionThemes.sites} link="/sites">
+<Block title="other sites" theme={sectionThemes.sites} links={[{href: "/sites"}]}>
 	<Buttons />
 	<Webrings />
 </Block>
