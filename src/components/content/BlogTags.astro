@@ -6,7 +6,7 @@ const { tags } = Astro.props;
   {
     tags.map((i: string[]) => {
       return (
-        <span class="text-purple-7 dark:text-purple-2">
+        <span class="text-[var(--section-accent)]">
           <a href={"/blog/tags/" + i}>#{i}</a>
         </span>
       );

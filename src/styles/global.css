@@ -18,7 +18,7 @@
 /* } */
 
 .link {
-	@apply text-purple-7 dark:text-purple-2 underline decoration-dashed underline-offset-4;
+	@apply underline decoration-dashed underline-offset-4;
 }
 
 /* hr { */
@@ -30,11 +30,13 @@
 }
 
 .prose thead {
-	@apply border-purple-7 dark:border-purple-2 border-b-2 border-dashed;
+	@apply border-b-2 border-dashed;
+	border-color: var(--section-accent);
 }
 
 .prose th {
-	@apply text-purple-7 dark:text-purple-2 py-1 pr-6 text-left font-bold last:pr-0;
+	@apply py-1 pr-6 text-left font-bold last:pr-0;
+	color: var(--section-accent);
 }
 
 .prose td {
@@ -66,7 +68,17 @@
 }
 
 abbr {
-	@apply decoration-purple-7 dark:decoration-purple-2 underline-offset-4;
+	@apply underline-offset-4;
+	text-decoration-color: var(--section-accent);
+}
+
+.prose li::marker,
+summary::marker {
+	color: var(--section-accent);
+}
+
+.prose hr {
+	border-color: var(--section-accent);
 }
 
 /* icon-list layout, matching Font Awesome's fa-ul/fa-li so self-hosted

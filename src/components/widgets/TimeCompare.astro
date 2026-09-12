@@ -7,13 +7,15 @@ const { timezone = "Europe/London" } = Astro.props;
 ---
 
 <div
-	class="not-prose flex items-center gap-2 text-base my-2"
+	class="not-prose flex items-center gap-1 text-base my-2"
 	id="ivy-time"
 	data-timezone={timezone}
 >
-	<span id="ivy-time-text" class="text-yin-7 dark:text-yin-3">
-		loading...
+	<span id="ivy-time-value">--:--</span>
+	<span class="text-yin-7 dark:text-yin-3">
+		({timezone})
 	</span>
+	<span id="ivy-time-birthday"></span>
 </div>
 
 <script>
@@ -38,19 +40,24 @@ const { timezone = "Europe/London" } = Astro.props;
 		return month === "10" && day === "16";
 	}
 
-	function tick(timezone: string, text: HTMLElement) {
-		const time = formatTime(timezone);
-		const birthday = isBirthday(timezone) ? " 🎂 it's my birthday!" : "";
-
-		text.textContent = `time: ${time} (${timezone})${birthday}`;
+	function tick(
+		timezone: string,
+		time: HTMLElement,
+		birthday: HTMLElement,
+	) {
+		time.textContent = formatTime(timezone);
+		birthday.textContent = isBirthday(timezone)
+			? " 🎂 it's my birthday!"
+			: "";
 	}
 
 	const container = document.getElementById("ivy-time");
-	const text = document.getElementById("ivy-time-text");
+	const time = document.getElementById("ivy-time-value");
+	const birthday = document.getElementById("ivy-time-birthday");
 	const timezone = container?.dataset.timezone;
 
-	if (container && text && timezone) {
-		tick(timezone, text);
-		setInterval(() => tick(timezone, text), 30_000);
+	if (container && time && birthday && timezone) {
+		tick(timezone, time, birthday);
+		setInterval(() => tick(timezone, time, birthday), 30_000);
 	}
 </script>

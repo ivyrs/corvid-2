@@ -10,13 +10,14 @@ interface Props {
 	icon?: string;
 	publish?: boolean;
 	path?: string;
+	headingClass?: string;
 }
 
-const { title, desc, date, icon, publish, path } = Astro.props;
+const { title, desc, date, icon, publish, path, headingClass } = Astro.props;
 ---
 
 <div class="mb-2 flex flex-col gap-px">
-	<h2 class="text-xl font-bold flex items-center gap-2">
+	<h2 class:list={["text-xl font-bold flex items-center gap-2", headingClass]}>
 		{icon && <Icon name={icon} />}
 		<Breadcrumbs title={title} path={path} />
 	</h2>

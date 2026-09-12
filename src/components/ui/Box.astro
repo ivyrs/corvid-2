@@ -1,13 +1,28 @@
 ---
+import { themeClasses, type Theme } from "~/lib/sectionThemes";
+
 export interface Props {
 	title?: string;
 	xstyle?: string;
+	theme?: Theme;
 }
 
-const { title, xstyle } = Astro.props;
+const {
+	title,
+	xstyle,
+	theme = "yin",
+} = Astro.props;
+
+const colours = themeClasses[theme];
 ---
 
-<div class:list={["border-l-purple-7 dark:border-purple-2 border-l-1 pl-4 ml-4 w-fit", xstyle]}>
+<div
+	class:list={[
+		"border-l pl-4 ml-4 w-fit",
+		colours.border,
+		xstyle,
+	]}
+>
 	{title && <span class="text-base block mt-0.5">{title}</span>}
 	<slot />
 </div>

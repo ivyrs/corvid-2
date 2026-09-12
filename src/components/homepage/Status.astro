@@ -2,10 +2,12 @@
 import Block from "./HPBlock.astro";
 import Discord from "../widgets/DiscordStatus.astro";
 import Time from "../widgets/TimeCompare.astro";
+import Listen from "../widgets/NowPlaying.astro";
+import { sectionThemes } from "~/lib/sectionThemes";
 ---
 
-<Block title="/proc/ivy">
+<Block title="/proc/ivy" theme={sectionThemes.status}>
 	<Discord userId="295975431058751498" />
 	<Time />
+	<Listen user="ivyt" />
 </Block>
-

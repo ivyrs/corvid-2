@@ -7,6 +7,7 @@ import BlogTags from "~/components/content/BlogTags.astro";
 import TOC from "~/components/ui/TableOfContents.astro";
 
 import { getBlogPosts } from "~/lib/blog";
+import { sectionThemes } from "~/lib/sectionThemes";
 import { render } from "astro:content";
 
 export async function getStaticPaths() {
@@ -23,7 +24,14 @@ const d = post.data;
 const hasSideNotes = post.body?.includes("<SideNote") ?? false;
 ---
 
-<Page title={d.title} desc={d.desc} date={d.date} icon={d.icon} publish={d.publish}>
+<Page
+	title={d.title}
+	desc={d.desc}
+	date={d.date}
+	icon={d.icon}
+	publish={d.publish}
+	theme={sectionThemes.blog}
+>
 	{
 		d.cw && (
 			<p class="my-2 text-yin-7 dark:text-yin-3 flex gap-2">
@@ -40,7 +48,7 @@ const hasSideNotes = post.body?.includes("<SideNote") ?? false;
 			<Content components={{ blockquote: Quote }} />
 		</Prose>
 
-		{headings.length > 1 && <TOC headings={headings} />}
+		{headings.length > 1 && <TOC headings={headings} theme={sectionThemes.blog} />}
 	</section>
 
 	{d.tags && <BlogTags tags={d.tags} />}

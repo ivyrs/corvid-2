@@ -3,11 +3,12 @@ import { undefined } from "astro:schema";
 import Link from "~/components/ui/Link.astro";
 import Page from "~/layouts/Page.astro";
 import { getAllTags, getBlogPosts } from "~/lib/blog";
+import { sectionThemes } from "~/lib/sectionThemes";
 
 const tags = await getAllTags();
 ---
 
-<Page title="tags" icon="fa-solid fa-tag">
+<Page title="tags" icon="fa-solid fa-tag" theme={sectionThemes.blog}>
   <ul class="ml-4">
     {
       tags

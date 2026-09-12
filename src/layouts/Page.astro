@@ -2,6 +2,7 @@
 import Breadcrumbs from "~/components/layout/Breadcrumbs.astro";
 import Base from "./Base.astro";
 import PageHead from "~/components/layout/PageHead.astro";
+import { themeClasses, themeForPath, type Theme } from "~/lib/sectionThemes";
 
 const {
     showPageHeader = true,
@@ -12,11 +13,18 @@ const {
     icon,
     path,
 } = Astro.props;
+const theme = (Astro.props.theme as Theme | undefined) ?? themeForPath(Astro.url.pathname);
+const colours = themeClasses[theme];
 ---
 
 <Base title={title} desc={desc} showHeader={showHeader}>
     <main
-        class="ml-4 pb-4 pt-3 px-4 border-l-1 border-dashed border-l-purple-7 dark:border-l-purple-2"
+        class:list={[
+            "ml-4 pb-4 pt-3 px-4 border-l-1 border-dashed",
+            colours.border,
+            colours.links,
+			colours.accent,
+        ]}
     >
         {
             showPageHeader && (
@@ -26,6 +34,7 @@ const {
                     date={date}
                     icon={icon}
                     path={path}
+                    headingClass={colours.heading}
                 />
             )
         }

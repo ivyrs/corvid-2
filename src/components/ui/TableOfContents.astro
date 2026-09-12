@@ -1,22 +1,24 @@
 ---
 import Box from "./Box.astro";
+import type { Theme } from "~/lib/sectionThemes";
 
 import type { MarkdownHeading } from "astro";
 
 interface Props {
 	headings: MarkdownHeading[];
 	xstyle?: string;
+	theme?: Theme;
 }
 
-const {headings, xstyle} = Astro.props;
+const {headings, xstyle, theme} = Astro.props;
 
 const head = headings.filter((h) => h.depth >= 3 && h.slug != "footnote-label");
 ---
 
-<Box title="table of contents" xstyle={xstyle + " my-2"}>
+<Box title="table of contents" xstyle={xstyle + " my-2"} theme={theme}>
 	<ul>
 	{ head.length > 1 && head.map((i) => {
-		return <li><a class="link" href={'#' + i.slug}>{i.text}</a></li>	
+		return <li><a class="" href={'#' + i.slug}>{i.text}</a></li>	
 	})
 	}
 	</ul>

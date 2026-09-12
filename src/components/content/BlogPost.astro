@@ -1,24 +1,42 @@
 ---
 import Item from "~/components/ui/Box.astro";
-import Link from "~/components/ui/Link.astro";
 import BlogTags from "./BlogTags.astro";
-import DateWithIcon from "~/components/ui/DateWithIcon.astro";
+import Date from "~/components/ui/Date.astro";
+import { themeClasses, type Theme } from "~/lib/sectionThemes";
 
-const { i } = Astro.props;
+interface Props {
+	i: any;
+	theme?: Theme;
+}
+
+const { i, theme } = Astro.props;
 const data = i.data;
 ---
 
 <li>
-  <Item>
-    <Link icon={data.icon} href={`/blog/${i.id}`}>
-      {data.title}
-    </Link>
+<Item theme="yin">
+	<a
+		href={`/blog/${i.id}`}
+		class:list={theme
+			? [
+				"underline decoration-dashed underline-offset-4",
+				themeClasses[theme].heading,
+			]
+			: "link"}
+	>
+		{data.title}
+	</a>
 
-    <span class="flex flex-col gap-0.5 pl-4 border-l-1 border-l-yin-3 text-base text-yin-7 dark:text-yin-3">
-      <DateWithIcon date={data.date} />
-      <span class="">{data.desc}</span>
-    </span>
-    
-    {data.tags && <BlogTags tags={data.tags} />}
-  </Item>
+	<div class="text-yin-7 dark:text-yin-3">
+		<Date date={data.date} />
+	</div>
+
+	{data.desc && (
+		<p class="text-base">
+			{data.desc}
+		</p>
+	)}
+
+	{data.tags && <BlogTags tags={data.tags} />}
+</Item>
 </li>

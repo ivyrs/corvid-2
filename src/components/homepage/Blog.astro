@@ -2,13 +2,14 @@
 import Block from "./HPBlock.astro";
 import Date from "../ui/Date.astro";
 import { getBlogPosts } from "../../lib/blog";
+import { sectionThemes } from "~/lib/sectionThemes";
 
 const posts = await getBlogPosts();
 const latest = posts.slice(0, 2);
 const older = posts.slice(2, 5);
 ---
 
-<Block title="blog posts" theme="blue" link="/blog">
+<Block title="blog posts" theme={sectionThemes.blog} link="/blog">
 	<div class="grid gap-6">
 		<div class="grid gap-4 sm:grid-cols-2">
 			{latest.map((post) => (

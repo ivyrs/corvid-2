@@ -1,10 +1,11 @@
 ---
 import PostList from "~/components/content/BlogList.astro";
 import Page from "~/layouts/Page.astro";
+import { sectionThemes } from "~/lib/sectionThemes";
 ---
 
-<Page title="blog" icon="fa-solid fa-signature">
+<Page title="blog" icon="fa-solid fa-signature" theme={sectionThemes.blog}>
 	<div>
-		<PostList />
+		<PostList theme={sectionThemes.blog} />
 	</div>
 </Page>

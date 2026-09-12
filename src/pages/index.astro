@@ -8,13 +8,14 @@ import Status from "~/components/homepage/Status.astro";
 import Blog from "~/components/homepage/Blog.astro";
 import Now from "~/components/homepage/Now.astro";
 import OtherSites from "~/components/homepage/OtherSites.astro";
+import { sectionThemes } from "~/lib/sectionThemes";
 ---
 
 <Base>
-	<div class="grid grid-cols-1 md:grid-cols-3 gap-y-4 md:gap-x-4">
+	<div class="grid grid-cols-1 md:grid-cols-3 gap-y-8 md:gap-x-8">
 	<!-- intro / about -->
 	<div class="md:col-span-2">
-		<Block title="~/about.md" theme="purple">
+		<Block title="~/about.md" theme={sectionThemes.about}>
 				<Prose>
 					<Content />
 				</Prose>

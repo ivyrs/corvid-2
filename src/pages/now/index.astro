@@ -4,10 +4,13 @@ import Prose from "~/components/ui/Prose.astro";
 import { render } from "astro:content";
 import CDate from "~/components/ui/Date.astro";
 import { getNowPosts } from "~/lib/now";
+import { sectionThemes, themeClasses } from "~/lib/sectionThemes";
 
-const posts = await getNowPosts()
+const posts = await getNowPosts();
+const theme = sectionThemes.now;
+const colours = themeClasses[theme];
 
-const rendered = await Promise.all(
+const [latest, ...older] = await Promise.all(
 	posts.map(async (post) => ({
 		post,
 		Content: (await render(post)).Content,
@@ -17,19 +20,44 @@ const rendered = await Promise.all(
 
 <Page
 	title="now"
-	desc="a page that tells you what this person* is focused on at this point in their life"
+	desc="what i'm focused on"
 	icon="fa-solid fa-calendar"
+	theme={theme}
 >
-	{
-		rendered.map(({ post, Content }) => (
-			<article id={post.id} class="mb-4">
-				<h3 class="text-purple-7 dark:text-purple-2 font-bold mb-1">
-					<CDate date={post.id} />
-				</h3>
-				<Prose>
-					<Content />
-				</Prose>
-			</article>
-		))
-	}
+	{latest && (
+		<article id={latest.post.id} class="mb-8">
+			<h2 class:list={["mb-1", colours.heading]}>
+				right now
+				<span class="ml-2 font-normal text-yin-7 dark:text-yin-3">
+					<CDate date={latest.post.id} />
+				</span>
+			</h2>
+
+			<Prose>
+				<latest.Content />
+			</Prose>
+		</article>
+	)}
+
+	{older.length > 0 && (
+		<section>
+			<h2 class="mb-4 text-yin-7 dark:text-yin-3">
+				previously
+			</h2>
+
+			<div class="space-y-6">
+				{older.map(({ post, Content }) => (
+					<article id={post.id}>
+						<h3 class="mb-1 text-yin-7 dark:text-yin-3">
+							<CDate date={post.id} />
+						</h3>
+
+						<Prose>
+							<Content />
+						</Prose>
+					</article>
+				))}
+			</div>
+		</section>
+	)}
 </Page>

@@ -29,7 +29,7 @@ const breadcrumbs = [
 				{i < breadcrumbs.length - 1 ? (
 					<>
 						<a
-							class="text-purple-7 dark:text-purple-2"
+							class="text-[var(--section-accent)]"
 							href={crumb.href}
 						>
 							{crumb.label}
@@ -37,7 +37,7 @@ const breadcrumbs = [
 						<span class="text-yin-7 dark:text-yin-3">/</span>
 					</>
 				) : (
-					<span aria-current="page">
+					<span aria-current="page" class="text-yin dark:text-yang">
 						{crumb.label}
 					</span>
 				)}

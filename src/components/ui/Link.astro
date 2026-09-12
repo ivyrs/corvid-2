@@ -22,6 +22,6 @@ if (wrapped) label = wrapped[1].trim();
 	rel={relme ? "me" : ""}
 	href={href || "#"}
 >
-	<Icon name={icon} class={"text-xl text-purple-7 dark:text-purple-2 mt-1"} />
+	<Icon name={icon} class={"text-xl text-[var(--section-accent)] mt-1"} />
 	<span class="link ml-1" set:html={label} />
 </a>
